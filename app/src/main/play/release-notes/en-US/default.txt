@@ -1,0 +1,6 @@
+• Play chess vs the computer: 8 levels from beginner to grandmaster (Stockfish), odds games.
+• Your coach grades and explains every move, shows better ones, warns before blunders.
+• Mistake notebook with spaced review.
+• Daily practice: review, today's puzzle, puzzles at your level.
+• 600 mate-in-1 to mate-in-4 puzzles by difficulty.
+• Game analysis, named openings, titles, streak. English, Tiếng Việt, 中文, 日本語.

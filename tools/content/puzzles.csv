@@ -1,0 +1,601 @@
+id,mate_in,difficulty,score,theme,first_check,sacrifice,replies,fen,solution
+1,1,1,1.0,Hàng cuối,true,false,0,1k1qQ3/p1p5/8/2bB4/1n3P2/6P1/1P5P/1K1R4 w - - 1 32,Qxd8#
+2,1,1,1.0,Hàng cuối,true,false,0,2k1b2N/rpp3p1/8/7Q/p7/2q5/2P2PPP/1K1R1BR1 w - - 0 26,Qxe8#
+3,1,2,1.0,Hàng cuối,true,false,0,2k5/1qp1Q3/8/1p6/P2N4/B1Np3P/3P1PP1/5R1K w - - 2 32,Qe8#
+4,1,1,1.0,Hàng cuối,true,false,0,2r1kr1R/p4q2/Q1p1pPB1/6B1/3P4/P1P5/5PP1/R3K3 w Q - 1 25,Qxc8#
+5,1,2,1.0,Hàng cuối,true,false,0,3k2rR/p1pr4/1p4P1/4R3/b1B2K2/2P5/PP3PP1/8 w - - 6 33,Rxg8#
+6,1,2,1.0,Hàng cuối,true,false,0,4qk2/6pp/p2p1n2/4n2r/4P3/1P1P1bP1/2P1RP2/R4QK1 b - - 1 28,Rh1#
+7,1,1,1.0,Hàng cuối,true,false,0,6k1/4Q1pp/1r6/3b4/3P3P/7P/PP3P1K/4R3 w - - 1 35,Qe8#
+8,1,1,1.0,Hàng cuối,true,false,0,8/3kb1p1/3p2Pr/r4p2/3n1pN1/4p2P/5P2/4KR1R b - - 1 38,Ra1#
+9,1,2,1.0,Hàng cuối,true,false,0,r1b3k1/pp1pR1pr/q7/2p2Q1p/B2P1P2/P5N1/1PP3PP/2K4R w - - 1 27,Re8#
+10,1,1,1.0,Hàng cuối,true,false,0,r1bk1b2/3p1Qp1/1p4P1/p2N3B/2P1p2q/3P2N1/PP3PPP/2KR3R w - - 3 24,Qxf8#
+11,1,1,1.0,Hàng cuối,true,false,0,r1bk4/pppp1Qp1/2n4p/2P1p1N1/4P3/8/PPP2PPq/RNB1KR2 w Q - 3 14,Qf8#
+12,1,2,1.0,Hàng cuối,true,false,0,r1bkqb2/p1p5/2pp2Qp/3P4/5N2/1N5P/PP3P1K/R3R3 w - - 3 25,Qxe8#
+13,1,1,1.0,Hàng cuối,true,false,0,r1k1bQ2/ppp4B/1q2p3/7p/8/B7/P2P4/K4R2 w - - 3 36,Qxe8#
+14,1,2,1.0,Hàng cuối,true,false,0,r2k1b1r/p4ppp/3p1n2/8/4b3/P2pP2P/1P2q1PR/R1B3K1 b - - 5 22,Qe1#
+15,1,1,1.0,Hàng cuối,true,false,0,r3k2r/ppp2ppp/8/2bqp3/6b1/8/PPP2PPP/R1BQKBnR b kq - 3 12,Qxd1#
+16,1,2,1.0,Hàng cuối,true,false,0,r6r/1p1k1pp1/5P1p/1p1p3P/4n1b1/4n3/4P1P1/4KBR1 b - - 0 29,Ra1#
+17,1,1,1.0,Phong cấp,true,false,0,8/6k1/8/2P5/3p1q2/7K/7p/8 b - - 3 70,h1=Q#
+18,1,1,1.0,Tốt chiếu,true,false,0,1rbk4/pppp1pp1/7r/3PnK1p/2P1P1BP/N3q3/PP3p2/3RnR2 b - - 2 27,d6#
+19,1,2,1.0,Tốt chiếu,true,false,0,3r4/kpp2pp1/8/4nbbp/4pP2/6P1/PPP1B3/1RK2R2 b - f3 0 23,exf3#
+20,1,1,1.0,Tốt chiếu,true,false,0,3rb1k1/ppp2ppp/8/2Kn4/P5P1/3q1P2/1P2N2P/R4B1R b - - 0 22,b6#
+21,1,1,1.0,Tốt chiếu,true,false,0,4k2r/1p1b2pp/1P5q/2R2p2/3pp3/3P2K1/5PPP/5B1R b k - 5 31,f4#
+22,1,1,1.0,Tốt chiếu,true,false,0,4kb1r/1p3ppp/5n2/1p2p1K1/6P1/1N1R3P/1r3q2/2B1nB1R b k - 3 25,h6#
+23,1,2,1.0,Tốt chiếu,true,false,0,6r1/p4Qbk/7P/8/1p1P2P1/P7/1P3P1R/RK6 w - - 0 40,hxg7#
+24,1,2,1.0,Tốt chiếu,true,false,0,8/1NPQ4/5kp1/1p5p/2n3P1/P4N2/1P3P1P/6K1 w - - 3 40,g5#
+25,1,1,1.0,Tốt chiếu,true,false,0,8/ppk5/4b3/1Kp4p/1P1b3P/8/2P5/r7 b - - 0 38,a6#
+26,1,1,1.0,Tốt chiếu,true,false,0,k7/P5p1/4p3/1R2p3/2P1Pn1K/3P3R/6q1/8 b - - 4 63,g5#
+27,1,2,1.0,Tốt chiếu,true,false,0,r1bq1bkr/ppnp2pp/3PpP2/2p1N1B1/2P5/2N5/PPQ2KPP/R4B1R w - - 3 14,f7#
+28,1,2,1.0,Tốt chiếu,true,false,0,r3k1nr/ppp2ppp/2n5/8/Kbb1q3/5N2/PP3PPP/R1BQ3R b kq - 1 12,b5#
+29,1,1,1.0,Tốt chiếu,true,false,0,r6r/p2Q3p/q4p2/k7/8/3PB3/PPN1PPPP/R3KB1R w KQ - 3 24,b4#
+30,1,2,1.0,Đòn Hậu,true,false,0,1k3b1r/1q3pp1/Q2r3p/3B4/2p1P3/8/1PP2PPP/4K2R w K - 0 21,Qxb7#
+31,1,1,1.0,Đòn Hậu,true,false,0,1k6/2pn1p2/p1p1p3/Pb1pP3/RP1P4/4P3/8/KQq2r2 b - - 1 46,Qxb1#
+32,1,1,1.0,Đòn Hậu,true,false,0,1k6/8/1K6/5P2/Q7/1n6/8/8 w - - 4 66,Qe8#
+33,1,2,1.0,Đòn Hậu,true,false,0,1r1k1b1r/2p2ppp/2B1b3/p2NQ3/8/3P4/PP1P1PPP/R1B1K2R w KQ - 5 17,Qxc7#
+34,1,1,1.0,Đòn Hậu,true,false,0,1r6/p4p1k/3P1B1p/1b2p3/6Q1/pP5P/6P1/6K1 w - - 7 45,Qg7#
+35,1,1,1.0,Đòn Hậu,true,false,0,1rb2k2/1p4p1/3p1nq1/p1QB1p2/8/6P1/PP1N1P1P/R1B1R1K1 w - - 0 30,Qxd6#
+36,1,2,1.0,Đòn Hậu,true,false,0,1rb3Q1/1p5R/p2k4/4p3/2P5/N7/R7/7K w - - 3 34,Qd5#
+37,1,2,1.0,Đòn Hậu,true,false,0,2b2r2/nr6/1p3Q1p/p3n3/1bPk2p1/P2N4/1P1N1PPP/1K3B1R w - - 1 33,Qxe5#
+38,1,2,1.0,Đòn Hậu,true,false,0,2k4r/2p3pp/8/pP1p4/4Pb2/5PPP/7K/4qB1R b - - 0 26,Qxg3#
+39,1,1,1.0,Đòn Hậu,true,false,0,2k5/5Q2/8/2PN4/pP6/P7/8/6K1 w - - 1 59,Qc7#
+40,1,1,1.0,Đòn Hậu,true,false,0,2r2rk1/1p4pp/p3P3/P1n4B/8/3QP3/1P2Kb1P/R1B4q b - - 0 37,Qe1#
+41,1,1,1.0,Đòn Hậu,true,false,0,2r3kr/pp3pp1/4p3/1b1p4/1b1q1P2/3Q1BPp/PP2KP1P/R4NR1 b - - 7 21,Qxd3#
+42,1,1,1.0,Đòn Hậu,true,false,0,2r4r/k5p1/p4q2/B1PQ1p2/7P/5P2/P3RK2/1R6 w - - 5 34,Qb7#
+43,1,2,1.0,Đòn Hậu,true,false,0,3rr2k/5R2/p4R2/1p1pP3/1P1P2pP/4B3/2Q3P1/6K1 w - - 1 37,Qh7#
+44,1,1,1.0,Đòn Hậu,true,false,0,4K3/8/3k4/8/3b4/6q1/8/8 b - - 11 80,Qg8#
+45,1,2,1.0,Đòn Hậu,true,false,0,4k1bQ/1R6/2p5/7R/1Pp5/4P1P1/6P1/6K1 w - - 3 48,Qxg8#
+46,1,1,1.0,Đòn Hậu,true,false,0,4k3/Q7/5P2/8/p5PP/P7/P1P5/6K1 w - - 1 41,Qe7#
+47,1,2,1.0,Đòn Hậu,true,false,0,4kb1r/4n3/4Q1pp/2P1N1P1/8/1P6/5KPP/4B3 w - - 2 36,Qd7#
+48,1,1,1.0,Đòn Hậu,true,false,0,5K2/8/5k2/8/6q1/8/8/8 b - - 27 79,Qc8#
+49,1,2,1.0,Đòn Hậu,true,false,0,5Q2/6R1/1k1p4/pppP3p/8/5K2/7P/8 w - - 1 46,Qxd6#
+50,1,2,1.0,Đòn Hậu,true,false,0,5b1Q/3k1p2/p1rP3p/4p3/4P3/2p5/q1P2PPP/2K1R2R b - - 1 25,Qa1#
+51,1,2,1.0,Đòn Hậu,true,false,0,5b2/7K/q6P/5k2/5p2/1b3P2/8/8 b - - 0 56,Qxh6#
+52,1,1,1.0,Đòn Hậu,true,false,0,5k2/6p1/1P6/5p1K/8/8/6q1/4b3 b - - 0 43,Qg4#
+53,1,1,1.0,Đòn Hậu,true,false,0,5rk1/4qppp/8/1p2p1b1/1Pp1Q3/r6P/1KP2pP1/4RB1R b - - 2 26,Qxb4#
+54,1,1,1.0,Đòn Hậu,true,false,0,5rk1/p3qp1p/8/4p1P1/2Bpn2K/7P/Pr3P2/4QR2 b - - 0 28,Qxg5#
+55,1,1,1.0,Đòn Hậu,true,false,0,5rk1/pp3ppp/8/3p4/4r3/3N1K2/1P1q2PP/5BR1 b - - 9 28,Qe3#
+56,1,2,1.0,Đòn Hậu,true,false,0,5rr1/1p2kp2/7p/1pp1BQ2/8/P5P1/1PP2P1P/2KR1B1R w - - 2 24,Qd7#
+57,1,1,1.0,Đòn Hậu,true,false,0,6k1/8/7K/7P/p2Q1p2/8/8/8 w - - 2 58,Qg7#
+58,1,2,1.0,Đòn Hậu,true,false,0,6k1/pp4pp/3p4/3Pp1b1/1P1q2b1/Q4r2/P2r2B1/R3K2R b - - 1 22,Qf2#
+59,1,1,1.0,Đòn Hậu,true,false,0,7k/6p1/5p2/K2B1P2/1p6/4q1n1/3bb3/8 b - - 3 68,Qa7#
+60,1,1,1.0,Đòn Hậu,true,false,0,7r/2Q2p1p/1p3k2/3bbN2/8/4pP1B/7q/5K2 b - - 1 40,Qf2#
+61,1,1,1.0,Đòn Hậu,true,false,0,7r/kqQ4p/2p5/p1N5/3P2p1/8/PP2KPPP/R6R w - - 5 26,Qxb7#
+62,1,1,1.0,Đòn Hậu,true,false,0,8/1k4P1/3qBK1P/4r3/8/8/3B4/8 b - - 5 60,Qxe6#
+63,1,1,1.0,Đòn Hậu,true,false,0,8/2Q5/k5K1/2P5/pp3P2/P7/8/8 w - - 0 70,Qb6#
+64,1,1,1.0,Đòn Hậu,true,false,0,8/2p1k3/p7/4P3/6b1/6P1/1q6/3n1K2 b - - 7 53,Qf2#
+65,1,2,1.0,Đòn Hậu,true,false,0,8/3Q4/1R6/4k1p1/5p1p/5B1P/6PK/4n3 w - - 0 59,Qd5#
+66,1,1,1.0,Đòn Hậu,true,false,0,8/5Bp1/1pp2k2/5p2/6qp/8/5r2/R6K b - - 1 59,Qg2#
+67,1,1,1.0,Đòn Hậu,true,false,0,8/5R2/6k1/2P3p1/3PP1P1/7p/5Q2/7K w - - 5 49,Qf6#
+68,1,2,1.0,Đòn Hậu,true,false,0,8/b3k3/4p3/3B2p1/6P1/3p4/5q2/7K b - - 2 57,Qg1#
+69,1,1,1.0,Đòn Hậu,true,false,0,8/pp6/2p1k3/4P3/PP1Kn3/5P2/2q1r3/8 b - - 0 43,Qc3#
+70,1,1,1.0,Đòn Hậu,true,false,0,k4r2/1p3P2/qQ5p/p3B3/8/1P3B2/P4P1P/2R2R1K w - - 5 36,Qxa6#
+71,1,1,1.0,Đòn Hậu,true,false,0,r1b1k3/p1p2p2/4p2p/1p1q4/PP5P/2K1B3/1P1r4/3R3R b q - 0 22,Qd3#
+72,1,1,1.0,Đòn Hậu,true,false,0,r1b2rk1/1pp2ppp/7q/4P3/p7/8/PPnNNKPP/R1B2BR1 b - - 0 21,Qe3#
+73,1,1,1.0,Đòn Hậu,true,false,0,r1b3nr/1p4p1/k4p2/2Q1p2p/8/4B3/PPP2PPP/RN2K2R w KQ - 2 17,Qb6#
+74,1,1,1.0,Đòn Hậu,true,false,0,r1b5/pk3N1p/q1nQ4/2pNp3/1p2P3/P7/2PP1PPP/R1B1K2R w KQ - 0 20,Qc7#
+75,1,1,1.0,Đòn Hậu,true,false,0,r2k1b2/pp6/2pnQ3/3PN1pp/3P4/P6P/1PP2P2/R5K1 w - - 0 30,Qd7#
+76,1,2,1.0,Đòn Hậu,true,false,0,r3k2r/p2b1ppp/2p5/8/1qPpn3/4P3/P4PPP/R2K1BNR b kq - 1 16,Qd2#
+77,1,2,1.0,Đòn Hậu,true,false,0,rr4k1/p1pn4/3p1pP1/3P4/1p2P3/1PN1BP2/n6Q/R2B1K1R w - - 2 29,Qh8#
+78,1,1,1.0,Đòn Mã,true,false,0,1r3b1r/4kppp/p1QRP3/2n4P/5q2/2N3N1/PP2BPP1/4K2R w K - 3 25,Nd5#
+79,1,2,1.0,Đòn Mã,true,false,0,2b1kb2/1pQ2pp1/2r5/4n3/8/2NP1q2/P2P4/R3K3 b - - 3 25,Nxd3#
+80,1,3,2.0,Đòn Mã,true,true,0,2r1kb1r/1p3pp1/p2p3p/B1n5/1Q1p4/3b1P1P/PP1NqP2/R1K4R b k - 13 23,Nb3#
+81,1,1,1.0,Đòn Mã,true,false,0,3k1r2/2R5/7p/1B6/3N2p1/7P/PP3P2/6K1 w - - 2 34,Ne6#
+82,1,1,1.0,Đòn Mã,true,false,0,3k4/1p2rppp/5n2/2Q5/1P1P2bP/4PpP1/3K4/1q4R1 b - - 1 41,Ne4#
+83,1,1,1.0,Đòn Mã,true,false,0,3kr3/1p3ppp/8/p4P2/1n4P1/3n4/PPr4P/3K1R2 b - - 1 27,Nxb2#
+84,1,1,1.0,Đòn Mã,true,false,0,3rN3/3k1p1p/2RP2p1/3P4/p3rP2/B6P/P5P1/1R4K1 w - - 1 35,Nf6#
+85,1,1,1.0,Đòn Mã,true,false,0,5b1r/1pp2kp1/3p3p/5q2/1nP1QP2/2Nn2B1/1r3P1P/K2R3R b - - 3 26,Nc2#
+86,1,1,1.0,Đòn Mã,true,false,0,6kr/3R1R2/3p1p1p/p1pP1P2/2P3N1/7P/P1P2PP1/6K1 w - - 0 30,Nxf6#
+87,1,2,1.0,Đòn Mã,true,false,0,8/2k2p1p/8/P1p2P2/4n2P/3p4/1p2r3/1K4R1 b - - 0 41,Nc3#
+88,1,1,1.0,Đòn Mã,true,false,0,N1b1kb1r/pN1n1ppp/3Q4/4n3/2B1pB2/8/PPP2P2/2KR3R w - - 3 22,Nc7#
+89,1,1,1.0,Đòn Mã,true,false,0,k7/2Q1K3/8/p6p/PpN4P/1P4P1/8/8 w - - 3 63,Nb6#
+90,1,2,1.0,Đòn Mã,true,false,0,k7/5R2/pp1B4/3N1n2/4P3/5B2/PP3K2/8 w - - 7 43,Nxb6#
+91,1,1,1.0,Đòn Mã,true,false,0,r1b1k2r/ppp2ppp/2n1p3/5n2/1b2pB2/1P1P3P/PqP1KPP1/3Q1B1R b kq - 3 15,Ncd4#
+92,1,1,1.0,Đòn Mã,true,false,0,r1b1kb1r/pp2pppp/3p4/8/2P3n1/8/PPQN1qPP/R1BK1BNR b kq - 1 13,Ne3#
+93,1,1,1.0,Đòn Mã,true,false,0,r1b4k/ppp2p1p/1b3PQ1/3pn3/PP6/2P2P1q/3P1P2/R1B2RK1 b - - 0 26,Nxf3#
+94,1,1,1.0,Đòn Mã,true,false,0,r1bq1b1r/1p1pk1p1/3Npp2/p1P1N2p/3p4/7P/PPQ2PPR/R1B1KB2 w Q - 2 15,Ng6#
+95,1,1,1.0,Đòn Mã,true,false,0,r3kb1r/ppp1p1pp/2n5/2nq1b2/5P2/P1K1B2N/RP2PQPP/5B1R b kq - 4 21,Na4#
+96,1,1,1.0,Đòn Mã,true,false,0,r3r1k1/pp3ppp/1nb5/8/1bp3nP/3PQ1P1/PPPN1qB1/R1BK3R b - - 1 25,Nxe3#
+97,1,1,1.0,Đòn Mã,true,false,0,rn2k2r/p1p3pp/3b1p2/3q4/1n6/1N2K1N1/PP2PPPP/R1B2B1R b kq - 6 21,Nc2#
+98,1,2,1.0,Đòn Mã,true,false,0,rnbq1b1r/pppkp1p1/1n2p1Bp/1N6/3p4/5N2/PPPP1PPP/R1BQK2R w KQ - 4 9,Ne5#
+99,1,2,1.0,Đòn Tượng,true,false,0,1Q3q2/pp1bkp1p/5Rn1/2p4N/2p1B1P1/B1P1P2P/P7/1R4K1 w - - 0 29,Bxc5#
+100,1,1,1.0,Đòn Tượng,true,false,0,1k1r4/1pp4p/8/p7/1Pb2bP1/5B2/P6r/1R2K3 b - - 0 34,Bg3#
+101,1,1,1.0,Đòn Tượng,true,false,0,1k6/pp2p3/5b2/3b2r1/8/7K/5PnP/1R6 b - - 1 30,Be6#
+102,1,1,1.0,Đòn Tượng,true,false,0,1r1k1b2/1P6/1n1pQp2/B3p2p/6p1/8/BPP2PPP/4K2R w K - 4 28,Bxb6#
+103,1,1,1.0,Đòn Tượng,true,false,0,1r3bkr/p1p1pnpp/1p6/1P1Bp1N1/8/2P1B1R1/P4n1P/3RK3 w - - 4 21,Bxf7#
+104,1,1,1.0,Đòn Tượng,true,false,0,2R5/4kp2/1b6/8/8/2pb4/3r4/2R1K3 b - - 9 48,Bf2#
+105,1,2,1.0,Đòn Tượng,true,false,0,2b2r2/ppNp1kpp/3Q4/2p2p2/4P3/8/PqP2PPP/3RKB1R w K - 6 22,Bc4#
+106,1,2,1.0,Đòn Tượng,true,false,0,2b5/p3Rp2/1pqk4/2pNbp2/2Pn1B2/3B4/PP3PPP/5K1R w - - 14 30,Bxe5#
+107,1,1,1.0,Đòn Tượng,true,false,0,2k2b1r/R4Np1/4pn2/1B1p3p/3P1B2/2r1P3/1PP2PPP/3Q1RK1 w - - 1 20,Ba6#
+108,1,2,1.0,Đòn Tượng,true,false,0,2k5/R4p1p/7P/3p4/6p1/1b2Pn2/7r/5K2 b - - 7 42,Bc4#
+109,1,1,1.0,Đòn Tượng,true,false,0,2r4k/2p2R1P/6P1/pp6/1P1p4/4n3/1BP1K3/8 w - - 1 51,Bxd4#
+110,1,1,1.0,Đòn Tượng,true,false,0,2rk4/1p3Q2/8/p3BR2/P6P/1Pn5/5P2/K7 w - - 1 45,Bf6#
+111,1,2,1.0,Đòn Tượng,true,false,0,3k4/6B1/2KN4/8/5P1p/2N4P/P7/8 w - - 5 50,Bf6#
+112,1,1,1.0,Đòn Tượng,true,false,0,4r1k1/1p3pp1/p6p/8/b7/3K3P/1q4P1/4NB2 b - - 0 32,Bb5#
+113,1,2,1.0,Đòn Tượng,true,false,0,6k1/1pR4R/7p/6r1/pbNP3K/5r2/1P5P/8 b - - 6 40,Be1#
+114,1,1,1.0,Đòn Tượng,true,false,0,6k1/r4ppp/pp6/2p5/K3R3/P5PP/3n4/Rb6 b - - 0 31,Bc2#
+115,1,1,1.0,Đòn Tượng,true,false,0,6rk/p3R3/p7/8/4n2p/8/1r6/3b3K b - - 5 46,Bf3#
+116,1,2,1.0,Đòn Tượng,true,false,0,7k/8/pnp4B/1p2P1RR/1P6/P1P2p2/8/5K2 w - - 0 42,Bf8#
+117,1,1,1.0,Đòn Tượng,true,false,0,7r/7p/3Q4/1Bp2b2/4k3/6P1/1bP2P2/6K1 w - - 1 39,Bc6#
+118,1,1,1.0,Đòn Tượng,true,false,0,8/4kNb1/3p4/3bp3/8/2p3q1/8/2Q2K2 b - - 1 47,Bc4#
+119,1,2,1.0,Đòn Tượng,true,false,0,8/6p1/p3k3/2b3p1/1p2P3/1P2n3/PK6/3r4 b - - 2 37,Bd4#
+120,1,2,1.0,Đòn Tượng,true,false,0,8/8/4k3/5p1Q/2b3P1/q3p3/8/1K6 b - - 8 55,Bd3#
+121,1,2,1.0,Đòn Tượng,true,false,0,8/8/5b2/5Pk1/8/8/7K/5q2 b - - 3 67,Be5#
+122,1,1,1.0,Đòn Tượng,true,false,0,8/R1b3p1/2k1b3/2B4p/3PP3/2N2P2/1P3P1P/4KB1R w K - 0 27,Bb5#
+123,1,2,1.0,Đòn Tượng,true,false,0,8/pp3p1p/r6k/3R4/6R1/1P1P3P/PB1K1PBP/8 w - - 5 31,Bg7#
+124,1,1,1.0,Đòn Tượng,true,false,0,k7/2Q5/8/8/5p2/P2B1P2/5P2/7K w - - 13 58,Be4#
+125,1,1,1.0,Đòn Tượng,true,false,0,r1bqk2r/ppp5/2n1B1Nb/4P3/3P2Qp/P1N1n3/1P4PP/R4RK1 w - - 3 21,Bf7#
+126,1,1,1.0,Đòn Tượng,true,false,0,r3k1r1/p1p1bpPp/8/4p3/7P/PP3q2/2PP4/RNB1K3 b q - 1 20,Bxh4#
+127,1,1,1.0,Đòn Tượng,true,false,0,r3k2r/1p6/p1n2b2/7p/5B1p/1qR3P1/8/K5R1 b kq - 3 35,Bxc3#
+128,1,2,1.0,Đòn Tượng,true,false,0,r3k2r/ppp2ppp/2n5/3p2q1/3P2bb/2B3R1/PPP1n3/RN1QKB2 b kq - 1 13,Bxg3#
+129,1,1,1.0,Đòn Tượng,true,false,0,r3kb1r/pbpp1ppp/8/1p3n2/3P4/1BP2p2/PPKBqP2/RNQ2R2 b kq - 6 19,Be4#
+130,1,1,1.0,Đòn Tượng,true,false,0,r5kr/pR6/3B1b1p/1Bp2p2/8/8/P4PPP/4K2R w K - 0 24,Bc4#
+131,1,2,1.0,Đòn Tượng,true,false,0,r7/7R/1p2b1p1/8/4PPk1/P2BK3/1P4PP/8 w - - 1 41,Be2#
+132,1,1,1.0,Đòn Tượng,true,false,0,r7/8/3R4/2p5/pk5P/N3B2b/PP2PPP1/2K2B1R w - - 5 32,Bd2#
+133,1,1,1.0,Đòn Xe,true,false,0,1K6/P3k3/2q4p/8/8/3b4/8/7r b - - 0 68,Rb1#
+134,1,2,1.0,Đòn Xe,true,false,0,1Q3R2/6nk/2N2pp1/6P1/5P1p/2B1P1P1/4K2n/8 w - - 0 49,Rh8#
+135,1,2,1.0,Đòn Xe,true,false,0,1R6/8/8/2R5/q3kb2/2K5/7r/8 b - - 4 52,Rc2#
+136,1,1,1.0,Đòn Xe,true,false,0,1r3b2/1p1Bp1p1/pk2p3/4P3/3R1P2/1N2B2P/PPP4P/2K4R w - - 1 25,Rc4#
+137,1,1,1.0,Đòn Xe,true,false,0,2R3R1/k2p3B/pp6/2B5/1p5P/8/PPPb4/1K6 w - - 0 40,Rc7#
+138,1,1,1.0,Đòn Xe,true,false,0,2b3k1/Rp2Bp1p/1n4p1/8/3b3P/2p2P2/1r4r1/4R2K b - - 1 31,Rh2#
+139,1,1,1.0,Đòn Xe,true,false,0,3k4/3r4/PN2R1p1/5p2/4p3/1p2K1P1/bP5P/3R4 w - - 5 38,Rxd7#
+140,1,1,1.0,Đòn Xe,true,false,0,3k4/Pp4pp/8/8/P7/4bb1P/1r6/4K3 b - - 0 39,Rb1#
+141,1,1,1.0,Đòn Xe,true,false,0,3r2k1/5pp1/2p4p/3p4/N1n2r2/P7/1b3q2/3Q3K b - - 3 40,Rh4#
+142,1,1,1.0,Đòn Xe,true,false,0,4k1r1/R7/2N1P3/2B4p/2P1P3/1K6/7P/8 w - - 1 36,Ra8#
+143,1,2,1.0,Đòn Xe,true,false,0,4r1k1/ppp2pp1/2n5/6p1/6P1/2P2K1P/3q4/7R b - - 3 27,Re3#
+144,1,2,1.0,Đòn Xe,true,false,0,4r1k1/ppp2ppp/8/8/2P5/P2b2P1/2r5/1K6 b - - 0 33,Re1#
+145,1,1,1.0,Đòn Xe,true,false,0,4rrk1/ppp2ppp/2p5/5b1P/5P1q/PPP5/6P1/R1B3K1 b - - 2 23,Re1#
+146,1,1,1.0,Đòn Xe,true,false,0,5R2/8/1K6/8/6Q1/8/8/7k w - - 3 82,Rh8#
+147,1,2,1.0,Đòn Xe,true,false,0,5R2/8/k1K5/5P2/8/8/8/8 w - - 0 75,Ra8#
+148,1,1,1.0,Đòn Xe,true,false,0,5r1r/2B3pp/3bQ1nk/p3p3/4N3/1R6/P1P2PKP/R7 w - - 2 28,Rh3#
+149,1,1,1.0,Đòn Xe,true,false,0,5r2/1p3p1p/p2prQpk/3N4/2R5/8/PPP2PPP/2K3R1 w - - 0 21,Rh4#
+150,1,1,1.0,Đòn Xe,true,false,0,5r2/4k1p1/p1b5/2Np4/p3pP2/2p3b1/P1B1K3/7r b - - 5 38,Re1#
+151,1,2,1.0,Đòn Xe,true,false,0,6Q1/8/7k/8/5R2/P4K2/8/8 w - - 9 59,Rh4#
+152,1,1,1.0,Đòn Xe,true,false,0,6Q1/R7/8/7k/7p/5p1B/5K2/8 w - - 2 53,Rh7#
+153,1,1,1.0,Đòn Xe,true,false,0,6k1/2R5/6p1/4N3/7P/8/1R4K1/8 w - - 2 62,Rb8#
+154,1,1,1.0,Đòn Xe,true,false,0,6k1/Q7/P1R5/8/P4P1p/7P/5K2/8 w - - 2 56,Rc8#
+155,1,1,1.0,Đòn Xe,true,false,0,6k1/p6p/4p2P/2p3p1/3b1rP1/8/1r6/3K4 b - - 5 42,Rf1#
+156,1,2,1.0,Đòn Xe,true,false,0,6r1/2k3p1/K6p/1pr1p3/4P1P1/P1b3NB/8/7R b - - 2 43,Ra8#
+157,1,1,1.0,Đòn Xe,true,false,0,7R/4k3/2K3Q1/6p1/8/8/8/8 w - - 1 57,Re8#
+158,1,2,1.0,Đòn Xe,true,false,0,8/1p3p2/7p/1Nk2P2/Pp6/4r1p1/5r2/6KR b - - 2 63,Re1#
+159,1,1,1.0,Đòn Xe,true,false,0,8/1p6/p1nk4/8/1P1n4/8/Pr4r1/R1KR4 b - - 5 38,Rgc2#
+160,1,1,1.0,Đòn Xe,true,false,0,8/1pk3q1/8/8/p6K/P7/2r5/8 b - - 4 66,Rh2#
+161,1,1,1.0,Đòn Xe,true,false,0,8/2p4p/2k2p2/7p/3b2n1/1n4P1/3r4/1K6 b - - 3 48,Rb2#
+162,1,1,1.0,Đòn Xe,true,false,0,8/4k3/8/4p1p1/4P1P1/p1p4K/q2r4/8 b - - 5 82,Rd3#
+163,1,1,1.0,Đòn Xe,true,false,0,8/5Q2/3pRb1k/pp6/P1P4P/8/1PK3P1/8 w - - 0 35,Rxf6#
+164,1,1,1.0,Đòn Xe,true,false,0,8/5b2/8/8/3R4/K1k5/8/5r2 b - - 5 85,Ra1#
+165,1,2,1.0,Đòn Xe,true,false,0,8/5p2/8/4p1pp/4P3/3k1r2/8/3K4 b - - 7 52,Rf1#
+166,1,2,1.0,Đòn Xe,true,false,0,8/8/6R1/3p4/3kp2p/7P/6PK/3qr3 b - - 4 68,Rh1#
+167,1,2,1.0,Đòn Xe,true,false,0,8/8/7p/7P/3b4/1p1P1k1K/8/1b4r1 b - - 2 46,Rh1#
+168,1,2,1.0,Đòn Xe,true,false,0,8/8/7p/p1r4P/P7/1k6/8/K7 b - - 1 52,Rc1#
+169,1,1,1.0,Đòn Xe,true,false,0,8/8/8/6p1/2K1k3/4P3/8/1q3r2 b - - 5 74,Rc1#
+170,1,2,1.0,Đòn Xe,true,false,0,8/8/8/R7/8/p7/k2K4/2Q5 w - - 2 69,Rxa3#
+171,1,1,1.0,Đòn Xe,true,false,0,8/8/k1K5/8/6R1/8/8/8 w - - 13 76,Ra4#
+172,1,1,1.0,Đòn Xe,true,false,0,8/kp6/8/8/p7/3p1p2/2q5/K2Rr3 b - - 9 64,Rxd1#
+173,1,1,1.0,Đòn Xe,true,false,0,8/p1p2p1p/p3k2p/P7/7K/8/6r1/3r4 b - - 8 47,Rh1#
+174,1,1,1.0,Đòn Xe,true,false,0,8/p1p3R1/3k1p2/1p2p3/P5p1/3bb1P1/3p1r2/R2K4 b - - 0 44,Rf1#
+175,1,1,1.0,Đòn Xe,true,false,0,8/p1pk2p1/2pb4/P7/3N2R1/2P5/1P3q2/3K1B1r b - - 4 34,Rxf1#
+176,1,1,1.0,Đòn Xe,true,false,0,8/pp4pp/2b5/8/5k2/4p2P/7K/3r4 b - - 3 42,Rh1#
+177,1,1,1.0,Đòn Xe,true,false,0,k1rR2N1/1p3pbp/3B4/pN4p1/3P4/3P2P1/PP4BP/R5K1 w - - 5 25,Rxc8#
+178,1,1,1.0,Đòn Xe,true,false,0,k7/8/BP3R2/4N3/4K3/6r1/8/8 w - - 3 77,Rf8#
+179,1,1,1.0,Đòn Xe,true,false,0,r1k5/pp1R2R1/8/4p3/2P3B1/6r1/1P1K4/8 w - - 3 35,Rg8#
+180,1,1,1.0,Đòn Xe,true,false,0,r4k2/p1P4R/3p1NB1/6p1/2p5/P7/1P1K2PP/8 w - - 2 36,Rf7#
+181,2,2,2.0,Hàng cuối,true,false,1,1k2r3/p1p2Q2/3q4/2bB4/1n3P2/6P1/1P5P/1K1R4 w - - 0 31,Qxe8+ Qd8 Qxd8#
+182,2,3,2.0,Hàng cuối,true,false,1,2bq2k1/ppNp1Npp/2n5/3Q4/4P3/8/PPP2RPP/R1B3K1 w - - 11 20,Nxd8+ Kh8 Rf8#
+183,2,2,2.0,Hàng cuối,true,false,1,3k3N/rppb2p1/4P3/7Q/p7/2q5/2P2PPP/1K1R1BR1 w - - 1 24,Rxd7+ Kc8 Qe8#
+184,2,2,2.0,Hàng cuối,true,false,1,3k4/p1pr2rR/1p4P1/4R3/b1B2K2/2P5/PP3PP1/8 w - - 4 32,Rh8+ Rg8 Rxg8#
+185,2,4,3.5,Hàng cuối,false,false,5,6kr/4Qp2/p4P2/1p5p/8/8/PP3P1P/RK3BN1 w - - 1 36,Bd3 h4 Qe8#
+186,2,4,3.0,Hàng cuối,true,true,1,r1b1kb2/1pq1pNp1/p1p1B1Q1/5n2/1P1pN3/P6P/1BPP1PP1/R4RK1 w - - 3 25,Nfd6+ Kd8 Qe8#
+187,2,3,2.0,Hàng cuối,true,false,1,r1b1kbQ1/3p2p1/1p4P1/p2N3B/2P1p2q/3P2N1/PP3PPP/2KR3R w q - 1 23,Qf7+ Kd8 Qxf8#
+188,2,3,2.0,Hàng cuối,true,false,1,r2k1b1r/p4ppp/3p1n2/8/4b3/P2pP2P/1Pq3PR/R1B2K2 b - - 3 21,Qe2+ Kg1 Qe1#
+189,2,3,3.0,Hàng cuối,true,true,1,r3k2r/ppp2ppp/8/2bqp3/6b1/5n2/PPP1KPPP/R1BQ1B1R b kq - 1 11,Ng1+ Ke1 Qxd1#
+190,2,4,3.5,Hàng cuối,false,false,3,r6r/1p1k1pp1/7p/1p1p1P1P/6b1/4n1n1/4P1P1/4KBR1 b - - 0 28,Ne4 f6 Ra1#
+191,2,2,2.0,Hàng cuối,true,false,1,rk1qQb2/p7/3Nb3/7p/P3Npp1/8/1P2PPP1/2R1KB1R w K - 2 26,Qxd8+ Bc8 Rxc8#
+192,2,4,3.0,Phong cấp,false,false,2,1k6/1p3p2/pb3P2/8/8/6Pp/1r6/5K2 b - - 0 41,h2 g4 h1=Q#
+193,2,4,3.0,Phong cấp,false,false,2,1k6/3R4/3KP3/8/8/8/8/8 w - - 5 78,e7 Kc8 e8=Q#
+194,2,4,3.5,Phong cấp,false,false,4,2k5/4QP2/p2p3p/P3p1p1/6P1/6r1/2P4P/5RK1 w - - 1 36,hxg3 e4 f8=Q#
+195,2,3,3.0,Phong cấp,false,false,1,5k2/6pp/2p3n1/8/1p6/p7/7r/2K5 b - - 1 53,a2 Kd1 a1=Q#
+196,2,4,3.5,Phong cấp,false,false,3,6k1/1pp5/4p1P1/5p2/pP6/P3p3/3q4/RK6 b - - 2 39,e2 g7 e1=Q#
+197,2,4,3.5,Phong cấp,false,false,4,6k1/5pp1/4p2p/6PP/5P2/1p2b3/3r4/4K3 b - - 0 36,b2 gxh6 b1=Q#
+198,2,2,2.0,Phong cấp,true,false,1,8/1Np1b2P/pp4k1/3B4/2P3P1/P7/1P1B1P2/n2K3R w - - 1 36,Rh6+ Kg7 h8=Q#
+199,2,4,3.0,Phong cấp,false,false,1,8/6p1/8/3k4/4p3/7p/r7/5K2 b - - 0 55,h2 Ke1 h1=Q#
+200,2,4,3.0,Phong cấp,false,false,1,8/6p1/8/7p/7P/5k2/2p5/7K b - - 0 63,Kg3 Kg1 c1=Q#
+201,2,4,3.0,Phong cấp,false,false,2,8/8/8/8/3k4/4p3/3r4/1K6 b - - 1 80,e2 Kc1 e1=Q#
+202,2,3,3.0,Phong cấp,false,false,1,8/8/8/p7/P4k2/7p/3q4/1K6 b - - 3 65,h2 Ka1 h1=Q#
+203,2,4,3.5,Phong cấp,false,false,7,r3k2r/3n1ppp/4p3/3bP3/1p1K4/5N1P/p7/8 b kq - 0 35,Ra3 h4 a1=Q#
+204,2,3,3.0,Thí quân,true,true,2,2r4Q/pp2kp1p/3p3B/3p4/B3n1b1/P4N2/1P3PPP/2R1R1K1 w - - 1 29,Bg5+ f6 Qxf6#
+205,2,5,4.5,Thí quân,false,true,18,2rk1b1r/p1p1q2p/2Qnpp2/2N3B1/3P4/8/PPP2PPP/R4RK1 w - - 1 18,Bxf6 Qxf6 Qd7#
+206,2,5,4.5,Thí quân,false,true,7,n7/Q6p/b6n/k7/1p5P/4P3/B2BKPP1/7R w - - 0 33,Bc4 Nb6 Qxa6#
+207,2,3,3.0,Thí quân,true,true,1,r2r2k1/1p3pb1/p3b1pp/3n4/P6P/2p2p2/2P2P2/R1BK1BR1 b - - 3 26,Ne3+ Ke1 Nxc2#
+208,2,4,3.0,Thí quân,true,true,1,r3k2r/pbp3pp/8/1N6/1b5q/3n4/PPQ1N1PP/R1BK1R2 b - - 1 15,Qe1+ Rxe1 Nf2#
+209,2,4,3.0,Thí quân,true,true,2,rk5q/1p2NQ2/3pN2P/p7/4P3/8/1PP1KP1P/1R5R w - - 1 29,Nc6+ bxc6 Qc7#
+210,2,3,2.5,Tốt chiếu,true,false,3,2Q5/1NP2k2/6p1/1p5p/2n3P1/P4N2/1P3P1P/6K1 w - - 1 39,Qd7+ Kf6 g5#
+211,2,3,2.0,Tốt chiếu,true,false,1,3r4/kpp2pp1/8/4nb1p/4p2b/6P1/PPP1BP2/1RK2R2 b - - 0 22,Bg5+ f4 exf3#
+212,2,3,2.0,Tốt chiếu,true,false,1,4k2r/1p1b2pp/1P6/2R2p2/3pp3/3P3K/3q1PPP/5B1R b k - 3 30,Qh6+ Kg3 f4#
+213,2,4,3.5,Tốt chiếu,false,false,11,6r1/p1Q3bk/7P/1p6/3P4/P7/1P3PP1/RK5R w - - 1 37,Qf7 b4 hxg7#
+214,2,2,2.0,Tốt chiếu,true,false,2,r1bq1b1r/ppnp1kpp/3PpP2/2p3B1/2P5/2N2N2/PPQ2KPP/R4B1R w - - 1 13,Ne5+ Kg8 f7#
+215,2,4,3.5,Đòn Hậu,false,false,4,1N6/8/6kp/6p1/5bP1/1b3P2/5K2/3q4 b - - 1 62,Bc4 Nc6 Qf1#
+216,2,3,2.0,Đòn Hậu,true,false,1,1Q6/p2k4/1p2pp2/4P1p1/PP1pb3/1K6/3q4/R7 b - - 5 41,Bd5+ Ka3 Qc3#
+217,2,3,2.0,Đòn Hậu,true,false,1,1R6/2p5/k7/r7/Q7/P1P5/6K1/8 w - - 1 60,Qc6+ Ka7 Qb7#
+218,2,3,2.0,Đòn Hậu,true,false,1,1k5r/1pp2p2/pn4b1/3p3p/1P1P2pP/4r1n1/P2Q1qP1/R2K1B1R b - - 1 28,Re1+ Qxe1 Qc2#
+219,2,2,2.0,Đòn Hậu,true,false,1,1n4k1/5p2/4p1p1/p3P2P/8/K5P1/1P3P2/2r2q2 b - - 2 52,Ra1+ Kb3 Qd3#
+220,2,3,2.0,Đòn Hậu,true,false,1,1q2k2r/1p2pp1p/1nn3pb/3p4/r2P2bN/1P1K1N2/1BQ1PPBP/R5R1 b k - 2 20,Nb4+ Kc3 Qc8#
+221,2,2,2.0,Đòn Hậu,true,false,1,1r6/2k1b1Q1/1q3p2/p4B2/3P4/1P2P3/P5PP/5RK1 w - - 2 30,Qxe7+ Kc6 Qd7#
+222,2,3,2.0,Đòn Hậu,true,false,1,1rb1q1nQ/1p2k3/p7/2p1p3/8/PB6/1P3PPP/3RR1K1 w - - 0 32,Qg7+ Qf7 Qxf7#
+223,2,3,2.0,Đòn Hậu,true,false,1,1rb2k2/1p1p2p1/5nq1/p2B1p2/2Q5/6P1/PP1N1P1P/R1B1R1K1 w - - 1 29,Qc5+ d6 Qxd6#
+224,2,3,2.0,Đòn Hậu,true,false,1,1rb3k1/1p1n3p/p1q3pB/2pNR3/P1B5/5Q2/1PP2PPP/R5K1 w - - 5 22,Re8+ Nf8 Qxf8#
+225,2,4,3.0,Đòn Hậu,false,false,2,2B2k2/2Q5/1B4p1/5p2/p4P2/P1PK4/8/8 w - - 3 69,Be6 Ke8 Qf7#
+226,2,3,2.0,Đòn Hậu,true,false,1,2K5/4q3/7p/8/B7/8/5k2/6q1 b - - 1 66,Qg8+ Be8 Qgxe8#
+227,2,3,2.0,Đòn Hậu,true,false,1,2Q5/3P4/1k2K3/1p6/7P/P5p1/P7/8 w - - 3 48,d8=Q+ Ka7 Qa8#
+228,2,2,2.0,Đòn Hậu,true,false,1,2k4r/1p4q1/5R2/p4K2/r7/8/8/8 b - - 11 49,Rh5+ Ke6 Qd7#
+229,2,4,3.0,Đòn Hậu,false,false,1,2k5/8/3Q4/6p1/8/2P1R1P1/6K1/8 w - - 1 49,Re7 g4 Qc7#
+230,2,3,2.0,Đòn Hậu,true,false,1,2q2b1B/1p1n1r1k/p2p1pR1/3Np3/2r1P3/8/PPP2PQP/2K3R1 w - - 3 26,Qh3+ Bh6+ Qxh6#
+231,2,2,2.0,Đòn Hậu,true,false,1,2r2k2/p4q2/Q1p1pPB1/6B1/3P4/P1P5/5PP1/R3K3 w Q - 0 26,Qxc8+ Qe8 Qxe8#
+232,2,3,2.0,Đòn Hậu,true,false,1,2r3kr/pp1b1pp1/4p3/3p4/1b1q1P2/5BPp/PP2KP1P/RQ3NR1 b - - 5 20,Bb5+ Qd3 Qxd3#
+233,2,4,3.0,Đòn Hậu,false,false,2,3B3Q/k7/5p2/1P3P2/3p4/8/5KP1/8 w - - 0 54,Bc7 Kb7 Qb8#
+234,2,3,2.0,Đòn Hậu,true,false,1,3Q2r1/7k/3P4/p4P2/7p/1K6/8/2q3q1 b - - 0 51,Qgd1+ Ka2 Qa1#
+235,2,3,2.0,Đòn Hậu,true,false,2,3Q4/k3K3/8/p6p/PpN4P/1P4P1/8/8 w - - 1 62,Qc7+ Ka6 Qb6#
+236,2,4,3.5,Đòn Hậu,false,false,7,3R4/8/ppN3k1/4Qppp/5P1n/1P6/P4P1P/7K w - - 2 40,Rd7 Nf3 Qe6#
+237,2,4,3.0,Đòn Hậu,false,false,1,3RN3/2P1k3/5p1p/4pP1P/2B1P3/4K3/2P5/8 w - - 4 72,c8=Q Kf8 Qc5#
+238,2,3,2.0,Đòn Hậu,true,false,2,3k1rr1/1p3p2/7p/1pp2Q2/3B4/P5P1/1PP2P1P/2KR1B1R w - - 0 23,Be5+ Ke7 Qd7#
+239,2,4,3.5,Đòn Hậu,false,false,27,3k3r/4p3/1NQ3p1/1Bp1bp1p/8/5N2/rPP2nPP/K6R w - - 0 27,Kxa2 Nxh1 Qc8#
+240,2,4,3.0,Đòn Hậu,false,false,1,3k4/5Q2/8/4K3/8/8/8/8 w - - 7 63,Kd6 Kc8 Qc7#
+241,2,2,2.0,Đòn Hậu,true,false,1,3r1b2/Q3ppp1/1pk2n2/8/1KP1P3/2B5/P1qNP3/R1q4r b - - 1 34,Qxc3+ Ka4 Q1a3#
+242,2,2,2.0,Đòn Hậu,true,false,1,3r4/1R5Q/6p1/R5q1/3p2k1/3P4/6PP/7K w - - 1 44,Qh3+ Kf4 Qf3#
+243,2,3,2.5,Đòn Hậu,true,false,3,3r4/qpp2k2/p2p4/2PPnp2/1P5Q/P7/4B2K/6R1 w - - 10 41,Qh7+ Kf6 Qg7#
+244,2,3,2.0,Đòn Hậu,true,false,1,4Q3/4n2R/p1pN1k1p/6p1/5p2/8/PPP2PPP/6K1 w - - 5 31,Qxe7+ Kg6 Qf7#
+245,2,2,2.0,Đòn Hậu,true,false,1,4k2r/1p3p2/2nP4/8/p1b1K1p1/P1bN2P1/3q2BP/7R b k - 3 34,Bxd3+ Kd5 Qg5#
+246,2,2,2.0,Đòn Hậu,true,false,1,4k2r/pp3pp1/7p/4p3/1n1q2b1/P2B2N1/1P1K2PP/R1B3b1 b k - 0 22,Qxd3+ Ke1 Qd1#
+247,2,4,3.5,Đòn Hậu,false,false,4,4kbr1/2B1n1pp/4Q3/2P3P1/8/1P3N2/5KPP/8 w - - 1 33,Ne5 Rh8 Qf7#
+248,2,3,2.0,Đòn Hậu,true,false,2,4r3/pk4pp/1p1P2r1/8/Q6P/P7/1P1K1PP1/2R4R w - - 4 32,Rc7+ Kb8 Qxa7#
+249,2,2,2.0,Đòn Hậu,true,false,2,5Q2/8/4N1k1/3K4/8/8/8/8 w - - 3 77,Qg7+ Kf5 Qg5#
+250,2,4,3.0,Đòn Hậu,false,false,1,5Q2/k7/3P4/pB6/P7/1P2K3/8/8 w - - 1 54,Qc8 Kb6 Qc7#
+251,2,2,2.0,Đòn Hậu,true,false,1,5Q2/r1pkn2p/1p6/p7/P1BB4/4RNPR/1Pq2P2/5K2 w - - 3 23,Ne5+ Kd6 Qf6#
+252,2,4,3.0,Đòn Hậu,false,false,1,5b2/7K/8/5k2/5p1P/1b3P2/p7/8 b - - 5 54,a1=Q h5 Qg7#
+253,2,4,3.5,Đòn Hậu,false,false,18,5bk1/7p/4p3/1Q2p3/P1Pq4/8/4K1p1/8 b - - 0 43,g1=Q a5 Qgd1#
+254,2,4,3.5,Đòn Hậu,false,false,22,5k2/1q3pp1/p3r2p/1pp5/3p2Pn/3P1Q1P/RPPB4/1N4K1 b - - 0 33,Qxf3 Kh2 Qg2#
+255,2,3,2.0,Đòn Hậu,true,false,1,5r1k/7p/4Pp2/5Kp1/2p2p2/Q1P4P/PP4q1/R1r5 b - - 1 36,Qxh3+ Ke4 Qd3#
+256,2,2,2.0,Đòn Hậu,true,false,2,5rk1/pq3p1p/8/4p3/2Bpn1PK/7P/Pr3P2/4QR2 b - - 4 27,Qe7+ Kh5 Qg5#
+257,2,2,2.0,Đòn Hậu,true,false,1,6k1/2p2p2/1p5p/4p1p1/6P1/3P1K2/r2qB2P/2b5 b - - 2 38,Qxe2+ Kg3 Qe3#
+258,2,3,2.0,Đòn Hậu,true,false,2,6k1/2p5/3p4/p2P4/P2bPRpq/8/4b2P/7K b - - 2 44,Qe1+ Kg2 Qg1#
+259,2,4,3.5,Đòn Hậu,false,false,3,6k1/3r2p1/p7/2p4P/2Pn4/P5b1/4pp2/6RK b - - 0 54,f1=Q h6 Qh3#
+260,2,3,3.0,Đòn Hậu,false,false,1,6k1/5p2/6Q1/3r2Pp/4bP2/4K3/6q1/8 b - - 3 63,fxg6 f5 Qf3#
+261,2,4,3.5,Đòn Hậu,false,false,18,6k1/8/2BBb3/3p4/2p5/P1P1b3/2q5/K7 b - - 1 60,Bc1 Bb4 Qb2#
+262,2,3,2.5,Đòn Hậu,true,false,3,6k1/p5p1/1p6/6B1/3R2r1/7q/4K3/8 b - - 7 45,Rg2+ Kf1 Qh1#
+263,2,3,2.0,Đòn Hậu,true,false,1,6r1/r1p1k1b1/bpP1pR1B/pB1pP2Q/P7/2NK3P/1PP5/7R w - - 1 29,Qf7+ Kd8 Qd7#
+264,2,3,2.0,Đòn Hậu,true,false,1,7B/1R1R2P1/8/2p5/p7/2k4P/P1P5/6K1 w - - 1 43,g8=Q+ Kxc2 Qc4#
+265,2,4,3.0,Đòn Hậu,false,false,2,7Q/2P2k2/8/8/1P3P2/8/6PP/6K1 w - - 1 51,c8=Q Ke7 Qhf8#
+266,2,3,2.5,Đòn Hậu,true,false,3,8/1k6/4Q2p/3Rp2P/1Bp1r1p1/P3P1P1/P7/6K1 w - - 1 40,Rd7+ Kc8 Qe8#
+267,2,2,2.0,Đòn Hậu,true,false,1,8/1p3Bp1/2p2k2/5p2/6qp/8/pr3P1K/2R5 b - - 3 56,Rxf2+ Kh1 Qg2#
+268,2,4,3.0,Đòn Hậu,false,false,2,8/2Q5/8/8/4k3/1Q6/8/5K2 w - - 7 96,Qcf7 Ke5 Qbd5#
+269,2,2,2.0,Đòn Hậu,true,false,1,8/3Pk3/3RN1pp/5p2/p7/7P/PP4P1/7K w - - 2 50,d8=Q+ Kf7 Qf8#
+270,2,3,2.0,Đòn Hậu,true,false,1,8/3k4/1p6/p7/b7/8/1Kp5/3r4 b - - 5 52,c1=Q+ Ka2 Qa1#
+271,2,4,3.5,Đòn Hậu,false,false,24,8/3q2p1/3r4/3Np2p/6k1/3Q4/P1P2PPP/R3KB1R w - - 2 28,h4 Rxd5 Qf3#
+272,2,3,2.0,Đòn Hậu,true,false,2,8/4P3/K1k5/6Q1/6BP/8/8/8 w - - 3 76,e8=Q+ Kd6 Qge5#
+273,2,3,2.0,Đòn Hậu,true,false,2,8/4Q3/2k5/8/pp6/nP3KP1/P7/4R3 w - - 2 59,Re6+ Kb5 Qg5#
+274,2,3,2.0,Đòn Hậu,true,false,1,8/4R3/2Q5/8/P2k4/7p/8/3KBr1r w - - 4 67,Re4+ Kd3 Qc4#
+275,2,3,2.0,Đòn Hậu,true,false,1,8/4k1p1/8/p2K1b1p/p4p2/P1q5/8/8 b - - 0 46,Be6+ Ke4 Qe3#
+276,2,4,3.5,Đòn Hậu,false,false,8,8/4k3/4p3/6p1/8/1B1p2P1/5q2/2b4K b - - 5 55,Be3 g4 Qg1#
+277,2,3,2.0,Đòn Hậu,true,false,1,8/6pk/8/1p2pp1p/p7/P4P1K/7R/7q b - - 3 44,Qxf3+ Kh4 Qg4#
+278,2,4,3.0,Đòn Hậu,false,false,2,8/7K/8/4k3/8/8/6q1/8 b - - 15 73,Kf6 Kh6 Qg6#
+279,2,4,3.0,Đòn Hậu,false,false,1,8/7P/2Q3K1/k2B4/8/8/8/8 w - - 3 63,h8=Q Kb4 Qhc3#
+280,2,3,2.0,Đòn Hậu,true,false,1,8/7k/pp2Q2b/1p2B2p/8/P1P5/1P4PP/1R4K1 w - - 1 38,Qf7+ Bg7 Qxg7#
+281,2,2,2.0,Đòn Hậu,true,false,2,8/8/2p5/1pP5/8/q5k1/3K4/7r b - - 3 57,Rh2+ Kd1 Qa1#
+282,2,2,2.0,Đòn Hậu,true,false,1,8/8/3q4/5k2/2p2p2/4nP2/4K3/8 b - - 13 58,Qd1+ Kf2 Qf1#
+283,2,4,3.0,Đòn Hậu,false,false,1,8/8/4Q3/p1k5/P6P/6P1/1P6/3R2K1 w - - 3 43,Qa6 Kb4 Qb5#
+284,2,3,3.0,Đòn Hậu,false,false,1,8/8/4q3/7K/8/6k1/8/8 b - - 7 84,Kf4 Kh4 Qh6#
+285,2,4,3.5,Đòn Hậu,false,false,8,8/8/8/1pB2n1p/pPk5/P3p3/5q2/K7 b - - 3 57,Kb3 Bxe3 Qb2#
+286,2,4,3.5,Đòn Hậu,false,false,7,8/8/8/8/6N1/4q1k1/8/5K2 b - - 49 87,Qd2 Ne5 Qd1#
+287,2,4,3.0,Đòn Hậu,false,false,2,8/8/8/p7/P2k4/8/4K2p/6r1 b - - 3 57,h1=Q Kf2 Qg2#
+288,2,2,2.0,Đòn Hậu,true,false,1,8/p1pk2p1/2pb1q2/P7/2BN2R1/2P5/1P5r/4K3 b - - 0 32,Qf2+ Kd1 Qd2#
+289,2,3,2.0,Đòn Hậu,true,false,1,8/p4k2/1R6/8/8/1PP5/3p3p/1KB1r3 b - - 0 44,dxc1=Q+ Ka2 Qa1#
+290,2,3,2.0,Đòn Hậu,true,false,1,Q1bq4/8/8/8/8/2k5/8/2K5 b - - 0 51,Qd2+ Kb1 Qb2#
+291,2,2,2.0,Đòn Hậu,true,false,1,Q7/8/8/2p2K2/8/1P4k1/2P5/5B2 w - - 7 56,Qg2+ Kh4 Qg4#
+292,2,3,2.0,Đòn Hậu,true,false,2,QB1k1b1r/5ppp/2Rpq2n/4p3/4P3/2N4P/1PP2PB1/4K2R w K - 3 17,Bxd6+ Kd7 Qc8#
+293,2,3,2.0,Đòn Hậu,true,false,2,br5r/4k3/2PN2Pp/Q2Pp3/6pP/P3B3/8/R1R3K1 w - - 5 36,Qc7+ Kf6 Qf7#
+294,2,3,2.0,Đòn Hậu,true,false,1,q6r/k6p/2p5/p1N1Q3/3P2p1/8/PP2KPPP/R6R w - - 3 25,Qc7+ Qb7 Qxb7#
+295,2,2,2.0,Đòn Hậu,true,false,1,r1b1k2r/1p4p1/4p2p/1P1p4/1bp4P/1q2PNP1/3B1P2/4KBR1 b kq - 0 22,Ra1+ Ke2 Qd3#
+296,2,3,2.0,Đòn Hậu,true,false,1,r1b2b2/p1p2Q1p/3k2pB/qp1PN3/2B5/2Pp4/PP3PPP/R3KR2 w Q - 1 22,Qxf8+ Kxe5 Qf4#
+297,2,3,2.5,Đòn Hậu,true,false,3,r1b2rk1/1pp2ppp/2q5/2b1P3/p7/6K1/PPnNN1PP/R1B2BR1 b - - 5 18,Qg6+ Kf3 Qg4#
+298,2,2,2.0,Đòn Hậu,true,false,1,r1bk4/p1n2Q2/3qp3/2pp4/3P1B1N/6P1/P4PBP/5RK1 w - - 0 27,Bg5+ Qe7 Qxe7#
+299,2,3,2.0,Đòn Hậu,true,false,1,r1bk4/ppq2p2/2p2b2/6p1/2P3n1/1P5r/P1BN1P2/1RB1R1K1 b - - 2 21,Qh2+ Kf1 Qxf2#
+300,2,2,2.0,Đòn Hậu,true,false,1,r1bqkb1r/1p1p2p1/4pp2/pNP1N2p/3p4/7P/PPQ2PPR/R1B1KB2 w Qkq - 0 14,Qg6+ Ke7 Qf7#
+301,2,4,3.5,Đòn Hậu,false,false,6,r1k5/pb6/1pBQ4/8/3PPB2/8/PP3PP1/R4RKr w - - 3 27,Kxh1 Bxc6 Qc7#
+302,2,4,3.5,Đòn Hậu,false,false,10,r1r3k1/ppp4p/4RppB/2P3N1/8/P1Q5/5PPP/5RK1 w - - 1 23,Qxf6 Rd8 Qg7#
+303,2,3,2.0,Đòn Hậu,true,false,1,r2Qbq1r/1k1Nn2p/2p3p1/pp3p2/4PP1P/P3B1R1/1PP3P1/3R1K2 w - - 6 32,Nc5+ Ka7 Qc7#
+304,2,4,3.5,Đòn Hậu,false,false,20,r2k1b2/ppp5/3nQ3/3P2pp/3P4/P4N1P/1PP2P2/R5K1 w - - 4 29,Ne5 Bg7 Qd7#
+305,2,2,2.0,Đòn Hậu,true,false,1,r2q1b1r/p1p3pp/1pnp1k2/1N2pbN1/P2PP1nP/4BQ2/1PP2PP1/R3KB1R w KQ - 2 12,Qxf5+ Ke7 Qf7#
+306,2,3,2.0,Đòn Hậu,true,false,1,r2q1r2/1p3p1p/p3b3/b1p4Q/4k3/2P5/P4PPP/RNB2RK1 w - - 12 21,Re1+ Kd3 Qe2#
+307,2,3,2.0,Đòn Hậu,true,false,1,r2qr2k/p4p2/2B1pP1p/2bp4/7Q/4P3/PP3PPP/1R2R1K1 w - - 0 23,Qxh6+ Kg8 Qg7#
+308,2,3,2.0,Đòn Hậu,true,false,1,r3bb2/2Q2Npp/p4k2/4p3/2B1p3/2P5/PP3PPP/R4RK1 w - - 0 31,Qxe5+ Kg6 Qg5#
+309,2,4,3.5,Đòn Hậu,false,false,13,r3k1r1/p3n1pp/2n1Q3/4Np2/3P4/6P1/PP1KP2P/R6R w q - 0 21,Nxc6 f4 Qxe7#
+310,2,3,2.0,Đòn Hậu,true,false,1,r3k2r/pp3ppp/1n6/2pp1qP1/6bP/2P1pNb1/PP2N3/1RBQ1K1R b kq - 5 22,Qxf3+ Kg1 Qf2#
+311,2,3,2.0,Đòn Hậu,true,false,2,r3kb1r/8/1p2bp1p/p2p4/3P4/2PB2B1/P3QPPP/4R1K1 w - - 4 24,Qxe6+ Kd8 Qe8#
+312,2,3,2.0,Đòn Hậu,true,false,1,r3r1k1/ppp2pp1/5n1p/4P3/2Np2b1/1q4P1/5PBP/2Q2KR1 b - - 0 22,Qd3+ Ke1 Qe2#
+313,2,2,2.0,Đòn Hậu,true,false,1,r4k2/ppp5/2n1p3/3p4/4bp2/P4B2/P1p3KP/R2q4 b - - 6 41,Qxf3+ Kg1 Qg2#
+314,2,3,2.0,Đòn Hậu,true,false,1,r4rk1/1Q1nb1p1/3p4/1p1P2p1/2p5/2KRqn2/PPP5/1R6 b - - 1 41,Bf6+ Kb4 Qc5#
+315,2,3,2.5,Đòn Hậu,true,false,4,r4rk1/2p3pp/p4q2/8/8/8/PPPK1P1P/1R6 b - - 3 22,Rad8+ Ke3 Qf3#
+316,2,2,2.0,Đòn Hậu,true,false,1,r4rk1/4qppp/8/1p2p1b1/1Pp1Q3/2K4P/2P2pP1/4RB1R b - - 0 25,Ra3+ Kb2 Qxb4#
+317,2,4,3.5,Đòn Hậu,false,false,19,r5k1/2p2ppp/pp3n2/8/4pP1P/6q1/PPbBK1P1/R4B1R b - - 4 24,Ng4 f5 Qf2#
+318,2,4,3.5,Đòn Hậu,false,false,12,r7/5pp1/3k4/p6p/3Pp1PP/R3P1K1/1r2B3/3q4 b - - 2 40,Qxe2 gxh5 Qf3#
+319,2,3,2.0,Đòn Mã,true,false,1,1R6/5pk1/8/8/4n1p1/N6p/2r3RK/8 b - - 0 61,Rxg2+ Kh1 Nf2#
+320,2,4,3.5,Đòn Mã,false,false,4,2Q5/p4Npk/8/8/7p/P6P/6KP/2R5 w - - 0 40,Rc6 a5 Ng5#
+321,2,2,2.0,Đòn Mã,true,false,1,2b1kb2/1pQ2pp1/2r5/4n3/8/2NP4/P2PK3/R6q b - - 1 24,Qf3+ Ke1 Nxd3#
+322,2,3,2.0,Đòn Mã,true,false,1,2k4b/2r2N2/5q2/1QpP3p/5p2/8/PP4P1/3RR1K1 w - - 1 38,Re8+ Qd8 Nd6#
+323,2,3,2.0,Đòn Mã,true,false,1,2r1kb1r/1p3pp1/p2p3p/Bbn5/1Q1p4/5P1P/PP1NqP2/RK5R b k - 11 22,Bd3+ Kc1 Nb3#
+324,2,4,3.5,Đòn Mã,false,false,10,3R4/4r3/ppnB3Q/7R/1Pp3k1/2P2Np1/P5P1/4K3 w - - 4 41,Bxe7 Nxe7 Ne5#
+325,2,3,2.0,Đòn Mã,true,false,2,3k4/1p2rppp/5n2/2Q5/1P1Pp1bP/4PPP1/4K3/1q4R1 b - - 0 40,exf3+ Kf2 Ne4#
+326,2,2,2.0,Đòn Mã,true,false,1,5b1r/1pp2kp1/3p3p/5q2/1nP1QP2/2Nn2B1/r4P1P/1K1R3R b - - 1 25,Rb2+ Ka1 Nc2#
+327,2,3,2.5,Đòn Mã,true,false,3,8/p3kppp/6P1/p7/K2n4/1R5P/8/2q5 b - - 1 52,Qc4+ Kxa5 Nc6#
+328,2,4,3.5,Đòn Mã,false,false,6,8/pbQ5/k3Np1p/3p4/8/1P3P2/P1P3PP/2R1K3 w - - 5 41,a4 f5 Nc5#
+329,2,2,2.0,Đòn Mã,true,false,1,r1b1kb1r/pp2pppp/1q1p4/8/2P3n1/8/PPQN1PPP/R1B1KBNR b KQkq - 0 12,Qxf2+ Kd1 Ne3#
+330,2,2,2.0,Đòn Mã,true,false,1,r3r1k1/pp3ppp/1nb5/8/1bp3nP/3PQqP1/PPPN1PB1/R1B1K2R b - - 3 24,Qxf2+ Kd1 Nxe3#
+331,2,2,2.0,Đòn Mã,true,false,1,rq2kbnr/4ppp1/ppbp4/4N2p/2QP4/8/PP2PPPP/R1B1KB1R w KQkq - 0 12,Qxc6+ Kd8 Nxf7#
+332,2,2,2.0,Đòn Tượng,true,false,1,1Q3r2/pp1bkpPp/2p2Rnq/7N/2p1B1P1/2P1P2P/P7/1RB3K1 w - - 1 27,Ba3+ c5 Bxc5#
+333,2,3,2.0,Đòn Tượng,true,false,2,1k6/1pp5/p2p3p/3Pp3/1PP5/P7/3b2r1/1K1Qq3 b - - 1 51,Qxd1+ Kb2 Bxb4#
+334,2,2,2.0,Đòn Tượng,true,false,1,1r1k1b2/1P1n4/3pQp2/4p2p/6p1/8/BPPB1PPP/4K2R w K - 2 27,Ba5+ Nb6 Bxb6#
+335,2,3,2.0,Đòn Tượng,true,false,1,1r2Q1nr/pbk3pp/1pn5/6P1/1N1P4/4B3/PPP2PBP/2KR3R w - - 0 21,Bf4+ Ne5 Bxe5#
+336,2,4,3.5,Đòn Tượng,false,false,13,1r5k/R4p1p/2p2NpB/4p3/1P6/3P4/2P2P1P/4KR2 w - - 2 32,Rxf7 Rxb4 Bg7#
+337,2,2,2.0,Đòn Tượng,true,false,1,1rB2k2/ppp4p/8/2pP2Q1/q7/7P/5PK1/4R3 w - - 1 34,Qf6+ Kg8 Be6#
+338,2,2,2.0,Đòn Tượng,true,false,1,2K3k1/8/Q7/2B2pP1/5P2/8/8/8 w - - 3 80,Qg6+ Kh8 Bd4#
+339,2,2,2.0,Đòn Tượng,true,false,1,2K5/2p5/2Pkp3/3b1p1p/8/r7/R7/6q1 b - - 1 56,Qg8+ Kb7 Bxc6#
+340,2,2,2.0,Đòn Tượng,true,false,1,2b4b/p3Rp2/1pqk4/2pN1pB1/2Pn4/3B4/PP3PPP/5K1R w - - 12 29,Bf4+ Be5 Bxe5#
+341,2,3,2.0,Đòn Tượng,true,false,1,2r5/1p2kn2/8/p3BR1Q/P6P/1Pn5/5P2/K7 w - - 1 44,Qxf7+ Kd8 Bf6#
+342,2,3,2.0,Đòn Tượng,true,false,1,2r5/3k3p/5Q2/2p1Pp2/8/6P1/PP2KPBP/2B5 w - - 3 39,Qf7+ Kd8 Bg5#
+343,2,3,2.0,Đòn Tượng,true,false,1,3k1b1r/R4pp1/4pn2/1B1pN2p/3P1B2/2r1P3/1PP2PPP/3Q1RK1 w - - 1 19,Nxf7+ Kc8 Ba6#
+344,2,3,2.0,Đòn Tượng,true,false,1,5Q2/2R5/3Bb1k1/7p/2P5/8/3K4/8 w - - 1 52,Rg7+ Kh6 Bf4#
+345,2,3,2.0,Đòn Tượng,true,false,1,6kr/3R1rp1/1pB4p/p7/2P5/5QPP/PP4P1/6K1 w - - 0 32,Qxf7+ Kh7 Be4#
+346,2,2,2.0,Đòn Tượng,true,false,1,8/2p1k3/p7/4P3/3q2b1/6P1/6K1/3n4 b - - 5 52,Qf2+ Kh1 Bf3#
+347,2,3,2.0,Đòn Tượng,true,false,1,8/5r2/6R1/5pB1/1P1K3p/P5kP/6P1/R7 w - - 1 47,Be3+ Kh2 Bf4#
+348,2,2,2.0,Đòn Tượng,true,false,1,8/8/4k3/5p1Q/1qb3P1/4p3/8/K7 b - - 6 54,Qa3+ Kb1 Bd3#
+349,2,4,3.0,Đòn Tượng,false,false,1,8/8/5b2/5Pk1/8/6K1/8/7q b - - 1 66,Qf1 Kh2 Be5#
+350,2,3,2.0,Đòn Tượng,true,false,1,r1b1k2r/ppbp2RN/8/n2QP2P/4P3/8/PPP2P1P/R1B1K3 w Q - 1 18,Qf7+ Kd8 Bg5#
+351,2,3,2.0,Đòn Tượng,true,false,1,r1b3k1/3p1p2/2n2B1p/p6P/P7/5N2/1PP2PP1/3KRB1R w - - 1 29,Re8+ Kh7 Bd3#
+352,2,2,2.0,Đòn Tượng,true,false,1,r3k1r1/p1p1bpPp/8/4p3/7P/PP3N2/2PP2q1/RNBK4 b q - 0 19,Qxf3+ Ke1 Bxh4#
+353,2,3,2.0,Đòn Tượng,true,false,1,r3k2r/ppp2ppp/2n5/3p2q1/3P2bb/2B3n1/PPP1N3/RN1QKBR1 b kq - 3 12,Nxe2+ Rg3 Bxg3#
+354,2,2,2.0,Đòn Tượng,true,false,1,r3kb1r/pbpp1ppp/8/1p3n2/3Pq3/1BP2p2/PP1B1P2/RNQK1R2 b kq - 4 18,Qe2+ Kc2 Be4#
+355,2,2,2.0,Đòn Tượng,true,false,1,r7/1R5p/1p2b1p1/7k/4PP2/P2BK3/1P4PP/8 w - - 5 40,Rxh7+ Kg4 Be2#
+356,2,2,2.0,Đòn Xe,true,false,1,1Q2rb1r/3kn1p1/3pp3/7p/3p4/P1N5/2PK4/1RB5 w - - 5 33,Rb7+ Kc6 Rc7#
+357,2,3,2.0,Đòn Xe,true,false,2,1Q6/3k4/2R5/P7/1P6/8/8/4K3 w - - 5 57,Qb7+ Kd8 Rc8#
+358,2,4,3.5,Đòn Xe,false,false,14,1Rnk4/5Qpp/8/5p2/4p3/b7/P1P2PPP/6K1 w - - 1 33,Qb7 Bc5 Rxc8#
+359,2,4,3.5,Đòn Xe,false,false,5,1k1n3R/1p1R4/4B3/p7/7p/2B4P/PP3PP1/6K1 w - - 0 44,Bd4 a4 Rhxd8#
+360,2,2,2.0,Đòn Xe,true,false,1,1r2Bb2/1p1bp1p1/p3p3/1k2P3/3R1P2/1N2B2P/PPP4P/2K4R w - - 7 24,Bxd7+ Kb6 Rc4#
+361,2,2,2.0,Đòn Xe,true,false,1,1r2k3/6R1/5R1p/1P3N2/3p1r2/2pK1P1P/2P2P2/8 w - - 5 39,Re7+ Kd8 Rf8#
+362,2,3,2.0,Đòn Xe,true,false,1,2R5/4kp2/1b6/8/8/2pb4/1r6/2R1K3 b - - 5 46,Bf2+ Kd1 Rd2#
+363,2,3,2.0,Đòn Xe,true,false,1,2R5/7k/6p1/4N3/7P/8/1R4K1/8 w - - 0 61,Rb7+ Kh6 Rh8#
+364,2,4,3.5,Đòn Xe,false,false,12,2R5/k7/8/2K5/3b3p/5B1P/6P1/8 w - - 0 61,Kb5 Be5 Ra8#
+365,2,2,2.0,Đòn Xe,true,false,2,2b3k1/Rp2Bp1p/1n4p1/8/3b3P/2p2P2/1r3rP1/4R1K1 b - - 1 30,Rxg2+ Kf1 Rbf2#
+366,2,3,2.0,Đòn Xe,true,false,1,2k5/P4p2/R5p1/4N2p/1P6/3P2P1/5K1P/7R w - - 1 67,a8=Q+ Kc7 Rc1#
+367,2,2,2.0,Đòn Xe,true,false,2,2kr3r/ppp2ppp/8/4P3/8/P4P1P/KP2P3/n2q1B1R b - - 3 25,Qb3+ Kxa1 Rd1#
+368,2,4,3.0,Đòn Xe,false,false,1,3B2r1/4kp1p/p5pP/6P1/P7/8/5q2/7K b - - 0 42,Rxd8 a5 Rd1#
+369,2,3,2.0,Đòn Xe,true,false,2,3R4/7k/R6p/8/4ppp1/4P3/PP3PPP/6K1 w - - 0 33,Rd7+ Kg8 Ra8#
+370,2,3,2.0,Đòn Xe,true,false,1,3k1b1r/Q3n1pp/1p1N4/3P1P2/R1p4q/3P3P/1PP2P2/2B2RK1 w - - 4 29,Qxb6+ Kd7 Ra7#
+371,2,4,3.5,Đòn Xe,false,false,11,3k4/pp4pp/8/b1p5/6p1/8/PRK1NrPP/4q3 b - - 1 34,c4 Rxb7 Rxe2#
+372,2,4,3.5,Đòn Xe,false,false,9,3r2k1/6pp/4bp2/1p2p3/4P3/1PRnKP2/6r1/8 b - - 1 34,Nf4 b4 Re2#
+373,2,3,2.0,Đòn Xe,true,false,1,3rr3/5k2/R7/1p1pP3/1P1P2pP/8/2Q2BP1/6K1 w - - 0 39,Qh7+ Kf8 Rf6#
+374,2,2,2.0,Đòn Xe,true,false,1,4k2r/8/1p6/3bP3/7p/5rR1/p7/7K b k - 0 52,Rf1+ Kh2 Rh1#
+375,2,4,3.5,Đòn Xe,false,false,6,4k2r/R7/2N1P3/2B4p/1pn1P3/1P6/1K5P/8 w - - 4 34,bxc4 Rh6 Ra8#
+376,2,4,3.0,Đòn Xe,false,false,1,4k3/5R2/3PK2p/6P1/8/6P1/8/8 w - - 2 54,gxh6 Kd8 Rf8#
+377,2,4,3.0,Đòn Xe,false,false,2,4k3/7R/8/1P6/7P/R3KP2/r5P1/8 w - - 3 54,Rxa2 Kf8 Ra8#
+378,2,4,3.5,Đòn Xe,false,false,21,4qk2/6pp/p2p1n2/4n2r/4P1b1/1P1P1NP1/2P1RP2/R2Q2K1 b - - 4 27,Bxf3 Rxa6 Rh1#
+379,2,2,2.0,Đòn Xe,true,false,1,4r1k1/pr6/4qp1Q/1p1p2p1/3P2P1/1RPB4/1P5R/6K1 w - - 1 37,Qh8+ Kf7 Rh7#
+380,2,3,2.0,Đòn Xe,true,false,1,4r3/6pp/pp6/2k5/5K1P/1P4P1/P4p2/7q b - - 3 44,Qe4+ Kg5 Re5#
+381,2,3,2.5,Đòn Xe,true,false,3,5Q2/1k6/3R4/4K3/3p4/3P4/8/8 w - - 1 65,Qe7+ Kb8 Rd8#
+382,2,4,3.5,Đòn Xe,false,false,3,5R2/3k4/1p2r3/3P1Npp/p5P1/P5B1/1P3PP1/4R1K1 w - - 1 34,Rxe6 h4 Re7#
+383,2,2,2.0,Đòn Xe,true,false,1,5r2/4k1p1/p1b5/2Np4/p3pP2/2p3b1/P1B4r/3K4 b - - 3 37,Rh1+ Ke2 Re1#
+384,2,3,2.0,Đòn Xe,true,false,1,5rk1/p5p1/1p6/4p1K1/2p5/5P1P/8/4q3 b - - 0 44,Qg3+ Kh5 Rf5#
+385,2,3,2.0,Đòn Xe,true,false,1,6r1/2k3p1/7p/Kpr1p3/3bP1P1/P5NB/8/7R b - - 0 42,Bc3+ Ka6 Ra8#
+386,2,4,3.0,Đòn Xe,false,false,1,6r1/4p2k/4n1P1/5p1p/5b2/5P1K/5P2/r7 b - - 0 45,Rxg6 Kh4 Rh1#
+387,2,3,2.0,Đòn Xe,true,false,1,7k/1p4p1/2p2p2/p3p2p/6PP/5b1K/r7/4R3 b - - 0 39,hxg4+ Kg3 Rg2#
+388,2,3,3.0,Đòn Xe,false,false,2,7k/6p1/3R1pr1/5P1p/2B2P2/8/4K2P/7R w - - 0 39,fxg6 h4 Rd8#
+389,2,3,2.0,Đòn Xe,true,false,1,7r/2kn1Q2/rN4pp/pBP1P1b1/5p2/P7/P1P2PPP/1K1RB1R1 w - - 6 28,Rxd7+ Kb8 Rb7#
+390,2,2,2.0,Đòn Xe,true,false,1,8/2k5/7p/2p4P/8/4b3/r5pK/8 b - - 2 58,g1=Q+ Kh3 Rh2#
+391,2,2,2.0,Đòn Xe,true,false,1,8/2p4p/2k2p2/2n4p/3b2n1/6P1/3r4/2K5 b - - 1 47,Nb3+ Kb1 Rb2#
+392,2,3,2.0,Đòn Xe,true,false,1,8/2r2pk1/1pQ2n2/8/7p/PP1b1r2/3K4/R4q2 b - - 3 40,Ne4+ Qxe4 Rc2#
+393,2,3,3.0,Đòn Xe,false,false,1,8/3p4/8/pp4k1/1p6/1P5K/r7/8 b - - 1 56,Kf4 Kh4 Rh2#
+394,2,3,3.0,Đòn Xe,false,false,2,8/5R2/5p2/4kP1p/1p2P3/p2K2P1/P6P/8 w - - 2 40,Rd7 b3 Rd5#
+395,2,3,2.5,Đòn Xe,true,false,3,8/5k2/8/5p2/5P2/1r6/6K1/q7 b - - 5 54,Qa2+ Kg1 Rb1#
+396,2,3,2.5,Đòn Xe,true,false,3,8/5k2/R6p/2R5/2P5/5P1K/5P2/8 w - - 3 54,Rc7+ Kg8 Ra8#
+397,2,4,3.0,Đòn Xe,false,false,1,8/5p2/8/4p1pp/3kP3/5r2/8/4K3 b - - 5 51,Kd3 Kd1 Rf1#
+398,2,4,3.0,Đòn Xe,false,false,1,8/8/3R1R2/p3k3/1p6/1P3PK1/P1P5/8 w - - 1 59,Kg4 a4 Rfe6#
+399,2,3,3.0,Đòn Xe,false,false,1,8/8/3pk3/8/2p4K/1r6/8/8 b - - 3 69,Kf5 Kh5 Rh3#
+400,2,2,2.0,Đòn Xe,true,false,1,8/8/4k3/1p6/8/1r6/3n1pK1/8 b - - 1 60,f1=Q+ Kh2 Rh3#
+401,2,3,2.5,Đòn Xe,true,false,3,8/8/6K1/1k6/8/8/5r2/7q b - - 33 100,Qg1+ Kh6 Rh2#
+402,2,3,3.0,Đòn Xe,false,false,1,8/8/7p/7P/3b1k2/1p1P4/7K/1b4r1 b - - 0 45,Kf3 Kh3 Rh1#
+403,2,4,3.0,Đòn Xe,false,false,1,8/8/7p/p1r4P/P7/1Pk5/8/1K6 b - - 7 51,Kxb3 Ka1 Rc1#
+404,2,3,2.5,Đòn Xe,true,false,3,8/8/8/6R1/1p6/Pk6/3K4/Q7 w - - 0 67,Qb1+ Kxa3 Ra5#
+405,2,4,3.5,Đòn Xe,false,false,19,8/p1p3R1/2pk1p2/1N2p3/6p1/3bb1P1/P2p1r2/R2K4 b - - 5 43,Kc5 Nxc7 Rf1#
+406,2,4,3.5,Đòn Xe,false,false,7,8/p3n3/2pB1kpr/4R1N1/1P2KP1p/8/PP5P/8 w - - 0 44,Rxe7 a6 Rf7#
+407,2,2,2.0,Đòn Xe,true,false,2,8/p4kp1/1pb1p3/2b5/P3nPPr/1Rp5/2P3K1/5R2 b - - 1 38,Nf2+ Kg1 Rh1#
+408,2,4,3.5,Đòn Xe,false,false,4,8/p4p2/7p/4K2k/P4P2/2R5/P4PP1/8 w - - 3 37,Kf5 a5 Rh3#
+409,2,3,2.0,Đòn Xe,true,false,1,8/rk6/R1R3P1/5prp/1P6/4PK2/5PP1/8 w - - 0 43,Rab6+ Ka8 Rc8#
+410,2,3,2.5,Đòn Xe,true,false,3,Q7/4k3/1R6/5p2/1PP5/3K1P1p/6PP/8 w - - 0 50,Qa7+ Kf8 Rb8#
+411,2,3,2.5,Đòn Xe,true,false,3,Q7/4k3/2R5/5p2/4p3/5P2/6PP/6K1 w - - 1 48,Qb7+ Kf8 Rc8#
+412,2,3,2.0,Đòn Xe,true,false,1,r1b2r1k/ppp2p1p/1bn2P2/3p4/PP6/2PB1P1q/3P1P2/R1B1QRK1 b - - 0 23,Rg8+ Bg6 Rxg6#
+413,2,2,2.0,Đòn Xe,true,false,1,r3brk1/pp4p1/2p1p1n1/2Q1P3/3RR3/2B1P1P1/PP2K3/7q b - - 3 23,Qf1+ Kd2 Rf2#
+414,2,2,2.0,Đòn Xe,true,false,1,r3r1k1/2P1R2R/pp3P2/8/2K3P1/8/P4P2/8 w - - 1 43,Reg7+ Kf8 Rh8#
+415,2,4,3.5,Đòn Xe,false,false,16,r4r2/1p3p1p/p2p1Qpk/3NP3/2q3R1/8/PPP2PPP/2K3R1 w - - 1 19,Rxc4 dxe5 Rh4#
+416,2,3,2.0,Đòn Xe,true,false,1,r5k1/p1PN3R/3p2B1/6p1/2p5/P7/1P1K2PP/8 w - - 4 37,Nf6+ Kf8 Rf7#
+417,2,4,3.5,Đòn Xe,false,false,4,r5k1/ppp2ppp/8/8/8/P1Pb2P1/2r5/1K6 b - - 1 32,Re8 g4 Re1#
+418,2,3,2.0,Đòn Xe,true,false,1,r7/5Np1/2b1p2p/k1B1P3/P1B2P2/1P4K1/6PP/1R6 w - - 5 44,b4+ Kxa4 Ra1#
+419,2,2,2.0,Đòn Xe,true,false,1,rk5r/1p6/4b2p/R4p2/8/p3BB2/2P2PPP/1R4K1 w - - 6 28,Rxb7+ Kc8 Rxa8#
+420,2,3,2.0,Đòn Xe,true,false,1,rr3k2/p1pn4/3p1pP1/3P4/1p2PP2/1PN1B3/n6Q/R2B1K1R w - - 1 30,Qh8+ Ke7 Rh7#
+421,3,5,4.0,Hàng cuối,true,true,2,1kN2b1r/rp1Q3p/p5p1/q1p1NB2/4P3/8/PPP2PPP/R1B2RK1 w - - 2 20,Nc6+ Ka8 Nb6+ Qxb6 Qc8#
+422,3,5,4.0,Hàng cuối,true,true,2,1r2q1k1/1p3p2/6N1/5QR1/p7/8/2P2PP1/5RK1 w - - 0 31,Ne7+ Kf8 Qf6 Qxe7 Qh8#
+423,3,4,3.0,Hàng cuối,true,false,1,2bq3k/ppNp2pp/2n5/3Q2N1/4P3/8/PPP2RPP/R1B3K1 w - - 9 19,Nf7+ Kg8 Nxd8+ Kh8 Rf8#
+424,3,5,4.5,Hàng cuối,false,false,18,3k3r/1B1b1ppp/3Q4/p7/3P4/4B3/PPn2PPP/5RK1 w - - 1 28,Bc6 Ke8 Qxd7+ Kf8 Qd8#
+425,3,4,3.0,Hàng cuối,true,false,2,3r1rk1/pbp2ppp/1p3n2/1R6/P6P/2bq1P1Q/3N1PP1/2B1K1R1 b - - 3 20,Bxd2+ Bxd2 Qxd2+ Kf1 Qd1#
+426,3,3,3.0,Hàng cuối,true,false,1,4kb2/1R3pp1/8/4P3/3r4/1p3K1R/5PP1/q7 b - - 3 36,Qc3+ Ke2 Rd2+ Kf1 Qc1#
+427,3,3,3.0,Hàng cuối,true,false,1,r1bk1b1N/1pq1p1p1/p1p1B1Q1/5n2/1P1pN3/P6P/1BPP1PP1/R4RK1 w - - 1 24,Nf7+ Ke8 Nfd6+ Kd8 Qe8#
+428,3,4,3.0,Hàng cuối,true,false,1,r1bk2r1/pppp1Qp1/2n4p/2P1p1N1/4P3/8/PPP2PPq/RNB1KR2 w Q - 4 12,Qxg8+ Ke7 Qf7+ Kd8 Qf8#
+429,3,4,3.0,Hàng cuối,true,false,2,r2k4/pppb3B/1q2ppQ1/7p/8/B7/P2P4/K4R2 w - - 2 34,Qxf6+ Kc8 Qf8+ Be8 Qxe8#
+430,3,4,3.0,Hàng cuối,true,false,2,rk3b2/p7/1q1Nb3/1Q5p/P3Npp1/8/1P2PPP1/2R1KB1R w K - 0 25,Qe8+ Qd8 Qxd8+ Bc8 Rxc8#
+431,3,5,4.5,Phong cấp,false,false,14,1b1r1k2/2p1Rp2/r2p3P/pp1P1N2/P1PP2P1/1P1K4/1R6/8 w - - 0 46,h7 bxc4+ bxc4 Ra8 h8=Q#
+432,3,5,4.5,Phong cấp,false,false,5,1k5r/pp6/8/8/P7/3pR1p1/5b1P/3K4 b - - 0 33,Bxe3 h4 g2 h5 g1=Q#
+433,3,4,4.0,Phong cấp,false,false,2,3k4/Q7/8/5P2/p5PP/P7/P1P5/6K1 w - - 1 40,f6 Kc8 f7 Kd8 f8=Q#
+434,3,5,4.5,Phong cấp,false,false,7,3r2k1/1b3p2/7p/4P1P1/1p5P/B4p2/3r4/2K5 b - - 1 45,f2 Kb1 bxa3 gxh6 f1=Q#
+435,3,5,4.5,Phong cấp,false,false,8,4r2k/P2R4/5pp1/7p/5P1P/8/1R3KP1/8 w - - 1 51,Rb8 Rg8 Rxg8+ Kxg8 a8=Q#
+436,3,5,4.0,Phong cấp,false,false,2,5k2/P7/3R4/8/4NK2/8/8/8 w - - 1 75,Rd7 Ke8 Nf6+ Kf8 a8=Q#
+437,3,3,3.0,Phong cấp,true,false,1,6k1/1pp5/4p1P1/5p2/pP6/P3p3/5q2/R1K5 b - - 0 38,Qd2+ Kb1 e2 g7 e1=Q#
+438,3,5,4.5,Phong cấp,false,false,3,6k1/5pp1/4p2p/7P/1p3PP1/4b3/3r4/4K3 b - - 1 35,b3 f5 b2 fxe6 b1=Q#
+439,3,4,3.0,Phong cấp,true,false,2,8/5r1k/1P3Qp1/p2P3p/P3p2P/4K3/5PP1/R7 w - - 0 47,Qxf7+ Kh8 b7 g5 b8=Q#
+440,3,5,4.0,Phong cấp,false,false,1,8/8/8/8/3kp3/8/3r4/K7 b - - 3 79,e3 Kb1 e2 Kc1 e1=Q#
+441,3,4,4.0,Phong cấp,false,false,1,8/8/8/p7/Pq3k2/7p/8/K7 b - - 1 64,Qd2 Kb1 h2 Ka1 h1=Q#
+442,3,4,3.0,Phong cấp,true,false,2,r1bkr3/p1pp1pPp/8/5P1B/3N4/8/PPP2bPP/R1BK3R w - - 0 18,Bg5+ f6 Bxf6+ Re7 g8=Q#
+443,3,5,4.5,Phối hợp,false,false,5,1R6/3P2p1/8/2k4p/p7/3K4/1P6/8 w - - 2 62,d8=Q g6 Rb6 g5 Qd6#
+444,3,5,4.5,Phối hợp,false,false,15,1k6/8/1P3R2/4N3/2B1K3/6r1/8/8 w - - 1 76,Ba6 Rg8 Nc6+ Ka8 b7#
+445,3,5,4.5,Phối hợp,false,false,4,1k6/ppp5/4b3/7p/1K1b4/1P5P/2P5/3r4 b - - 2 35,Ra1 h4 a5+ Kb5 c6#
+446,3,5,4.5,Phối hợp,false,false,6,1kn5/pp5p/8/8/P4pP1/1P5P/2q5/5K2 b - - 1 46,f3 a5 Qe2+ Kg1 Qg2#
+447,3,5,4.5,Phối hợp,false,false,10,1kr5/2R5/ppnB4/3N4/4P1B1/8/PP3K2/8 w - - 1 39,Bxc8 Nd8 Rd7+ Kxc8 Nxb6#
+448,3,5,4.5,Phối hợp,false,false,8,1r3k2/pbp1R3/p4N2/2P5/2P5/B7/P4PP1/6K1 w - - 3 42,c6 Bxc6 Rxc7+ Rb4 Bxb4#
+449,3,5,4.5,Phối hợp,false,false,9,2k5/5PR1/3p4/pppP3p/5K2/5r2/7P/8 w - - 1 44,Kxf3 Kc7 f8=Q+ Kb6 Qxd6#
+450,3,5,4.5,Phối hợp,false,false,9,5R2/1P4nk/2N2pp1/6Pp/5P2/2B1P1P1/4K2n/8 w - - 0 48,b8=Q Ne8 Qxe8 fxg5 Rh8#
+451,3,5,4.0,Phối hợp,false,false,2,5k2/6pp/2p3n1/1p6/8/p7/7r/1K6 b - - 0 52,b4 Ka1 b3 Kb1 Rh1#
+452,3,5,4.5,Phối hợp,false,false,13,5rkr/3R1Rp1/1pB4p/p7/2P5/5QqP/PP3PP1/6K1 w - - 1 31,fxg3 Rxf7 Qxf7+ Kh7 Be4#
+453,3,5,4.5,Phối hợp,false,false,7,6k1/p5pp/3p4/8/3q1P1P/6K1/p7/8 b - - 0 51,a1=Q h5 Qf1 h6 Qdxf4#
+454,3,4,4.0,Phối hợp,false,false,2,7B/1R1R4/6P1/2p5/p1k5/7P/P1P5/6K1 w - - 0 42,g7 Kc3 g8=Q+ Kxc2 Qc4#
+455,3,5,4.5,Phối hợp,false,false,3,7k/2R5/5qp1/p3P2p/2Q5/6PP/PP5K/8 w - - 0 54,exf6 g5 Qc6 Kg8 Qe8#
+456,3,4,4.0,Phối hợp,false,false,2,8/1R4P1/4k3/1P6/8/P4K2/1P6/8 w - - 1 60,Ke4 Kd6 g8=Q Kc5 Qd5#
+457,3,5,4.5,Phối hợp,false,false,6,8/1k1P4/4RP2/3N2Pr/P4P2/7p/1P2N2P/4K2R w K - 1 45,d8=Q Rh4 Re7+ Kc6 Rc7#
+458,3,5,4.5,Phối hợp,false,false,8,8/3kb1p1/3p2Pr/r4p2/3npp2/7P/5P1N/4KR1R b - - 3 37,e3 fxe3 fxe3 Nf3 Ra1#
+459,3,5,4.0,Phối hợp,false,false,1,8/4k3/8/5p2/5P2/2r5/p2K4/8 b - - 1 51,a1=Q Ke2 Qb2+ Kf1 Rc1#
+460,3,5,4.0,Phối hợp,false,false,2,8/6k1/8/2P3K1/3p4/5q1p/8/8 b - - 0 68,h2 c6 h1=Q c7 Qhh5#
+461,3,5,4.5,Phối hợp,false,false,3,8/7R/4R3/5p2/2pP1p2/8/5Pk1/4K3 w - - 1 61,Ke2 f3+ Ke1 c3 Rg6#
+462,3,5,4.0,Phối hợp,false,false,1,8/7k/4K2p/7P/8/8/8/4R3 w - - 1 59,Kf7 Kh8 Kg6 Kg8 Re8#
+463,3,5,4.0,Phối hợp,false,false,2,8/8/1p6/1Pp5/2P5/4pk2/1n6/6K1 b - - 0 67,e2 Kh2 e1=Q Kh3 Qh1#
+464,3,5,4.0,Phối hợp,false,false,1,8/8/7P/4pK2/k3P3/1R1PP3/2P5/8 w - - 1 56,h7 Ka5 h8=Q Ka6 Qa8#
+465,3,5,4.5,Phối hợp,false,false,11,8/8/8/3p2R1/3kp2p/4r2P/6PK/2q5 b - - 0 66,Re1 Rxd5+ Kxd5 g4 Qc2#
+466,3,5,4.0,Phối hợp,false,false,2,8/B1k4P/5R2/8/8/1P6/1P3KP1/8 w - - 3 49,h8=Q Kd7 Qg7+ Kc8 Rf8#
+467,3,5,4.0,Phối hợp,false,false,2,8/K6k/7p/8/1q6/6p1/8/8 b - - 1 69,g2 Ka6 g1=R Ka7 Ra1#
+468,3,5,4.5,Phối hợp,false,false,6,8/P5k1/6p1/1Q6/5P1p/6PP/1P6/6K1 w - - 0 43,a8=Q hxg3 Qe5+ Kf7 Qae8#
+469,3,5,4.5,Phối hợp,false,false,26,r1b1k3/p1p2p2/4p2p/1p1q4/1P5P/2K1B3/PP1N2r1/3R3R b q - 1 21,Rxd2 Bd4 Qxd4+ Kb3 Qd3#
+470,3,5,4.5,Phối hợp,false,false,7,r1b5/2pkbQ2/p1p5/5P2/3P4/2N5/PPP3PP/R5K1 w - - 0 32,Re1 Bb7 Rxe7+ Kd6 Ne4#
+471,3,5,4.5,Phối hợp,false,false,17,r1k5/pp1R2R1/8/4p2B/2P5/2r5/1P1K4/8 w - - 1 34,Bg4 Rc2+ Kxc2 b5 Rg8#
+472,3,5,4.5,Phối hợp,false,false,12,r4k2/p1R3pp/3p1p2/7q/2Q2N2/8/PP3P1P/2KR4 w - - 5 27,Nxh5 d5 Qxd5 Re8 Qf7#
+473,3,5,4.5,Phối hợp,false,false,8,r7/p3kp2/4p3/2p1p2p/2P1nbp1/8/PB1r4/1RK5 b - - 3 37,Nf2 Ra1 Nd3+ Kb1 Rxb2#
+474,3,5,4.5,Phối hợp,false,false,17,rnb1k2r/pppp1ppp/4pq2/3P4/8/1Pbn4/P3PPPP/RK3BNR b kq - 1 11,Bxa1 Kc2 Qc3+ Kb1 Qc1#
+475,3,5,5.5,Thí quân,false,true,14,1rb1qk2/1p2n2Q/p3P3/2p1p3/8/PB6/1P3PPP/3RR1K1 w - - 1 30,Rd8 Bxe6 Qh6+ Kf7 Bxe6#
+476,3,5,4.5,Thí quân,true,true,3,2bqrk2/2R3p1/p7/1p1p1p1p/1P1N1P1P/2Q1P3/6P1/6K1 w - - 6 40,Ne6+ Rxe6 Qxg7+ Ke8 Qg8#
+477,3,4,4.0,Thí quân,true,true,1,3R4/k6r/1Rb5/8/PP1BP3/8/7p/2K5 w - - 4 42,Rb5+ Ka6 Ra5+ Kb7 Ra7#
+478,3,5,4.5,Thí quân,true,true,3,5Q1Q/3k1b2/3p4/1Pq1pr2/8/2N5/2P2PP1/R5K1 w - - 0 39,Ra7+ Qxa7 Qc8+ Ke7 Qhd8#
+479,3,5,4.0,Thí quân,true,true,1,8/5BBr/6R1/5p2/1P3k1p/P2K2nP/6P1/R7 w - - 1 43,Rf1+ Nxf1 Bf8 Rxf7 Bd6#
+480,3,5,4.0,Thí quân,true,true,2,r1b5/pk3N1p/2nQ4/q1pNp3/1p2P3/P7/2PP1PPP/R1B1KB1R w KQ - 2 19,Ba6+ Kxa6 Qxc6+ Qb6 axb4#
+481,3,5,4.5,Tốt chiếu,false,false,7,R7/2P2kpr/3p4/1N1N4/6Pp/1p6/1P3P1P/5RK1 w - - 1 39,c8=Q Kg6 Qe6+ Kg5 f4#
+482,3,3,3.0,Đòn Hậu,true,false,2,1R6/4rrpk/p4R2/8/P4P2/7P/QP4KP/8 w - - 3 41,Qb1+ Re4 Qxe4+ g6 Qxg6#
+483,3,5,4.5,Đòn Hậu,false,false,20,1k1r2r1/2p1Rpp1/1N1p1n2/1P1P3p/5Q2/2N2K1P/2P3P1/8 w - - 1 30,Qa4 cxb6 Qa7+ Kc8 Qa8#
+484,3,5,4.0,Đòn Hậu,false,false,2,2Q5/8/8/B3k3/7p/3K2PP/P4P2/8 w - - 0 50,Qc6 hxg3 Bc3+ Kf4 Qf6#
+485,3,5,4.5,Đòn Hậu,false,false,15,2b2k1r/2pp1pp1/1r1b3p/2q5/2P2PP1/4P3/P2K1n1P/R1B1R3 b - - 2 27,Qxc4 Ba3 Qd3+ Kc1 Qc3#
+486,3,4,3.5,Đòn Hậu,true,false,3,2bqk2r/2pp2pp/rp6/p4p2/1bp5/4KN1N/1P2P1PP/R1B2B1n b k - 1 15,Qe7+ Kf4 Qe4+ Kg5 Qg4#
+487,3,3,3.0,Đòn Hậu,true,false,1,3b3r/3nkp2/2r4p/p2pp1p1/Q7/P1q5/4PPPP/R2K1B1R b - - 3 25,Qxa1+ Kd2 Qc3+ Kd1 Qc1#
+488,3,4,4.0,Đòn Hậu,false,false,1,3k4/8/p1n1Q3/3N4/1PP5/P7/8/6K1 w - - 5 54,Qxc6 a5 Qc7+ Ke8 Qe7#
+489,3,4,3.0,Đòn Hậu,true,false,2,3r1kr1/2P2p1p/p5pP/6P1/P2q4/8/5P1K/8 b - - 0 40,Qxf2+ Kh3 Rd3+ Kg4 Qg3#
+490,3,4,3.0,Đòn Hậu,true,false,2,3rkbnr/Nbn2pp1/p7/4P3/4p1pP/4K3/PqP2PP1/RN3B1R b k - 3 18,Qc1+ Ke2 Bc5 c4 Qd1#
+491,3,5,4.0,Đòn Hậu,false,false,1,4Q3/k7/8/1B6/5p2/5P2/P4P2/6K1 w - - 1 51,Qc6 Kb8 Ba6 Ka7 Qb7#
+492,3,4,3.0,Đòn Hậu,true,false,1,4r3/p5pp/kp1P2r1/8/1Q5P/P7/1P1K1PP1/2R4R w - - 2 31,Qa4+ Kb7 Rc7+ Kb8 Qxa7#
+493,3,5,4.5,Đòn Hậu,false,false,17,5Q2/6pp/6q1/3k1p2/p4B2/P2P1N2/1PP4P/7K w - - 2 37,Qc8 Qa6 c4+ Qxc4 Qxc4#
+494,3,3,3.0,Đòn Hậu,true,false,2,5r1k/7p/2q1Pp2/6p1/2p2pK1/Q1P4P/PP4P1/R1r5 b - - 5 35,Qxg2+ Kf5 Qxh3+ Ke4 Qd3#
+495,3,4,3.0,Đòn Hậu,true,false,2,5rk1/1p5p/p2bb1p1/2p1p1Q1/1q2P2P/2NP3r/P1P3R1/B1R3K1 b - - 6 29,Qd4+ Qe3 Qxe3+ Rf2 Qxf2#
+496,3,5,4.5,Đòn Hậu,false,false,27,5rk1/pp4pp/1q1p4/3Pp1b1/3P2b1/Q4P2/PP1r2B1/R4K1R b - - 1 20,Qxd4 Qxa7 Qxa7 Ke1 Qf2#
+497,3,4,4.0,Đòn Hậu,false,false,2,6k1/1p3p2/6p1/5bP1/3p1P2/p7/6K1/2q5 b - - 1 38,Qe1 Kf3 Bh3 f5 Qe3#
+498,3,3,3.0,Đòn Hậu,true,false,1,6k1/8/2BBb3/3p4/2p5/P1P1b3/K1P5/2q5 b - - 3 59,Qxc2+ Ka1 Bc1 Bb4 Qb2#
+499,3,4,3.5,Đòn Hậu,true,false,3,7b/2rk1N2/Q4q2/1ppP3p/5p2/8/PP4P1/3RR1K1 w - - 1 37,Qxb5+ Rc6 dxc6+ Kc7 Qb7#
+500,3,5,4.5,Đòn Hậu,false,false,12,7k/6p1/2B2p2/K4P2/1p6/1q4n1/3bb3/8 b - - 1 67,Qe3 Bb7 Qa7+ Ba6 Qxa6#
+501,3,4,3.0,Đòn Hậu,true,false,1,7k/pp6/7P/3p4/P2P2p1/2P2q2/7K/8 b - - 0 53,Qf2+ Kh1 g3 a5 Qf1#
+502,3,4,3.5,Đòn Hậu,true,false,3,8/1k6/3Q4/2P4p/7P/1P6/3K4/8 w - - 3 58,Qd7+ Ka6 Kd3 Ka5 Qa4#
+503,3,4,3.5,Đòn Hậu,true,false,3,8/4kNb1/3p4/3bp3/6R1/2p5/4qB2/2Q3K1 b - - 0 45,Qxg4+ Kf1 Bc4+ Ke1 Qe2#
+504,3,5,4.5,Đòn Hậu,false,false,6,8/5kp1/3P1p2/P1P5/3p3P/2pP2b1/2K5/7q b - - 0 48,Qb7 Kd1 Qb2 d7 Qd2#
+505,3,3,3.0,Đòn Hậu,true,false,1,8/6Q1/1b1kp3/3bNp2/8/P7/1B2KP2/8 w - - 2 45,Qd7+ Kc5 Nd3+ Kc4 Qa4#
+506,3,5,4.0,Đòn Hậu,false,false,1,8/8/3q4/6K1/8/6k1/8/8 b - - 5 83,Qe6 Kh5 Kf4 Kh4 Qh6#
+507,3,5,4.0,Đòn Hậu,false,false,2,8/8/8/3Q4/8/6K1/4k3/8 w - - 3 74,Qd4 Ke1 Kf3 Kf1 Qd1#
+508,3,5,4.0,Đòn Hậu,false,false,1,8/K1p2p2/5P2/1P6/4k3/1q6/1p6/8 b - - 1 53,Qxb5 Ka8 b1=Q Ka7 Qa1#
+509,3,5,4.5,Đòn Hậu,false,false,12,r1b1k1r1/pp4p1/1N2p2p/4Q1B1/8/2P5/PP3PPP/R2R2K1 w - - 0 24,Qc7 Bd7 Qxd7+ Kf8 Qe7#
+510,3,5,4.5,Đòn Hậu,false,false,20,r1b5/1ppp1Bk1/1b4p1/5p2/p5pB/P1P5/1PP1Q3/4RR1K w - - 1 26,Qe8 d6 Qg8+ Kh6 Qxg6#
+511,3,5,4.5,Đòn Hậu,false,false,16,r3k2r/1pp1n2p/p3b1p1/6B1/2p1Q3/8/PPP1BPPP/4K2R w K - 2 21,Qxe6 Kd8 Bg4 Re8 Qd7#
+512,3,3,3.0,Đòn Hậu,true,false,2,r3r3/2pk2pp/5n2/p4p2/1b1p1P2/1K1P2PN/P3q2P/R1B4R b - - 5 21,Qxd3+ Ka4 Qc2+ Kb5 Qc6#
+513,3,4,3.0,Đòn Hậu,true,false,1,rnb4q/2p4k/2p1N2b/P1PpP3/8/1N2Q3/1P1B1PP1/R3K3 w Q - 0 31,Qxh6+ Kg8 Qg6+ Qg7 Qxg7#
+514,3,4,3.0,Đòn Mã,true,false,2,r1bq1k1r/ppp5/2n1B2b/4P3/3P1NQp/P1N1n3/1P4PP/R4RK1 w - - 1 20,Ng6+ Kg7 Rf7+ Kg8 Ne7#
+515,3,4,3.0,Đòn Tượng,true,false,2,1r3bkr/p1p1p1pp/1p5n/1P2p1N1/4B3/2P1B1R1/P4n1P/3RK3 w - - 2 20,Bd5+ e6 Bxe6+ Nf7 Bxf7#
+516,3,4,3.5,Đòn Tượng,true,false,4,3n3r/p5pp/1k1b4/5BB1/1P5P/2R2Q2/2P2PP1/6K1 w - - 3 32,Bxd8+ Kb5 Qb7+ Ka4 Bd7#
+517,3,5,4.5,Đòn Tượng,false,false,10,4k2r/8/1p2b3/4P3/7p/5rp1/p7/6RK b k - 1 51,Bd5 Kg2 Rf2+ Kh3 Be6#
+518,3,4,3.0,Đòn Tượng,true,false,1,5k1r/B1R5/6pp/1N6/2B5/8/PP3P1P/6K1 w - - 2 29,Bc5+ Ke8 Bf7+ Kd8 Be7#
+519,3,4,3.0,Đòn Tượng,true,false,2,r3k2r/1p2b3/p1n5/7p/5B1p/1q4P1/8/K1R3R1 b kq - 1 34,Bf6+ Be5 Bxe5+ Rc3 Bxc3#
+520,3,4,3.0,Đòn Tượng,true,false,1,rB3k1r/pR4b1/7p/1Bp2p2/4N3/8/P4PPP/4K2R w K - 2 22,Bd6+ Kg8 Nf6+ Bxf6 Bc4#
+521,3,4,3.5,Đòn Xe,true,false,3,1kr4r/6p1/p4q2/B1PQ1p2/7P/5P2/P3RK2/7R w - - 3 33,Rb1+ Qb6 Rxb6+ Kc7 Re7#
+522,3,4,3.0,Đòn Xe,true,false,1,1r3k2/6R1/R6p/1P3N2/3p1r2/2pK1P1P/2P2P2/8 w - - 3 38,Rf6+ Ke8 Re7+ Kd8 Rf8#
+523,3,4,3.0,Đòn Xe,true,false,2,1r4rk/p3R3/p7/8/4n2p/8/7K/3b4 b - - 3 45,Rb2+ Kh3 Bg4+ Kxh4 Rh2#
+524,3,3,3.0,Đòn Xe,true,false,2,1rb4Q/q2k4/p3p1Bp/1p1n4/8/6PP/PP3P2/2RR2K1 w - - 5 38,Rxd5+ exd5 Qe8+ Kd6 Rc6#
+525,3,5,4.5,Đòn Xe,false,false,10,2k5/p1p2p2/1p3p1p/5K2/3r3P/2b3r1/5R2/8 b - - 1 36,Rxh4 Rf4 Rh5+ Ke4 Re5#
+526,3,4,3.5,Đòn Xe,true,false,3,3k1r2/pp4pp/8/b1p5/6p1/8/PRK2PPP/4q1N1 b - - 9 33,Rxf2+ Ne2 c4 Rxb7 Rxe2#
+527,3,4,3.5,Đòn Xe,true,false,3,3r2k1/5pp1/2p4p/3p4/N1nqrP2/P4K2/1b6/3Q4 b - - 1 38,Rxf4+ Kg3 Qf2+ Kh3 Rh4#
+528,3,5,4.5,Đòn Xe,false,false,12,3rN3/2k5/1b5p/pP4p1/5n1P/B2n4/3P1p2/5K1R b - - 0 51,Rxe8 Be7 Rxe7 hxg5 Re1#
+529,3,5,4.5,Đòn Xe,false,false,14,4k3/1pR1Pr2/7p/4pb1Q/P6P/4K1P1/1P6/R7 w - - 2 34,Rd1 Bd3 Rxd3 b5 Rd8#
+530,3,5,4.0,Đòn Xe,false,false,2,4k3/1pp2pp1/8/5P2/1P5K/4n1P1/5r2/4b3 b - - 2 36,Rxf5 b5 Rxb5 Kh3 Rh5#
+531,3,4,4.0,Đòn Xe,false,false,2,4k3/8/7p/R7/8/P3p3/1P2K1PP/5R2 w - - 0 38,Ra7 h5 h4 Kd8 Rf8#
+532,3,4,3.5,Đòn Xe,true,false,6,4rrk1/pp3ppp/8/3p4/6K1/3N4/1P1q2PP/5BR1 b - - 7 27,Re4+ Kf5 g6+ Kf6 Re6#
+533,3,3,3.0,Đòn Xe,true,false,1,5r2/2p3p1/p3p3/1p2P3/3P2rP/PkP1n2K/8/2R1R3 b - - 5 39,Rf3+ Kh2 Rg2+ Kh1 Rh3#
+534,3,4,3.0,Đòn Xe,true,false,1,5rk1/6r1/8/pp2K3/1b1P4/1P2PB2/4RP2/8 b - - 4 42,Re7+ Kd5 Rf6 Be4 Rd6#
+535,3,4,3.0,Đòn Xe,true,false,1,6k1/p4pp1/2pB4/2P3Pp/5P1P/P7/3rr3/5RK1 b - - 0 38,Rg2+ Kh1 Rh2+ Kg1 Rdg2#
+536,3,5,4.5,Đòn Xe,false,false,4,6kr/p2RRr2/3p1p1p/2pP1P2/2P3N1/7P/P1P2PP1/6K1 w - - 4 29,Rxf7 Rh7 Nxf6+ Kh8 Rd8#
+537,3,4,3.0,Đòn Xe,true,false,1,8/1p6/p1nk4/8/1P1n4/8/P4rr1/R1KR4 b - - 1 36,Rc2+ Kb1 Rb2+ Kc1 Rgc2#
+538,3,5,4.5,Đòn Xe,false,false,13,8/2p4k/p6B/1p1nPp2/8/P1P5/1P3K2/R6R w - - 0 35,Rag1 Nf6 Bf8+ Nh5 Rxh5#
+539,3,3,3.0,Đòn Xe,true,false,1,8/5Q2/1p1p3k/p5b1/P1P5/8/1PK3PP/4R3 w - - 1 33,Re6+ Bf6 h4 d5 Rxf6#
+540,3,4,3.0,Đòn Xe,true,false,1,8/5k2/6p1/p3p3/P4p1P/1Pp2K2/2Pr2r1/4R3 b - - 1 42,Rg3+ Ke4 Kf6 Rc1 Rd4#
+541,3,5,4.0,Đòn Xe,false,false,2,8/5p1k/4b3/6K1/7p/7r/5p2/5r2 b - - 1 51,Rf3 Kh5 Rg1 Kxh4 Rh3#
+542,3,4,3.5,Đòn Xe,true,false,3,8/7p/2Q5/p4k1r/P1K5/1P6/8/6R1 w - - 7 47,Rf1+ Kg5 Qg2+ Kh6 Rf6#
+543,3,5,4.0,Đòn Xe,false,false,2,8/8/R4R2/p3k3/1p6/1P4K1/P1P2P2/8 w - - 3 57,Rad6 Ke4 Kg4 Ke5 Rfe6#
+544,3,5,4.5,Đòn Xe,false,false,10,8/Rp5Q/2p1bk1p/7R/1Pp5/4P1P1/6P1/6K1 w - - 0 45,Rxb7 Bd7 Rxd7 c3 Rd6#
+545,3,5,4.5,Đòn Xe,false,false,3,8/p7/6k1/3p3p/4p3/P5K1/5r2/4r3 b - - 1 62,Ree2 Kh4 Re3 a4 Rf4#
+546,3,4,3.0,Đòn Xe,true,false,1,8/p7/Bp3k2/8/P7/5r1p/2K2p1R/4q3 b - - 1 59,Rc3+ Kb2 Qd2+ Kb1 Rc1#
+547,3,5,4.0,Đòn Xe,false,false,2,8/pR6/6rR/k7/P7/6B1/6PK/8 w - - 1 48,Rxg6 a6 Bc7+ Kxa4 Rxa6#
+548,3,3,3.0,Đòn Xe,true,false,2,Q7/5p1k/8/2P3pp/3P4/4PR2/6P1/7K w - - 1 43,Rxf7+ Kg6 Qg8+ Kh6 Rf6#
+549,3,4,3.0,Đòn Xe,true,false,1,k1b1R1R1/1p1p3B/p2B4/8/1p5P/8/PPPb4/1K6 w - - 1 38,Rxc8+ Ka7 Bc5+ b6 Rc7#
+550,3,4,3.0,Đòn Xe,true,false,1,k7/5R2/P7/3K1P2/8/8/8/8 w - - 1 73,Rf8+ Ka7 Kc6 Kxa6 Ra8#
+551,3,5,4.0,Đòn Xe,false,false,2,r5k1/p6p/4p2P/2p3p1/3b1rP1/8/8/3K4 b - - 1 40,Rf2 Kc1 Rb8 Kd1 Rb1#
+552,3,5,4.5,Đòn Xe,false,false,22,r6r/2B3pp/3bQ1nk/p3p3/4N3/8/P1P2PKP/RR6 w - - 0 27,Rb3 Be7 Rh3+ Bh4 Rxh4#
+553,4,5,4.0,Hàng cuối,true,false,2,1r4k1/p4p2/3P1B1p/1b2p3/4Q3/pP5P/6P1/6K1 w - - 5 44,Qg4+ Kf8 d7 Bxd7 Qg7+ Ke8 Qg8#
+554,4,5,5.5,Phong cấp,true,true,3,8/1p3p2/7p/1Nk2P2/Pp6/4r1p1/2rn2K1/7R b - - 1 61,Nf1+ Kh3 g2+ Kg4 Re4+ Kf3 gxh1=Q#
+555,4,5,5.5,Phong cấp,false,false,20,r1b1k2r/2pn1Q1p/4p3/pp6/2Bq1b2/8/PP3PpP/R3K2R b kq - 0 19,Kxf7 Bxe6+ Kxe6 Ke2 Qe4+ Kd1 gxh1=Q#
+556,4,5,5.5,Phối hợp,false,false,3,3R4/2P5/1k2p3/p3P1p1/1p4P1/1P2K3/1P3P1P/8 w - - 1 43,c8=Q a4 Qxe6+ Kc7 Rd7+ Kb8 Qe8#
+557,4,5,5.5,Phối hợp,false,false,6,3k4/3P3p/6p1/5pN1/p7/7P/PP4P1/3R3K w - - 0 48,Rd6 h5 Ne6+ Ke7 d8=Q+ Kf7 Qf8#
+558,4,5,5.5,Phối hợp,false,false,8,3k4/P2N1p2/R5p1/4b2p/1P6/3P2P1/5K1P/7R w - - 0 66,Nxe5 Ke7 a8=Q h4 Qb7+ Kf8 Qxf7#
+559,4,5,5.5,Phối hợp,false,false,20,6k1/5p2/5Q2/2r3Pp/4bP2/4K3/6q1/8 b - - 1 62,Rd5 Qd4 Qf3+ Kd2 Rxd4+ Kc1 Qc3#
+560,4,5,5.5,Phối hợp,false,false,3,6k1/5pPp/8/6P1/4p2K/5r2/p7/8 b - - 3 42,a1=Q Kg4 Qg1+ Kh4 Qg3+ Kh5 Qh3#
+561,4,4,4.0,Phối hợp,true,false,1,7Q/5k2/7R/8/1pKP3P/6r1/6P1/8 w - - 3 67,Rf6+ Ke7 Qf8+ Kd7 Rf7+ Ke6 Qe7#
+562,4,5,5.5,Phối hợp,false,false,5,8/1k6/3R1P2/4K3/3p4/3P4/8/8 w - - 1 63,f7 Kc7 f8=Q Kb7 Qe7+ Kb8 Rd8#
+563,4,5,5.5,Phối hợp,false,false,6,8/2k5/4Q2p/3np2P/1Bp1r1p1/P3P1P1/P7/3R2K1 w - - 1 39,Rxd5 Rd4 Qd7+ Kb6 Rb5+ Ka6 Qb7#
+564,4,5,5.0,Phối hợp,false,false,2,8/3k4/6p1/4q3/1pn3K1/8/8/8 b - - 1 55,Nd2 Kh3 Ne4 Kg2 Qg3+ Kf1 Qf2#
+565,4,5,5.0,Phối hợp,false,false,2,8/4k1B1/3N4/2K5/5P1p/2N4P/P7/8 w - - 3 49,Kc6 Ke6 f5+ Ke7 Nd5+ Kd8 Bf6#
+566,4,5,5.5,Phối hợp,false,false,9,8/6k1/P5p1/1Q5p/5P2/6PP/1P6/6K1 w - - 1 42,a7 Kf7 Qd7+ Kf6 a8=Q g5 Qa6#
+567,4,5,5.5,Phối hợp,false,false,3,8/7k/6p1/7p/6PP/8/3q4/6K1 b - - 0 45,hxg4 Kf1 g3 Kg1 Qh2+ Kf1 Qf2#
+568,4,5,5.5,Phối hợp,false,false,5,8/8/1p3k1p/3p4/8/p1r5/6K1/8 b - - 1 59,a2 Kf2 a1=Q Kg2 Qb2+ Kg1 Rc1#
+569,4,5,5.5,Phối hợp,false,false,3,8/8/2P2Q2/8/6k1/8/2K5/8 w - - 1 52,c7 Kh5 c8=R Kg4 Rg8+ Kh5 Qh8#
+570,4,5,5.0,Phối hợp,false,false,2,8/8/4k3/1p6/8/1r3p2/3n4/7K b - - 1 59,f2 Kh2 b4 Kg2 f1=Q+ Kh2 Rh3#
+571,4,5,5.0,Phối hợp,false,false,2,8/8/4k3/4p1p1/p3P1P1/p1p2K2/2Pr4/8 b - - 1 72,a2 Ke3 a1=Q Kf3 Qf1+ Ke3 Qf2#
+572,4,5,5.0,Phối hợp,false,false,2,8/8/k7/3K4/2R5/8/8/8 w - - 9 74,Kc6 Ka7 Ra4+ Kb8 Ra5 Kc8 Ra8#
+573,4,5,5.5,Phối hợp,false,false,3,8/k4N2/1p1P4/8/1P6/P7/2P2KB1/8 w - - 1 39,d7 Ka6 d8=Q Kb5 Nd6+ Ka6 Qa8#
+574,4,5,5.5,Phối hợp,false,false,12,8/p3kprp/4pN2/4P1p1/2K5/P5PP/4n3/1q6 b - - 4 37,a6 Nd5+ exd5+ Kxd5 Qb7+ Kc4 Qb5#
+575,4,5,5.0,Phối hợp,false,false,2,B7/k7/3P2R1/7p/5K1P/8/2P2PP1/8 w - - 1 45,d7 Kxa8 d8=Q+ Kb7 Rb6+ Ka7 Qb8#
+576,4,5,5.0,Phối hợp,false,false,2,R7/4k2P/8/p7/P4K2/5P2/6P1/8 w - - 1 52,Ke5 Kd7 h8=Q Kc6 Qc8+ Kb6 Ra6#
+577,4,5,4.0,Phối hợp,true,false,2,k6r/P5p1/4p3/1R2p3/2P1Pn2/2qPR2Q/7K/8 b - - 0 60,Rxh3+ Rxh3 Qc2+ Kg3 Qg2+ Kh4 g5#
+578,4,5,5.5,Phối hợp,false,false,15,r2r4/2kP4/5Q2/p3pB2/2Pp4/p7/2P3PP/R5K1 w - - 0 39,Rb1 Rxd7 Qb6+ Kc8 Qb7+ Kd8 Qxd7#
+579,4,5,5.0,Thí quân,true,true,2,2qk1b1r/2r1nQp1/7p/Bp2N3/8/7P/PPP2PP1/R3R1K1 w - - 1 26,Nc6+ Kd7 Rad1+ Kxc6 Qf3+ Kc5 Qc3#
+580,4,5,5.0,Thí quân,true,true,2,4k2r/1p3p2/2nP4/8/p1b3p1/P1bN2P1/1qP3BP/5K1R b k - 0 31,Qc1+ Kf2 Qd2+ Kg1 Bd4+ Kf1 Qd1#
+581,4,5,5.0,Thí quân,true,true,2,4kb1r/1p3ppp/5n2/1p1qp3/6P1/1N1R1PKP/1r6/2B1nB1R b k - 2 23,Qxf3+ Rxf3 Ne4+ Kh4 Nxf3+ Kh5 Nf6#
+582,4,5,4.0,Đòn Hậu,true,false,1,1Q6/4R3/8/8/P2k4/7p/8/3KBr1r w - - 0 65,Qd6+ Kc4 Qc6+ Kd4 Re4+ Kd3 Qc4#
+583,4,5,5.5,Đòn Hậu,false,false,13,1k6/1pp5/p2p3p/3Pp3/QPP5/P3P3/R4qr1/2K3b1 b - - 4 48,Qxa2 Qe8+ Ka7 Qa8+ Kxa8 e4 Qa1#
+584,4,5,4.5,Đòn Hậu,true,false,4,4Q3/2R3pk/R4b2/6p1/4p1b1/7p/5P2/6K1 w - - 2 52,Qxe4+ Bf5 Qxf5+ Kh6 Rxf6+ gxf6 Qh7#
+585,4,5,4.0,Đòn Hậu,true,false,1,5Q2/8/1kp3K1/1p6/pP3P2/P7/8/8 w - - 1 67,Qb8+ Ka6 Qc7 c5 bxc5 b4 Qb6#
+586,4,4,4.0,Đòn Hậu,true,false,2,5R2/8/2q1k3/8/8/K7/8/2r5 b - - 7 79,Qc3+ Ka4 Ra1+ Kb5 Rb1+ Ka4 Qb4#
+587,4,5,4.0,Đòn Hậu,true,false,2,8/1k4P1/5K1P/4r3/2Bq4/8/3B4/8 b - - 3 59,Qd6+ Kf7 Qd7+ Kg8 Re8+ Kh7 Qf5#
+588,4,5,4.0,Đòn Hậu,true,false,2,8/4nkpp/1r6/3b4/3P3P/4Q2P/PP3P1K/4R3 w - - 0 34,Qxe7+ Kg6 Rg1+ Bg2 Rxg2+ Kf5 Qe5#
+589,4,5,4.5,Đòn Hậu,true,false,6,8/6K1/3k4/8/q7/8/8/6b1 b - - 1 75,Qg4+ Kf7 Bd4 Kf8 Qg7+ Ke8 Qg8#
+590,4,5,5.5,Đòn Hậu,false,false,6,8/pp6/2p5/2Prk1R1/PP6/2K5/8/6q1 b - - 0 47,Qxg5 a5 Qe3+ Kc2 Rd2+ Kb1 Qe1#
+591,4,5,4.0,Đòn Hậu,true,false,2,r3k2r/p2b1ppp/2p5/q7/1QPpn3/4P3/P4PPP/R3KBNR b kq - 4 15,Qxb4+ Ke2 Qb2+ Kf3 Qxf2+ Kxe4 Qxe3#
+592,4,5,4.0,Đòn Hậu,true,false,1,r4k1r/pp3p1p/1n1R4/4Q3/2b5/P4PR1/P6P/4KB2 w - - 1 27,Qxh8+ Ke7 Qf6+ Kf8 Rd8+ Rxd8 Qxd8#
+593,4,5,5.5,Đòn Mã,false,false,22,1rk4r/1p4p1/3Qb1p1/4N3/8/8/PPPN1PPP/R3K1R1 w Q - 1 25,Ndc4 b5 Qxe6+ Kb7 Qb6+ Kc8 Nd6#
+594,4,4,4.0,Đòn Tượng,true,false,1,5k2/2R2P2/4b3/4B2p/2P5/8/3K4/8 w - - 7 50,Bd6+ Kg7 f8=Q+ Kg6 Rg7+ Kh6 Bf4#
+595,4,5,4.0,Đòn Tượng,true,false,2,6r1/2k1q2p/2B1b1n1/3p1p2/1Q1P2P1/4P2P/5K2/2R5 w - - 3 41,Ba4+ Qc5 Qxc5+ Kb7 Rb1+ Ka8 Bc6#
+596,4,5,4.0,Đòn Xe,true,false,1,2k4r/2P3p1/p3p3/4Pp1p/7P/P7/1R3PP1/2R3K1 w - - 1 32,Rb8+ Kd7 c8=Q+ Rxc8 Rbxc8 f4 R1c7#
+597,4,4,4.0,Đòn Xe,true,false,2,3k4/7r/PN2R1p1/5p2/4p3/1p2K1P1/bP5P/7R w - - 3 37,Rd1+ Kc7 Rc1+ Kb8 Rc8+ Ka7 Ra8#
+598,4,5,5.5,Đòn Xe,false,false,7,4Q3/3n4/ppk5/2p2P1p/6P1/2Nq4/P7/3RK3 w - - 1 53,Rxd3 b5 Qxd7+ Kb6 Nd5+ Ka5 Ra3#
+599,4,5,5.5,Đòn Xe,false,false,6,8/2P3k1/2r4p/p5pP/3P2R1/P7/8/2R3K1 w - - 1 38,Rxc6 a4 c8=Q Kf7 Qd7+ Kg8 Rc8#
+600,4,5,5.5,Đòn Xe,false,false,8,8/3RPk2/ppN3p1/5p1p/5P1n/1P6/P4P1P/7K w - - 1 37,Rd8 Kg7 e8=Q Nf3 Qe7+ Kh6 Rh8#

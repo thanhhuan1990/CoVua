@@ -1,0 +1,30 @@
+build/
+.gradle/
+local.properties
+.idea/
+*.iml
+key.properties
+*.jks
+*_keystore
+ads.properties
+app/google-services.json
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Release keystore (shared HuanHuynh upload key)
+/keystore
+
+*.keystore
+# Kotlin compiler cache
+.kotlin/
+# Local backups
+*.tgz
+__pycache__/
+# Ảnh chụp tạm cho store assets
+store-assets/raw/
+.xfer/
+
+# Stockfish (build bằng engine-native/build_stockfish.sh)
+app/src/main/jniLibs/

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="file" path="datastore/" />
+        <include domain="database" path="user.db" />
+        <include domain="sharedpref" path="app_lang.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="file" path="datastore/" />
+        <include domain="database" path="user.db" />
+        <include domain="sharedpref" path="app_lang.xml" />
+    </device-transfer>
+</data-extraction-rules>
