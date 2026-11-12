@@ -99,7 +99,7 @@ class SettingsRepository(private val context: Context) {
         val WARN = booleanPreferencesKey("coach_warn")
         val HINT = booleanPreferencesKey("coach_hint")
         val UNDO = booleanPreferencesKey("allow_undo")
-        val STYLE = stringPreferencesKey("piece_style")
+        val STYLE = stringPreferencesKey("piece_style_v2") // v2: bỏ giá trị "Chữ" cũ do onboarding tự đặt → mọi người về quân hình
         val TARGETS = booleanPreferencesKey("show_targets")
         val FLIP = booleanPreferencesKey("flip_black")
         val FULL = booleanPreferencesKey("coach_full")

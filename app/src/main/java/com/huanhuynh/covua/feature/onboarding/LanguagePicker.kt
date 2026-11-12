@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -44,7 +45,7 @@ fun LanguagePicker(onPick: (String) -> Unit) {
             Modifier.padding(28.dp).fillMaxWidth().clip(RoundedCornerShape(22.dp)).background(Paper).padding(22.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Text("♚", fontSize = 40.sp, color = Red, fontWeight = FontWeight.Bold)
+            com.huanhuynh.covua.ui.board.PieceIcon(1, Modifier.size(52.dp), tint = Red)
             Spacer(Modifier.height(4.dp))
             Text("Ngôn ngữ · Language · 语言 · 言語", fontSize = 17.sp, fontWeight = FontWeight.Bold, color = Ink)
             Spacer(Modifier.height(16.dp))

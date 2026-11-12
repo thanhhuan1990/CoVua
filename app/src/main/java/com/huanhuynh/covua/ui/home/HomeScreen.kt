@@ -151,9 +151,8 @@ fun HomeScreen(
                 Modifier.fillMaxWidth().clip(RoundedCornerShape(bottomStart = 30.dp, bottomEnd = 30.dp))
                     .background(Brush.linearGradient(listOf(Color(0xFF3B6AA8), RedDark))),
             ) {
-                Text(
-                    "♚", fontSize = 190.sp, fontFamily = FontFamily.Serif, fontWeight = FontWeight.Bold, color = Color.White.copy(alpha = 0.07f),
-                    modifier = Modifier.align(Alignment.TopEnd).offset(x = 36.dp, y = 30.dp),
+                com.huanhuynh.covua.ui.board.PieceIcon(
+                    1, Modifier.align(Alignment.TopEnd).offset(x = 36.dp, y = 30.dp).size(200.dp), tint = Color.White.copy(alpha = 0.07f),
                 )
                 Column(Modifier.statusBarsPadding().padding(start = 18.dp, end = 12.dp, top = 6.dp, bottom = 22.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -238,19 +237,19 @@ fun HomeScreen(
                 Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     val lv = Level.of(settings.level)
                     ColorCard(
-                        "♚", "♟", t("Chơi với máy", "Play vs computer", "人机对弈", "コンピュータと対局"), t("Đang ở cấp ${lv.id} · ${lv.title}", "At level ${lv.id} · ${lv.title}", "当前${lv.id}级 · ${lv.title}", "レベル${lv.id} · ${lv.title}"), HomeRed, Modifier.weight(1f), onNewGame,
+                        1, "♟", t("Chơi với máy", "Play vs computer", "人机对弈", "コンピュータと対局"), t("Đang ở cấp ${lv.id} · ${lv.title}", "At level ${lv.id} · ${lv.title}", "当前${lv.id}级 · ${lv.title}", "レベル${lv.id} · ${lv.title}"), HomeRed, Modifier.weight(1f), onNewGame,
                     ) { LevelBar(lv.id) }
                     ColorCard(
-                        "♞", "🧩", t("Bài tập", "Puzzles", "习题", "問題集"), t("${solved.size}/$puzzleCount · Bài vừa sức", "${solved.size}/$puzzleCount · For you", "${solved.size}/$puzzleCount · 适合你", "${solved.size}/${puzzleCount} · あなた向け"), HomeAmber, Modifier.weight(1f), onPuzzles,
+                        5, "🧩", t("Bài tập", "Puzzles", "习题", "問題集"), t("${solved.size}/$puzzleCount · Bài vừa sức", "${solved.size}/$puzzleCount · For you", "${solved.size}/$puzzleCount · 适合你", "${solved.size}/${puzzleCount} · あなた向け"), HomeAmber, Modifier.weight(1f), onPuzzles,
                         badge = player?.let { t("Bậc ${it.puzzleBand}/5", "Level ${it.puzzleBand}/5", "等级${it.puzzleBand}/5", "段階${it.puzzleBand}/5") },
                     ) { ProgressBar(if (puzzleCount > 0) solved.size.toFloat() / puzzleCount else 0f) }
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     ColorCard(
-                        "♜", "📖", t("Khai cuộc", "Openings", "开局", "定跡"), t("Ý, Tây Ban Nha, Sicilia…", "Italian, Ruy Lopez, Sicilian…", "意大利、西班牙、西西里…", "イタリアン、ルイ・ロペス…"), HomeGreen, Modifier.weight(1f), onOpenings,
+                        3, "📖", t("Khai cuộc", "Openings", "开局", "定跡"), t("Ý, Tây Ban Nha, Sicilia…", "Italian, Ruy Lopez, Sicilian…", "意大利、西班牙、西西里…", "イタリアン、ルイ・ロペス…"), HomeGreen, Modifier.weight(1f), onOpenings,
                     ) { Text(t("$openings thế có tên ›", "$openings named lines ›", "${openings}种布局 ›", "名前のある定跡${openings}種 ›"), color = Color.White, fontSize = 12.sp, fontWeight = FontWeight.Bold) }
                     ColorCard(
-                        "♛", "📈", t("Tiến bộ", "Progress", "进步", "上達"), t("$titleName · Sổ tay", "$titleName · Notebook", "$titleName · 错题本", "${titleName} · ミスノート"), HomeBlue, Modifier.weight(1f), onProgress,
+                        2, "📈", t("Tiến bộ", "Progress", "进步", "上達"), t("$titleName · Sổ tay", "$titleName · Notebook", "$titleName · 错题本", "${titleName} · ミスノート"), HomeBlue, Modifier.weight(1f), onProgress,
                         badge = dueCount.takeIf { it > 0 }?.let { t("$it thế cần ôn", "$it to review", "${it}个待复习", "復習${it}件") },
                     ) {
                         val pts = remember(settings.accuracyLog) { settings.accuracyEntries().takeLast(8).map { it.second } }
@@ -307,7 +306,7 @@ private fun HeroWeek(dots: List<StreakCalculator.Dot>, done: Int, streak: Int, m
 /** Thẻ màu ở Trang chủ: chữ Hán chìm, icon, tiêu đề, nhãn góc, chỉ báo ở đáy. */
 @Composable
 private fun ColorCard(
-    han: String, icon: String, title: String, sub: String, colors: List<Color>, modifier: Modifier, onClick: () -> Unit,
+    han: Int, icon: String, title: String, sub: String, colors: List<Color>, modifier: Modifier, onClick: () -> Unit,
     badge: String? = null, foot: @Composable () -> Unit,
 ) {
     // Chữ to (+20%) thì thẻ cao theo để không bị cắt
@@ -316,9 +315,9 @@ private fun ColorCard(
         modifier.height(h).shadow(6.dp, RoundedCornerShape(22.dp)).clip(RoundedCornerShape(22.dp))
             .background(Brush.linearGradient(colors)).clickable(onClick = onClick),
     ) {
-        Text(
-            han, fontSize = 92.sp, fontFamily = FontFamily.Serif, fontWeight = FontWeight.Bold, color = Color.White.copy(alpha = 0.16f),
-            modifier = Modifier.align(Alignment.BottomEnd).offset(x = 8.dp, y = 22.dp),
+        // Hình chìm quân cờ ở góc thẻ
+        com.huanhuynh.covua.ui.board.PieceIcon(
+            han, Modifier.align(Alignment.BottomEnd).offset(x = 10.dp, y = 14.dp).size(100.dp), tint = Color.White.copy(alpha = 0.16f),
         )
         Column(Modifier.fillMaxSize().padding(horizontal = 14.dp, vertical = 12.dp)) {
             Box(Modifier.size(34.dp).clip(RoundedCornerShape(11.dp)).background(Color.White.copy(alpha = 0.2f)), contentAlignment = Alignment.Center) {

@@ -35,7 +35,6 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.huanhuynh.covua.AppContainer
-import com.huanhuynh.covua.data.PieceStyle
 import com.huanhuynh.covua.domain.Ev
 import com.huanhuynh.covua.engine.Handicap
 import com.huanhuynh.covua.ui.TeacherAvatar
@@ -62,7 +61,6 @@ object Onboarding {
         val s = c.settings.current()
         c.settings.setNewGamePrefs(a.level, s.sideChoice, s.coachExplain, if (a == SkillAnswer.NEW) true else s.coachWarn, s.coachHint, s.allowUndo)
         c.settings.setHandicap(a.handicap.id)
-        if (a == SkillAnswer.NEW) c.settings.setPieceStyle(PieceStyle.LETTERS)
         c.settings.setBigText(bigText)
         c.settings.setSkillAsked()
         runCatching { c.player.update { it.copy(skillAnswer = a.id, puzzleBand = a.band, bandOkStreak = 0, bandFailStreak = 0) } }

@@ -37,9 +37,6 @@ import com.huanhuynh.covua.ui.theme.Good
 import kotlin.math.abs
 import kotlin.math.atan2
 
-/** Hình quân (bộ đặc = quân Đen; bộ rỗng = nét chi tiết vẽ lên quân Trắng). ︎: ép kiểu chữ, không phải emoji. */
-private val SOLID = arrayOf("", "♚", "♛", "♜", "♝", "♞", "♟︎")
-private val OUTLINE = arrayOf("", "♔", "♕", "♖", "♗", "♘", "♙")
 private val LETTER_VI = arrayOf("", "Vua", "Hậu", "Xe", "Tượng", "Mã", "Tốt")
 private val LETTER_ZH = arrayOf("", "王", "后", "车", "象", "马", "兵")
 private val LETTER_INTL = arrayOf("", "K", "Q", "R", "B", "N", "P")
@@ -194,30 +191,7 @@ fun DrawScope.drawPiece(o: Offset, cell: Float, p: Int, style: PieceStyle, glyph
     val t = abs(p)
     val canvas = drawContext.canvas.nativeCanvas
     if (style == PieceStyle.CLASSIC) {
-        glyph.textSize = cell * 0.86f
-        val fm = glyph.fontMetrics
-        val y = o.y - (fm.ascent + fm.descent) / 2f
-        // Bóng
-        glyph.style = Paint.Style.FILL
-        glyph.color = 0x40000000
-        canvas.drawText(SOLID[t], o.x + cell * 0.02f, y + cell * 0.035f, glyph)
-        if (white) {
-            // Thân trắng (hình đặc tô trắng) + nét chi tiết (hình rỗng tô đen)
-            glyph.color = PieceWhite.toArgb()
-            canvas.drawText(SOLID[t], o.x, y, glyph)
-            glyph.color = 0xFF202020.toInt()
-            canvas.drawText(OUTLINE[t], o.x, y, glyph)
-        } else {
-            // Viền sáng mảnh để quân Đen nổi trên ô tối
-            glyph.style = Paint.Style.STROKE
-            glyph.strokeWidth = cell * 0.035f
-            glyph.color = 0x99FFFFFF.toInt()
-            canvas.drawText(SOLID[t], o.x, y, glyph)
-            glyph.style = Paint.Style.FILL
-            glyph.color = PieceBlack.toArgb()
-            canvas.drawText(SOLID[t], o.x, y, glyph)
-        }
-        glyph.style = Paint.Style.FILL
+        PieceArt.draw(canvas, o.x, o.y, cell, p)
     } else {
         val r = cell * 0.43f
         drawCircle(Color(0x55000000), r, o + Offset(0f, r * 0.12f))

@@ -444,10 +444,10 @@ private fun sideName(s: Int) = if (s > 0) t("Trắng", "White", "白方", "白")
 private fun PlayerRow(name: String, sub: String, side: Int, active: Boolean) {
     Row(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
         Box(
-            Modifier.size(30.dp).clip(CircleShape).background(if (side > 0) PieceWhite else PieceBlack).border(1.dp, Line, CircleShape),
+            Modifier.size(30.dp).clip(CircleShape).background(Color(0xFFEDE4D3)).border(1.dp, Line, CircleShape),
             contentAlignment = Alignment.Center,
         ) {
-            Text("♚", color = if (side > 0) PieceBlack else PieceWhite, fontSize = 17.sp)
+            com.huanhuynh.covua.ui.board.PieceIcon(side, Modifier.size(24.dp))
         }
         Spacer(Modifier.width(10.dp))
         Column {

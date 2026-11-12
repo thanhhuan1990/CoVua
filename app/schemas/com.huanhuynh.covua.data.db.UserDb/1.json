@@ -1,0 +1,803 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "746788ff74b07b9b59ed124a1f5db368",
+    "entities": [
+      {
+        "tableName": "game",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `profile_id` INTEGER NOT NULL DEFAULT 1, `status` TEXT NOT NULL, `mode` TEXT NOT NULL, `level` INTEGER NOT NULL, `handicap` TEXT, `player_side` INTEGER NOT NULL, `start_fen` TEXT NOT NULL, `moves` TEXT NOT NULL, `result` INTEGER, `end_reason` TEXT, `accuracy` INTEGER, `undo_count` INTEGER NOT NULL DEFAULT 0, `hint_count` INTEGER NOT NULL DEFAULT 0, `opening_id` TEXT, `engine_version` INTEGER NOT NULL, `started_at` INTEGER NOT NULL, `ended_at` INTEGER, `legacy` INTEGER NOT NULL DEFAULT 0)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "level",
+            "columnName": "level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "handicap",
+            "columnName": "handicap",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "playerSide",
+            "columnName": "player_side",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startFen",
+            "columnName": "start_fen",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "moves",
+            "columnName": "moves",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "result",
+            "columnName": "result",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "endReason",
+            "columnName": "end_reason",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "accuracy",
+            "columnName": "accuracy",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "undoCount",
+            "columnName": "undo_count",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "hintCount",
+            "columnName": "hint_count",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "openingId",
+            "columnName": "opening_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "engineVersion",
+            "columnName": "engine_version",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startedAt",
+            "columnName": "started_at",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endedAt",
+            "columnName": "ended_at",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "legacy",
+            "columnName": "legacy",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_game_profile_id_ended_at",
+            "unique": false,
+            "columnNames": [
+              "profile_id",
+              "ended_at"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_game_profile_id_ended_at` ON `${TABLE_NAME}` (`profile_id`, `ended_at`)"
+          },
+          {
+            "name": "index_game_profile_id_status",
+            "unique": false,
+            "columnNames": [
+              "profile_id",
+              "status"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_game_profile_id_status` ON `${TABLE_NAME}` (`profile_id`, `status`)"
+          },
+          {
+            "name": "index_game_profile_id_level",
+            "unique": false,
+            "columnNames": [
+              "profile_id",
+              "level"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_game_profile_id_level` ON `${TABLE_NAME}` (`profile_id`, `level`)"
+          }
+        ]
+      },
+      {
+        "tableName": "move_eval",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`game_id` INTEGER NOT NULL, `ply` INTEGER NOT NULL, `profile_id` INTEGER NOT NULL DEFAULT 1, `move` INTEGER NOT NULL, `code` TEXT NOT NULL, `best_move` INTEGER NOT NULL, `second_best_score` INTEGER, `score_before` INTEGER NOT NULL, `score_after` INTEGER NOT NULL, `loss_cp` INTEGER NOT NULL, `accuracy` INTEGER NOT NULL DEFAULT 100, `label` INTEGER NOT NULL, `tags` INTEGER NOT NULL, `coach_title` TEXT, `coach_text` TEXT, PRIMARY KEY(`game_id`, `ply`), FOREIGN KEY(`game_id`) REFERENCES `game`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "gameId",
+            "columnName": "game_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ply",
+            "columnName": "ply",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "move",
+            "columnName": "move",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bestMove",
+            "columnName": "best_move",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "secondBestScore",
+            "columnName": "second_best_score",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "scoreBefore",
+            "columnName": "score_before",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scoreAfter",
+            "columnName": "score_after",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lossCp",
+            "columnName": "loss_cp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accuracy",
+            "columnName": "accuracy",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "100"
+          },
+          {
+            "fieldPath": "label",
+            "columnName": "label",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tags",
+            "columnName": "tags",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "coachTitle",
+            "columnName": "coach_title",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "coachText",
+            "columnName": "coach_text",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "game_id",
+            "ply"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_move_eval_game_id",
+            "unique": false,
+            "columnNames": [
+              "game_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_move_eval_game_id` ON `${TABLE_NAME}` (`game_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "game",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "game_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "review_card",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `profile_id` INTEGER NOT NULL DEFAULT 1, `source` TEXT NOT NULL, `fen` TEXT NOT NULL, `zobrist` INTEGER NOT NULL, `played_move` INTEGER NOT NULL, `best_moves` TEXT NOT NULL, `accept_loss_cp` INTEGER NOT NULL DEFAULT 50, `theme_tags` INTEGER NOT NULL, `box` INTEGER NOT NULL, `due_day` INTEGER NOT NULL, `reps` INTEGER NOT NULL, `lapses` INTEGER NOT NULL, `status` TEXT NOT NULL, `game_id` INTEGER, `ply` INTEGER, `level` INTEGER NOT NULL, `engine_version` INTEGER NOT NULL, `created_at` INTEGER NOT NULL, `last_reviewed_at` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fen",
+            "columnName": "fen",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zobrist",
+            "columnName": "zobrist",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "playedMove",
+            "columnName": "played_move",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bestMoves",
+            "columnName": "best_moves",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "acceptLossCp",
+            "columnName": "accept_loss_cp",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "50"
+          },
+          {
+            "fieldPath": "themeTags",
+            "columnName": "theme_tags",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "box",
+            "columnName": "box",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dueDay",
+            "columnName": "due_day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reps",
+            "columnName": "reps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lapses",
+            "columnName": "lapses",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gameId",
+            "columnName": "game_id",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "ply",
+            "columnName": "ply",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "level",
+            "columnName": "level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "engineVersion",
+            "columnName": "engine_version",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "created_at",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastReviewedAt",
+            "columnName": "last_reviewed_at",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_review_card_profile_id_source_zobrist",
+            "unique": true,
+            "columnNames": [
+              "profile_id",
+              "source",
+              "zobrist"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_review_card_profile_id_source_zobrist` ON `${TABLE_NAME}` (`profile_id`, `source`, `zobrist`)"
+          },
+          {
+            "name": "index_review_card_profile_id_status_due_day",
+            "unique": false,
+            "columnNames": [
+              "profile_id",
+              "status",
+              "due_day"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_review_card_profile_id_status_due_day` ON `${TABLE_NAME}` (`profile_id`, `status`, `due_day`)"
+          }
+        ]
+      },
+      {
+        "tableName": "puzzle_attempt",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `profile_id` INTEGER NOT NULL DEFAULT 1, `puzzle_id` INTEGER NOT NULL, `mode` TEXT NOT NULL, `success` INTEGER NOT NULL, `hint_level` INTEGER NOT NULL, `lives_left` INTEGER, `time_ms` INTEGER NOT NULL, `at` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "puzzleId",
+            "columnName": "puzzle_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "success",
+            "columnName": "success",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hintLevel",
+            "columnName": "hint_level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "livesLeft",
+            "columnName": "lives_left",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "timeMs",
+            "columnName": "time_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "at",
+            "columnName": "at",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_puzzle_attempt_profile_id_puzzle_id",
+            "unique": false,
+            "columnNames": [
+              "profile_id",
+              "puzzle_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_puzzle_attempt_profile_id_puzzle_id` ON `${TABLE_NAME}` (`profile_id`, `puzzle_id`)"
+          },
+          {
+            "name": "index_puzzle_attempt_profile_id_at",
+            "unique": false,
+            "columnNames": [
+              "profile_id",
+              "at"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_puzzle_attempt_profile_id_at` ON `${TABLE_NAME}` (`profile_id`, `at`)"
+          }
+        ]
+      },
+      {
+        "tableName": "puzzle_progress",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`profile_id` INTEGER NOT NULL DEFAULT 1, `puzzle_id` INTEGER NOT NULL, `solved` INTEGER NOT NULL, `first_solved_at` INTEGER, `best_lives` INTEGER, `last_attempt_at` INTEGER, PRIMARY KEY(`profile_id`, `puzzle_id`))",
+        "fields": [
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "puzzleId",
+            "columnName": "puzzle_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "solved",
+            "columnName": "solved",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstSolvedAt",
+            "columnName": "first_solved_at",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "bestLives",
+            "columnName": "best_lives",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "lastAttemptAt",
+            "columnName": "last_attempt_at",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "profile_id",
+            "puzzle_id"
+          ]
+        }
+      },
+      {
+        "tableName": "daily_activity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`profile_id` INTEGER NOT NULL DEFAULT 1, `epoch_day` INTEGER NOT NULL, `games_counted` INTEGER NOT NULL DEFAULT 0, `puzzles` INTEGER NOT NULL DEFAULT 0, `reviews` INTEGER NOT NULL DEFAULT 0, `daily_puzzle_done` INTEGER NOT NULL DEFAULT 0, `daily_lives` INTEGER, `session_parts_done` INTEGER NOT NULL DEFAULT 0, `first_open_minute` INTEGER, PRIMARY KEY(`profile_id`, `epoch_day`))",
+        "fields": [
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "epochDay",
+            "columnName": "epoch_day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gamesCounted",
+            "columnName": "games_counted",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "puzzles",
+            "columnName": "puzzles",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "reviews",
+            "columnName": "reviews",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "dailyPuzzleDone",
+            "columnName": "daily_puzzle_done",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "dailyLives",
+            "columnName": "daily_lives",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "sessionPartsDone",
+            "columnName": "session_parts_done",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "firstOpenMinute",
+            "columnName": "first_open_minute",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "profile_id",
+            "epoch_day"
+          ]
+        }
+      },
+      {
+        "tableName": "streak_freeze",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `profile_id` INTEGER NOT NULL DEFAULT 1, `epoch_day_used` INTEGER NOT NULL, `source` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "epochDayUsed",
+            "columnName": "epoch_day_used",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_streak_freeze_profile_id_epoch_day_used",
+            "unique": true,
+            "columnNames": [
+              "profile_id",
+              "epoch_day_used"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_streak_freeze_profile_id_epoch_day_used` ON `${TABLE_NAME}` (`profile_id`, `epoch_day_used`)"
+          }
+        ]
+      },
+      {
+        "tableName": "player_state",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`profile_id` INTEGER NOT NULL, `puzzle_band` INTEGER NOT NULL DEFAULT 2, `band_ok_streak` INTEGER NOT NULL DEFAULT 0, `band_fail_streak` INTEGER NOT NULL DEFAULT 0, `skill_answer` INTEGER, `dda_last_prompt_game_id` INTEGER, `dda_declined_until_game` INTEGER, `title_id` INTEGER, `best_streak` INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(`profile_id`))",
+        "fields": [
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "puzzleBand",
+            "columnName": "puzzle_band",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "2"
+          },
+          {
+            "fieldPath": "bandOkStreak",
+            "columnName": "band_ok_streak",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "bandFailStreak",
+            "columnName": "band_fail_streak",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "skillAnswer",
+            "columnName": "skill_answer",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "ddaLastPromptGameId",
+            "columnName": "dda_last_prompt_game_id",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "ddaDeclinedUntilGame",
+            "columnName": "dda_declined_until_game",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "titleId",
+            "columnName": "title_id",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "bestStreak",
+            "columnName": "best_streak",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "profile_id"
+          ]
+        }
+      },
+      {
+        "tableName": "legacy_stats",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`profile_id` INTEGER NOT NULL DEFAULT 1, `key` TEXT NOT NULL, `value` TEXT NOT NULL, PRIMARY KEY(`profile_id`, `key`))",
+        "fields": [
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "key",
+            "columnName": "key",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "profile_id",
+            "key"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '746788ff74b07b9b59ed124a1f5db368')"
+    ]
+  }
+}

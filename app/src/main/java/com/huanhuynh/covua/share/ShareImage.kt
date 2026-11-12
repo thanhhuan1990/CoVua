@@ -151,8 +151,6 @@ object ShareImage {
         }
     }
 
-    private val SOLID = arrayOf("", "♚", "♛", "♜", "♝", "♞", "♟\uFE0E")
-    private val OUTLINE = arrayOf("", "♔", "♕", "♖", "♗", "♘", "♙")
     private val LETTER_VI = arrayOf("", "Vua", "Hậu", "Xe", "Tượng", "Mã", "Tốt")
     private val LETTER_ZH = arrayOf("", "王", "后", "车", "象", "马", "兵")
     private val LETTER_INTL = arrayOf("", "K", "Q", "R", "B", "N", "P")
@@ -161,21 +159,7 @@ object ShareImage {
         val white = v > 0
         val t = abs(v)
         if (style == PieceStyle.CLASSIC) {
-            glyph.textSize = cell * 0.86f
-            val fm = glyph.fontMetrics
-            val by = y - (fm.ascent + fm.descent) / 2f
-            glyph.style = Paint.Style.FILL
-            glyph.color = 0x40000000; cv.drawText(SOLID[t], x + cell * 0.02f, by + cell * 0.035f, glyph)
-            if (white) {
-                glyph.color = 0xFFFBF7EE.toInt(); cv.drawText(SOLID[t], x, by, glyph)
-                glyph.color = 0xFF202020.toInt(); cv.drawText(OUTLINE[t], x, by, glyph)
-            } else {
-                glyph.style = Paint.Style.STROKE; glyph.strokeWidth = cell * 0.035f; glyph.color = 0x99FFFFFF.toInt()
-                cv.drawText(SOLID[t], x, by, glyph)
-                glyph.style = Paint.Style.FILL; glyph.color = 0xFF1C1C1C.toInt()
-                cv.drawText(SOLID[t], x, by, glyph)
-            }
-            glyph.style = Paint.Style.FILL
+            com.huanhuynh.covua.ui.board.PieceArt.draw(cv, x, y, cell, v)
         } else {
             val r = cell * 0.43f
             val p = Paint(Paint.ANTI_ALIAS_FLAG)
