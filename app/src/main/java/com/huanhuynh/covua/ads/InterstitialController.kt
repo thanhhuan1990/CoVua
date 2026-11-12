@@ -104,6 +104,44 @@ class InterstitialController(
         FirebaseHelper.logEvent(app, "ad_interstitial_show")
     }
 
+    /** Có quảng cáo sẵn để hiện ngay không (nếu chưa thì bắt đầu tải). */
+    fun isReady(): Boolean = (ad != null).also { if (!it) preload() }
+
+    /**
+     * Hiện ngay, bỏ qua frequency cap – dùng cho cổng "thua ván Chỉ đánh cờ → xem 1 quảng cáo rồi vào ván mới"
+     * (điểm chuyển tự nhiên, người chơi đã được báo trước). [onDone] chạy khi đóng hoặc hiện lỗi.
+     * @return false nếu tắt quảng cáo / chưa có quảng cáo (khi đó không gọi [onDone]).
+     */
+    fun showRequired(activity: Activity, onDone: () -> Unit): Boolean {
+        if (!adsManager.isAdsEnabledNow() || adsManager.isShowingFullScreenAd) return false
+        val current = ad ?: run { preload(); return false }
+        current.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdShowedFullScreenContent() {
+                adsManager.isShowingFullScreenAd = true
+                adsManager.lastInterstitialShownAt = SystemClock.elapsedRealtime()
+            }
+
+            override fun onAdDismissedFullScreenContent() {
+                adsManager.isShowingFullScreenAd = false
+                ad = null
+                preload()
+                onDone()
+            }
+
+            override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                adsManager.isShowingFullScreenAd = false
+                ad = null
+                preload()
+                onDone()
+            }
+        }
+        actionCount = 0
+        shownToday.increment()
+        current.show(activity)
+        FirebaseHelper.logEvent(app, "ad_interstitial_loss_gate")
+        return true
+    }
+
     private fun canShow(requireActions: Boolean): Boolean {
         val now = SystemClock.elapsedRealtime()
         if (adsManager.isShowingFullScreenAd) return false

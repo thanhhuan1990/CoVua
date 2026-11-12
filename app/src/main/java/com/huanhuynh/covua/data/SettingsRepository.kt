@@ -72,6 +72,8 @@ data class AppSettings(
     val notifAuto: Boolean = false,
     /** Chỉ đánh cờ: tắt hết lời thầy, cảnh báo, gợi ý trong ván với máy (vẫn chấm điểm ngầm để xem phân tích sau ván). */
     val playOnly: Boolean = false,
+    /** Vừa thua một ván "Chỉ đánh cờ": phải xem 1 quảng cáo trước khi vào ván mới. */
+    val lossAdOwed: Boolean = false,
 ) {
     val hasSavedGame get() = savedGame.isNotEmpty()
 
@@ -127,6 +129,7 @@ class SettingsRepository(private val context: Context) {
         val NOTIF_MINUTE = intPreferencesKey("notif_minute")
         val NOTIF_AUTO = booleanPreferencesKey("notif_auto")
         val PLAY_ONLY = booleanPreferencesKey("play_only")
+        val LOSS_AD = booleanPreferencesKey("loss_ad_owed")
     }
 
     val settings: Flow<AppSettings> = context.dataStore.data.map { p ->
@@ -167,6 +170,7 @@ class SettingsRepository(private val context: Context) {
             notifMinute = p[K.NOTIF_MINUTE] ?: -1,
             notifAuto = p[K.NOTIF_AUTO] ?: false,
             playOnly = p[K.PLAY_ONLY] ?: false,
+            lossAdOwed = p[K.LOSS_AD] ?: false,
         )
     }
 
@@ -201,6 +205,7 @@ class SettingsRepository(private val context: Context) {
         it[K.NOTIF_ON] = on; it[K.NOTIF_MINUTE] = minute; it[K.NOTIF_AUTO] = auto
     }
     suspend fun setPlayOnly(v: Boolean) = context.dataStore.edit { it[K.PLAY_ONLY] = v }
+    suspend fun setLossAdOwed(v: Boolean) = context.dataStore.edit { it[K.LOSS_AD] = v }
     suspend fun setLevel(level: Int) = context.dataStore.edit { it[K.LEVEL] = level }
 
     // ---- Khoá phụ (trạng thái nội bộ, không hiện trong AppSettings) ----

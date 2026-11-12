@@ -688,8 +688,11 @@ class GameController(
         val candidates = reviews.map { PlayerMoveEval(it.ply, it.fenBefore, it.review.move, it.review.loss, it.okMoveCount, it.review.tags) } +
             retried.values.filter { r -> reviews.none { it.fenBefore == r.fenBefore && it.review.move == r.move } }
         scope.launch { afterGame(result, reason, acc, moves, candidates) }
+        val owesAd = result == -1 && _state.value.playOnly
         scope.launch {
             val before = settings.current()
+            // Thua ở chế độ "Chỉ đánh cờ" → ván mới cần xem 1 quảng cáo (ghi trước để không lách bằng cách thoát app)
+            if (owesAd) settings.setLossAdOwed(true)
             settings.recordGame(result, acc, level.id)
             val note = when {
                 result != 1 -> if (result == 0 && level.id >= 6) t("Cầm hoà máy cấp ${level.id} – ${level.title} là rất giỏi rồi!", "Drawing level ${level.id} – ${level.title} is a great result!", "和${level.id}级电脑（${level.title}）已经很厉害了！", "レベル${level.id}（${level.title}）と引き分けるのは素晴らしい結果です！") else null
