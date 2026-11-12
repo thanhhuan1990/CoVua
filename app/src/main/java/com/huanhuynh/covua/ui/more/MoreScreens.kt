@@ -170,6 +170,10 @@ fun SettingsScreen(container: AppContainer, settings: AppSettings, onBack: () ->
             }
             SectionTitle(t("Thầy kèm", "Coaching", "老师陪练", "先生のサポート"))
             CardBox {
+                SwitchRow(t("Chỉ đánh cờ với máy", "Just play the computer", "只和电脑下棋", "コンピュータと対局のみ"), t("Ván mới không có lời thầy, cảnh báo, gợi ý. Vẫn xem được phân tích sau ván.", "New games have no comments, warnings or hints. Analysis is still available afterwards.", "新对局没有点评、警告和提示，赛后仍可查看分析。", "新しい対局では解説・警告・ヒントなし。終局後の分析は見られます。"), settings.playOnly) { v ->
+                    scope.launch { repo.setPlayOnly(v) }
+                }
+                HorizontalDivider(color = Line)
                 Row(Modifier.fillMaxWidth().padding(vertical = 11.dp), verticalAlignment = Alignment.CenterVertically) {
                     Column(Modifier.weight(1f)) {
                         Text(t("Mức chi tiết", "Detail level", "详细程度", "解説の詳しさ"), fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Ink)

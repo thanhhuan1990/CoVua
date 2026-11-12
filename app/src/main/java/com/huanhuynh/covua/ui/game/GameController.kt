@@ -82,6 +82,8 @@ data class GameUiState(
     val warn: Boolean = true,
     val hintsOn: Boolean = true,
     val undoOn: Boolean = true,
+    /** Chỉ đánh cờ: không hiện thẻ thầy (lời thầy, cảnh báo, gợi ý, hộp thoại nước tốt hơn). */
+    val playOnly: Boolean = false,
     /** Số lần thay đổi bàn cờ – để Compose biết vẽ lại / chạy hoạt ảnh. */
     val version: Int = 0,
     /** Bên đi trước ở thế đầu (ván từ thế cờ có thể Đen đi trước). */
@@ -172,7 +174,7 @@ class GameController(
      */
     fun newGame(
         level: Level, humanSide: Int, explain: Boolean, warn: Boolean, hints: Boolean, undo: Boolean,
-        handicap: Handicap = Handicap.NONE, fromFen: String? = null,
+        handicap: Handicap = Handicap.NONE, fromFen: String? = null, playOnly: Boolean = false,
     ) {
         cancelJobs()
         app.reviews.cancelVerification()
@@ -187,9 +189,9 @@ class GameController(
             else -> GameMode.PRACTICE
         }
         _state.value = GameUiState(
-            humanSide = humanSide, level = level, explain = explain, warn = warn, hintsOn = hints, undoOn = undo,
+            humanSide = humanSide, level = level, explain = explain && !playOnly, warn = warn && !playOnly, hintsOn = hints && !playOnly, undoOn = undo, playOnly = playOnly,
             startSide = game.pos.side, handicap = if (fromFen != null) Handicap.NONE else handicap, mode = mode,
-            card = if (mode == GameMode.PRACTICE) CoachCard.YourTurn else CoachCard.Info(
+            card = if (mode == GameMode.PRACTICE || playOnly) CoachCard.YourTurn else CoachCard.Info(
                 if (mode == GameMode.HANDICAP) handicap.gameLabel else t("Chơi tiếp từ thế này", "Play on from here", "从这里继续下", "ここから続きを指す"),
                 if (mode == GameMode.HANDICAP) t("Thế đầu đã bớt quân nên thầy không gọi tên khai cuộc. Cứ đánh thoải mái nhé.", "Pieces have been removed, so openings won't be named. Enjoy the game.", "开局少了棋子，老师不点评开局名称。放心下吧。", "駒を減らした局面なので、定跡名は出しません。気軽に楽しみましょう。")
                 else t("Thầy vẫn kèm từng nước như ván thường.", "Your coach still comments on every move.", "老师照常点评每一步。", "先生は引き続き一手ごとに解説します。"),
@@ -203,16 +205,33 @@ class GameController(
         afterPositionChanged()
     }
 
+    /**
+     * Bật/tắt "Chỉ đánh cờ" giữa ván. Bật lại thầy → dùng các lựa chọn thầy kèm đã lưu
+     * (nếu đã tắt cả ba thì bật cả ba, vì người chơi vừa bấm "Bật thầy kèm").
+     */
+    fun setPlayOnly(on: Boolean, explain: Boolean, warn: Boolean, hints: Boolean) {
+        val any = explain || warn || hints
+        _state.update {
+            if (on) it.copy(playOnly = true, explain = false, warn = false, hintsOn = false, danger = emptyMap(), prompt = null,
+                arrows = emptyList(), card = CoachCard.YourTurn)
+            else it.copy(playOnly = false, explain = !any || explain, warn = !any || warn, hintsOn = !any || hints,
+                card = CoachCard.Info(t("Thầy kèm đã bật", "Coaching is on", "老师陪练已开启", "先生のサポートをオンにしました"),
+                    t("Từ nước tiếp theo thầy sẽ nhận xét, cảnh báo và gợi ý.", "From your next move your coach will comment, warn and give hints.", "从下一步起老师会点评、警告并提示。", "次の手から先生が解説・警告・ヒントを出します。")))
+        }
+        if (on) { pendingDanger = -1; if (hintStage != 0) hintStage = 0 }
+        else _state.value.selected.takeIf { it >= 0 }?.let { computeWarnings(it) }
+    }
+
     private val standardStart get() = game.startFen == Position.START_FEN
 
-    fun resume(serialized: String, level: Level, humanSide: Int, explain: Boolean, warn: Boolean, hints: Boolean, undo: Boolean): Boolean {
+    fun resume(serialized: String, level: Level, humanSide: Int, explain: Boolean, warn: Boolean, hints: Boolean, undo: Boolean, playOnly: Boolean = false): Boolean {
         val g = Game.deserialize(serialized) ?: return false
         cancelJobs()
         game = g
         gameId = 0
         reviews.clear(); evalCurve.clear(); retried.clear()
         _state.value = GameUiState(
-            humanSide = humanSide, level = level, explain = explain, warn = warn, hintsOn = hints, undoOn = undo,
+            humanSide = humanSide, level = level, explain = explain && !playOnly, warn = warn && !playOnly, hintsOn = hints && !playOnly, undoOn = undo, playOnly = playOnly,
             startSide = Position.fromFen(g.startFen).side,
             card = CoachCard.Info(t("Tiếp tục ván", "Resume game", "继续棋局", "対局を再開"), if (game.sideToMove == humanSide) t("Thầy đã sẵn sàng. Đến lượt bạn.", "Your coach is ready. Your turn.", "老师准备好了。轮到你。", "先生の準備ができました。あなたの番です。") else t("Thầy đã sẵn sàng. Máy đang đi.", "Your coach is ready. The computer is moving.", "老师准备好了。电脑正在走。", "先生の準備ができました。コンピュータが考えています。")),
         ).let(::withBoard)
@@ -221,7 +240,7 @@ class GameController(
     }
 
     /** Tiếp tục ván từ Room (có cả lời thầy từng nước). false → gọi [resume] với DataStore. */
-    fun resumeFrom(g: GameEntity, evals: List<com.huanhuynh.covua.data.db.MoveEvalEntity>, explain: Boolean, warn: Boolean, hints: Boolean, undo: Boolean): Boolean {
+    fun resumeFrom(g: GameEntity, evals: List<com.huanhuynh.covua.data.db.MoveEvalEntity>, explain: Boolean, warn: Boolean, hints: Boolean, undo: Boolean, playOnly: Boolean = false): Boolean {
         if (g.status != GameStatus.IN_PROGRESS) return false
         val restored = runCatching {
             Game(g.startFen).also { gm -> g.moveList().forEach { m -> check(gm.play(m)) } }
@@ -236,7 +255,7 @@ class GameController(
         }
         val h = Handicap.of(g.handicap)
         _state.value = GameUiState(
-            humanSide = g.playerSide, level = Level.of(g.level), explain = explain, warn = warn, hintsOn = hints, undoOn = undo,
+            humanSide = g.playerSide, level = Level.of(g.level), explain = explain && !playOnly, warn = warn && !playOnly, hintsOn = hints && !playOnly, undoOn = undo, playOnly = playOnly,
             startSide = Position.fromFen(g.startFen).side, handicap = h, mode = g.mode,
             card = CoachCard.Info(t("Tiếp tục ván", "Resume game", "继续棋局", "対局を再開"), if (game.sideToMove == g.playerSide) t("Thầy đã sẵn sàng. Đến lượt bạn.", "Your coach is ready. Your turn.", "老师准备好了。轮到你。", "先生の準備ができました。あなたの番です。") else t("Thầy đã sẵn sàng. Máy đang đi.", "Your coach is ready. The computer is moving.", "老师准备好了。电脑正在走。", "先生の準備ができました。コンピュータが考えています。")),
         ).let(::withBoard)

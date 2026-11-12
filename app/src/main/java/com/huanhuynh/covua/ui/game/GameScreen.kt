@@ -225,6 +225,15 @@ fun GameScreen(
                     text = { Text(t("Xin hoà", "Offer draw", "提和", "引き分けを提案")) }, enabled = ctrl.canOfferDraw(),
                     onClick = { menu = false; ctrl.offerDraw() },
                 )
+                if (st.outcome == Outcome.NONE) DropdownMenuItem(
+                    text = { Text(if (st.playOnly) t("🎓 Bật thầy kèm", "🎓 Turn coaching on", "🎓 开启老师陪练", "🎓 先生のサポートをオン") else t("Chỉ đánh cờ (tắt thầy kèm)", "Just play (coaching off)", "只下棋（关闭老师）", "対局のみ（先生オフ）")) },
+                    onClick = {
+                        menu = false
+                        val on = !st.playOnly
+                        ctrl.setPlayOnly(on, settings.coachExplain, settings.coachWarn, settings.coachHint)
+                        scope.launch { container.settings.setPlayOnly(on) }
+                    },
+                )
                 if (st.outcome == Outcome.NONE) DropdownMenuItem(text = { Text(t("Xin thua", "Resign", "认输", "投了")) }, onClick = { menu = false; confirmResign = true })
                 if (st.outcome != Outcome.NONE) DropdownMenuItem(text = { Text(t("Phân tích ván", "Game analysis", "棋局分析", "対局の分析")) }, onClick = { menu = false; onAnalysis() })
             }
@@ -250,13 +259,33 @@ fun GameScreen(
         MovesStrip(st.codes)
         Spacer(Modifier.weight(1f))
 
-        // Thẻ thầy
+        // Thẻ thầy (chỉ đánh cờ: khung gọn, không lời thầy)
+        val compact = st.playOnly && st.outcome == Outcome.NONE
         Column(
             Modifier.padding(10.dp).fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Color.White)
                 .border(1.dp, Line, RoundedCornerShape(20.dp)).padding(horizontal = 14.dp, vertical = 12.dp)
-                .heightIn(min = 120.dp),
+                .heightIn(min = if (compact) 0.dp else 120.dp),
         ) {
-            if (st.outcome != Outcome.NONE) {
+            if (compact) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        when {
+                            st.aiThinking -> t("Máy đang nghĩ…", "Computer is thinking…", "电脑思考中…", "コンピュータが考え中…")
+                            st.humanToMove && st.checkSquare >= 0 -> t("Chiếu! Đến lượt bạn", "Check! Your move", "将军！轮到你", "チェック！あなたの番")
+                            st.humanToMove -> t("Đến lượt bạn", "Your move", "轮到你", "あなたの番")
+                            else -> ""
+                        },
+                        fontWeight = FontWeight.Bold, fontSize = 15.sp, color = if (st.humanToMove && st.checkSquare >= 0) Red else Ink,
+                        modifier = Modifier.weight(1f),
+                    )
+                    if (st.undoOn) {
+                        val label = if (st.undoUnlimited || st.undosLeft > 0) t("↶ Đi lại", "↶ Take back", "↶ 悔棋", "↶ 待った") else t("↶ Đi lại (xem QC)", "↶ Take back (ad)", "↶ 悔棋（看广告）", "↶ 待った（広告）")
+                        PillButton(label, primary = false, enabled = ctrl.canUndo() || (!st.undoUnlimited && st.undosLeft <= 0 && st.codes.isNotEmpty())) {
+                            if (!st.undoUnlimited && st.undosLeft <= 0) rewardedThen { ctrl.addUndos(3); ctrl.undo() } else ctrl.undo()
+                        }
+                    }
+                }
+            } else if (st.outcome != Outcome.NONE) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     TeacherAvatar()
                     Spacer(Modifier.width(10.dp))

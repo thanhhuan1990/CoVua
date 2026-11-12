@@ -194,9 +194,9 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
         })
     }
 
-    fun startNewGame(nav: NavHostController, level: Level, sideChoice: Int, explain: Boolean, warn: Boolean, hint: Boolean, undo: Boolean, handicap: Handicap = Handicap.NONE, fromFen: String? = null) {
+    fun startNewGame(nav: NavHostController, level: Level, sideChoice: Int, explain: Boolean, warn: Boolean, hint: Boolean, undo: Boolean, handicap: Handicap = Handicap.NONE, fromFen: String? = null, playOnly: Boolean = false) {
         val side = if (sideChoice == 0) (if (Random.nextBoolean()) 1 else -1) else sideChoice
-        container.game.newGame(level, side, explain, warn, hint, undo, handicap, fromFen)
+        container.game.newGame(level, side, explain, warn, hint, undo, handicap, fromFen, playOnly)
         if (fromFen != null) container.events.log(Ev.PLAY_FROM_POSITION)
         nav.navigate("game") { popUpTo("home") }
     }
@@ -216,7 +216,7 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
             ReminderScheduler.DEST_REVIEW -> nav.navigate("review")
             ReminderScheduler.DEST_GAME -> {
                 val g = container.archive.inProgress()
-                val ok = container.game.hasGame || (g != null && container.game.resumeFrom(g, container.archive.evals(g.id), settings.coachExplain, settings.coachWarn, settings.coachHint, settings.allowUndo))
+                val ok = container.game.hasGame || (g != null && container.game.resumeFrom(g, container.archive.evals(g.id), settings.coachExplain, settings.coachWarn, settings.coachHint, settings.allowUndo, settings.playOnly))
                 if (ok) nav.navigate("game") else nav.navigate("daily/notif")
             }
             else -> nav.navigate("daily/notif")
@@ -307,10 +307,10 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
                         container.migrated.await()
                         val g = runCatching { container.archive.inProgress() }.getOrNull()
                         val ok = container.game.hasGame ||
-                            (g != null && container.game.resumeFrom(g, runCatching { container.archive.evals(g.id) }.getOrDefault(emptyList()), settings.coachExplain, settings.coachWarn, settings.coachHint, settings.allowUndo)) ||
+                            (g != null && container.game.resumeFrom(g, runCatching { container.archive.evals(g.id) }.getOrDefault(emptyList()), settings.coachExplain, settings.coachWarn, settings.coachHint, settings.allowUndo, settings.playOnly)) ||
                             container.game.resume(
                                 settings.savedGame, Level.of(settings.savedLevel), settings.savedHumanSide,
-                                settings.coachExplain, settings.coachWarn, settings.coachHint, settings.allowUndo,
+                                settings.coachExplain, settings.coachWarn, settings.coachHint, settings.allowUndo, settings.playOnly,
                             )
                         if (ok) nav.navigate("game")
                     }
@@ -329,12 +329,13 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
                 container.appScope.launch {
                     container.settings.setNewGamePrefs(c.level.id, c.side, c.explain, c.warn, c.hint, c.undo)
                     container.settings.setHandicap(c.handicap.id)
+                    container.settings.setPlayOnly(c.playOnly)
                 }
                 // Điểm chuyển màn tự nhiên (trước khi ván bắt đầu) – InterstitialController tự áp giới hạn tần suất
                 if (FirebaseHelper.getLong(context, RcKeys.INTERSTITIAL_ON_NEW_GAME) != 0L && settings.games >= 1) {
                     context.findActivity()?.let { container.interstitial.onTransition(it) }
                 }
-                startNewGame(nav, c.level, c.side, c.explain, c.warn, c.hint, c.undo, c.handicap)
+                startNewGame(nav, c.level, c.side, c.explain, c.warn, c.hint, c.undo, c.handicap, playOnly = c.playOnly)
             }
         }
         composable("new/fen") {
@@ -342,8 +343,8 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
             if (f == null) LaunchedEffect(Unit) { nav.popBackStack() } else NewGameScreen(
                 settings, onBack = { nav.popBackStack() }, handicapEnabled = false, fromFen = f.first, presetSide = f.second,
             ) { c ->
-                container.appScope.launch { container.settings.setNewGamePrefs(c.level.id, settings.sideChoice, c.explain, c.warn, c.hint, c.undo) }
-                startNewGame(nav, c.level, c.side, c.explain, c.warn, c.hint, c.undo, fromFen = f.first)
+                container.appScope.launch { container.settings.setNewGamePrefs(c.level.id, settings.sideChoice, c.explain, c.warn, c.hint, c.undo); container.settings.setPlayOnly(c.playOnly) }
+                startNewGame(nav, c.level, c.side, c.explain, c.warn, c.hint, c.undo, fromFen = f.first, playOnly = c.playOnly)
             }
         }
         composable("game") {
@@ -355,7 +356,12 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
                 onOpenReview = { nav.navigate("progress") },
                 onStartWith = { o ->
                     val st = container.game.state.value
-                    startNewGame(nav, Level.of(o.level), st.humanSide, st.explain, st.warn, st.hintsOn || o.enableHints, st.undoOn, o.handicap)
+                    if (st.playOnly) {
+                        // Giữ "Chỉ đánh cờ" cho ván sau, trừ khi người chơi chọn "Bật gợi ý" (khi đó bật lại thầy kèm)
+                        val keep = !o.enableHints
+                        if (!keep) container.appScope.launch { container.settings.setPlayOnly(false) }
+                        startNewGame(nav, Level.of(o.level), st.humanSide, settings.coachExplain, settings.coachWarn, settings.coachHint || o.enableHints, st.undoOn, o.handicap, playOnly = keep)
+                    } else startNewGame(nav, Level.of(o.level), st.humanSide, st.explain, st.warn, st.hintsOn || o.enableHints, st.undoOn, o.handicap)
                 },
             )
         }

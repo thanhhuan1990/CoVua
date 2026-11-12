@@ -45,7 +45,7 @@ import com.huanhuynh.covua.ui.theme.Muted
 import com.huanhuynh.covua.ui.theme.Paper
 import com.huanhuynh.covua.ui.theme.Red
 
-data class NewGameChoice(val level: Level, val side: Int, val explain: Boolean, val warn: Boolean, val hint: Boolean, val undo: Boolean, val handicap: Handicap = Handicap.NONE)
+data class NewGameChoice(val level: Level, val side: Int, val explain: Boolean, val warn: Boolean, val hint: Boolean, val undo: Boolean, val handicap: Handicap = Handicap.NONE, val playOnly: Boolean = false)
 
 @Composable
 fun NewGameScreen(settings: AppSettings, onBack: () -> Unit, handicapEnabled: Boolean = true, fromFen: String? = null, presetSide: Int? = null, onStart: (NewGameChoice) -> Unit) {
@@ -56,6 +56,7 @@ fun NewGameScreen(settings: AppSettings, onBack: () -> Unit, handicapEnabled: Bo
     var warn by remember { mutableStateOf(settings.coachWarn) }
     var hint by remember { mutableStateOf(settings.coachHint) }
     var undo by remember { mutableStateOf(settings.allowUndo) }
+    var playOnly by remember { mutableStateOf(settings.playOnly) }
     val lv = Level.of(level)
 
     Column(Modifier.fillMaxSize().background(Paper).navigationBarsPadding()) {
@@ -66,7 +67,7 @@ fun NewGameScreen(settings: AppSettings, onBack: () -> Unit, handicapEnabled: Bo
                 androidx.compose.foundation.layout.Box(Modifier.fillMaxWidth(0.6f).align(Alignment.CenterHorizontally).padding(top = 6.dp)) {
                     com.huanhuynh.covua.ui.board.BoardView(board = pos.board, flipped = settings.flipWhenBlack && side < 0, style = settings.pieceStyle)
                 }
-                Text(if (pos.side > 0) t("Trắng đi trước. Thầy vẫn kèm từng nước; ván này không tính vào gợi ý cấp.", "White moves first. Your coach still comments on every move; this game doesn't affect level suggestions.", "白方先走。老师照常点评；本局不计入等级建议。", "白が先手です。先生はいつも通り一手ごとに解説します。この対局はレベル提案に含まれません。") else t("Đen đi trước. Thầy vẫn kèm từng nước; ván này không tính vào gợi ý cấp.", "Black moves first. Your coach still comments on every move; this game doesn't affect level suggestions.", "黑方先走。老师照常点评；本局不计入等级建议。", "黒が先手です。先生はいつも通り一手ごとに解説します。この対局はレベル提案に含まれません。"), fontSize = 12.5.sp, color = Muted, modifier = Modifier.padding(top = 6.dp))
+                Text(if (playOnly) (if (pos.side > 0) t("Trắng đi trước. Ván này không tính vào gợi ý cấp.", "White moves first. This game doesn't affect level suggestions.", "白方先走。本局不计入等级建议。", "白が先手です。この対局はレベル提案に含まれません。") else t("Đen đi trước. Ván này không tính vào gợi ý cấp.", "Black moves first. This game doesn't affect level suggestions.", "黑方先走。本局不计入等级建议。", "黒が先手です。この対局はレベル提案に含まれません。")) else if (pos.side > 0) t("Trắng đi trước. Thầy vẫn kèm từng nước; ván này không tính vào gợi ý cấp.", "White moves first. Your coach still comments on every move; this game doesn't affect level suggestions.", "白方先走。老师照常点评；本局不计入等级建议。", "白が先手です。先生はいつも通り一手ごとに解説します。この対局はレベル提案に含まれません。") else t("Đen đi trước. Thầy vẫn kèm từng nước; ván này không tính vào gợi ý cấp.", "Black moves first. Your coach still comments on every move; this game doesn't affect level suggestions.", "黑方先走。老师照常点评；本局不计入等级建议。", "黒が先手です。先生はいつも通り一手ごとに解説します。この対局はレベル提案に含まれません。"), fontSize = 12.5.sp, color = Muted, modifier = Modifier.padding(top = 6.dp))
             }
             SectionTitle(t("Cấp độ máy", "Computer level", "电脑等级", "コンピュータのレベル"))
             for (rowStart in listOf(1, 5)) {
@@ -119,15 +120,26 @@ fun NewGameScreen(settings: AppSettings, onBack: () -> Unit, handicapEnabled: Bo
             }
 
             SectionTitle(t("Thầy kèm", "Coaching", "老师陪练", "先生のサポート"))
+            Segmented(
+                listOf(t("Có thầy kèm", "With coach", "老师陪练", "先生あり"), t("Chỉ đánh cờ", "Just play", "只下棋", "対局のみ")),
+                if (playOnly) 1 else 0, Modifier.fillMaxWidth(),
+            ) { playOnly = it == 1 }
+            Text(
+                if (playOnly) t("Không có lời thầy, cảnh báo hay gợi ý trong ván – chỉ bạn và máy. Sau ván vẫn xem được phân tích. Bật lại thầy giữa ván ở menu ⋮.", "No comments, warnings or hints during the game – just you and the computer. You can still see the analysis afterwards. Turn coaching back on from the ⋮ menu.", "对局中没有点评、警告和提示——只有你和电脑。赛后仍可查看分析。可在 ⋮ 菜单中随时重新开启老师。", "対局中は解説・警告・ヒントなし – あなたとコンピュータだけ。終局後の分析は見られます。⋮ メニューからいつでも先生をオンにできます。")
+                else t("Thầy nhận xét từng nước, cảnh báo nước mất quân và gợi ý khi bạn cần.", "Your coach comments on every move, warns before you hang a piece and gives hints when you need them.", "老师点评每一步，丢子前提醒，需要时给提示。", "先生が一手ごとに解説し、駒損の前に警告し、必要なときにヒントを出します。"),
+                fontSize = 12.5.sp, color = Muted, modifier = Modifier.padding(top = 6.dp, bottom = 8.dp),
+            )
             CardBox {
-                SwitchRow(t("Giải thích sau mỗi nước", "Explain after each move", "每步讲解", "一手ごとに解説"), t("Hay / chưa chính xác / sai lầm – kèm lý do và nước tốt hơn", "Good / inaccurate / mistake – with reasons and better moves", "好棋/欠准确/失误——附原因和更好着法", "良い手・緩手・悪手 – 理由とより良い手つき"), explain) { explain = it }
-                SwitchRow(t("Cảnh báo trước khi đi", "Warn before moving", "走前警告", "着手前に警告"), t("Tô đỏ ô đi vào sẽ mất quân", "Squares where you'd lose a piece turn red", "会丢子的格子标红", "駒を取られるマスを赤く表示"), warn) { warn = it }
-                SwitchRow(t("Gợi ý nước đi", "Move hints", "着法提示", "着手のヒント"), t("Không giới hạn · cứ vài lần sẽ mời xem 1 quảng cáo ngắn (có thể từ chối)", "Unlimited · every few hints you're offered a short ad (you can decline)", "不限次数 · 每隔几次会请你看一段短广告（可拒绝）", "回数無制限 · 数回ごとに短い広告のお誘い（断れます）"), hint) { hint = it }
+                if (!playOnly) {
+                    SwitchRow(t("Giải thích sau mỗi nước", "Explain after each move", "每步讲解", "一手ごとに解説"), t("Hay / chưa chính xác / sai lầm – kèm lý do và nước tốt hơn", "Good / inaccurate / mistake – with reasons and better moves", "好棋/欠准确/失误——附原因和更好着法", "良い手・緩手・悪手 – 理由とより良い手つき"), explain) { explain = it }
+                    SwitchRow(t("Cảnh báo trước khi đi", "Warn before moving", "走前警告", "着手前に警告"), t("Tô đỏ ô đi vào sẽ mất quân", "Squares where you'd lose a piece turn red", "会丢子的格子标红", "駒を取られるマスを赤く表示"), warn) { warn = it }
+                    SwitchRow(t("Gợi ý nước đi", "Move hints", "着法提示", "着手のヒント"), t("Không giới hạn · cứ vài lần sẽ mời xem 1 quảng cáo ngắn (có thể từ chối)", "Unlimited · every few hints you're offered a short ad (you can decline)", "不限次数 · 每隔几次会请你看一段短广告（可拒绝）", "回数無制限 · 数回ごとに短い広告のお誘い（断れます）"), hint) { hint = it }
+                }
                 SwitchRow(t("Cho phép đi lại", "Allow takebacks", "允许悔棋", "待ったを許可"), if (level <= 4) t("Không giới hạn ở cấp 1–4", "Unlimited at levels 1–4", "1–4级不限次数", "レベル1〜4は無制限") else t("3 lần mỗi ván ở cấp 5+, xem quảng cáo để thêm", "3 per game at level 5+, watch an ad for more", "5级以上每盘3次，看广告可增加", "レベル5以上は1局3回、広告で追加"), undo, last = true) { undo = it }
             }
         }
         PillButton(if (fromFen != null) t("Chơi tiếp với máy", "Play vs computer", "和电脑继续下", "コンピュータと対局") else t("Bắt đầu ván", "Start game", "开始对局", "対局開始"), modifier = Modifier.fillMaxWidth().padding(16.dp)) {
-            onStart(NewGameChoice(lv, side, explain, warn, hint, undo, if (handicapEnabled && fromFen == null) handicap else Handicap.NONE))
+            onStart(NewGameChoice(lv, side, explain, warn, hint, undo, if (handicapEnabled && fromFen == null) handicap else Handicap.NONE, playOnly))
         }
     }
 }
