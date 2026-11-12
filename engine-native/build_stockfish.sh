@@ -35,7 +35,7 @@ mkdir -p "$WORK" "$JNI"
 cd "$WORK"
 SRC="$WORK/Stockfish-$SF_TAG/src"
 if [[ ! -d "$SRC" ]]; then
-  echo "Tải mã nguồn Stockfish $SF_TAG…"
+  echo "Tải mã nguồn Stockfish ${SF_TAG}…"
   curl -fL --retry 3 -o "stockfish-$SF_TAG.tar.gz" "https://github.com/official-stockfish/Stockfish/archive/refs/tags/$SF_TAG.tar.gz"
   tar xzf "stockfish-$SF_TAG.tar.gz"
 fi
