@@ -7,6 +7,10 @@ Package: `com.huanhuynh.covua` · Danh mục: **Game → Board** · Ngôn ngữ 
 | Tên (≤30) | Cờ Vua Có Thầy – Học & chơi | Chess Coach – Learn & Play | 国际象棋老师 – 学棋与对弈 | チェス先生 – 学んで指せるチェス |
 | Mô tả ngắn (≤80) | Chơi cờ vua với máy, thầy chấm và giải thích từng nước. Bài chiếu hết mỗi ngày | Play chess vs the computer with a coach who explains every move | 与电脑下国际象棋，老师逐步点评讲解。每日杀棋题 | コンピュータとチェス。一手ごとに先生が解説。毎日のメイト問題 |
 
+## Tags gợi ý (tối đa 5)
+Board (Cờ bàn) · Chess · Strategy · Puzzle · Offline. Dự phòng: Educational (Giáo dục – hợp với thầy kèm, Sổ tay & Buổi tập), Brain games.
+Chọn ở Play Console → Store presence → Store settings → App tags (chọn từ danh sách của Google, không gõ tự do).
+
 ## Mô tả đầy đủ (vi-VN)
 ```
 Cờ Vua Có Thầy – học cờ vua với máy, có "thầy" kèm từng nước.
