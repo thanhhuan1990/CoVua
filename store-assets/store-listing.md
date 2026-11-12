@@ -33,4 +33,9 @@ Tiếng Việt, English, 中文, 日本語. Engine: Stockfish (GPL v3). Miễn p
 ```
 
 ## Ảnh store
-- `icon-512.png` (icon 512×512). Feature graphic + ảnh màn hình: chưa làm.
+- `icon-512.png` – icon 512×512 (Vua vàng kim, nền xanh hoàng gia).
+- `covua-feature-graphic-<lang>-1024x500.png` – feature graphic cho từng ngôn ngữ (vi, en, zh, ja).
+- `screenshots/<lang>/covua-<lang>-01..06-*.png` – 6 ảnh điện thoại 1080×1920 mỗi ngôn ngữ, theo thứ tự:
+  1. Thầy kèm từng nước · 2. Cảnh báo trước khi đi · 3. Mỗi ngày thầy giao bài · 4. 600 bài chiếu hết · 5. Sổ tay sai lầm · 6. Phân tích sau mỗi ván
+- Dựng lại: `python3 store-assets/source/build_assets.py` (cần Playwright + Chromium, hoặc đặt `CHROME=`). Quân cờ lấy từ `tools/pieces/gen.py`.
+- Thế cờ trong ảnh là thế thật: bẫy Blackburne–Shilling (khai cuộc Ý, 4.Nxe5? Qg5!), 4.c3 Nf6 rồi Bxf7+?, bài 209 (Nc6+ bxc6 Qc7#).
