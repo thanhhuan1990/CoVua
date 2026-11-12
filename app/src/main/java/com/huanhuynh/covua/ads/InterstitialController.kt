@@ -108,8 +108,8 @@ class InterstitialController(
     fun isReady(): Boolean = (ad != null).also { if (!it) preload() }
 
     /**
-     * Hiện ngay, bỏ qua frequency cap – dùng cho cổng "thua ván Chỉ đánh cờ → xem 1 quảng cáo rồi vào ván mới"
-     * (điểm chuyển tự nhiên, người chơi đã được báo trước). [onDone] chạy khi đóng hoặc hiện lỗi.
+     * Hiện ngay, bỏ qua frequency cap – dùng khi bấm "Ván mới" sau ván thua ở chế độ Chỉ đánh cờ
+     * (điểm chuyển tự nhiên). [onDone] chạy khi đóng hoặc hiện lỗi.
      * @return false nếu tắt quảng cáo / chưa có quảng cáo (khi đó không gọi [onDone]).
      */
     fun showRequired(activity: Activity, onDone: () -> Unit): Boolean {

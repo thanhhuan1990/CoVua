@@ -194,7 +194,7 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
         })
     }
 
-    /** Bắt đầu ván ngay (đã qua cổng quảng cáo). Tách riêng vì lambda của cổng giữ [settings] cũ (lossAdOwed vẫn = true). */
+    /** Tạo ván mới và mở màn chơi. */
     fun startGameNow(nav: NavHostController, level: Level, sideChoice: Int, explain: Boolean, warn: Boolean, hint: Boolean, undo: Boolean, handicap: Handicap, fromFen: String?, playOnly: Boolean) {
         val side = if (sideChoice == 0) (if (Random.nextBoolean()) 1 else -1) else sideChoice
         container.game.newGame(level, side, explain, warn, hint, undo, handicap, fromFen, playOnly)
@@ -202,54 +202,20 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
         nav.navigate("game") { popUpTo("home") }
     }
 
-    // ---- Cổng quảng cáo sau ván thua ở chế độ "Chỉ đánh cờ" ----
-    var lossGate by remember { mutableStateOf<(() -> Unit)?>(null) }
-    var lossGateLoading by remember { mutableStateOf(false) }
-    fun passLossGate(next: () -> Unit) {
-        val a = context.findActivity()
-        lossGateLoading = true
-        scope.launch {
-            // Chờ quảng cáo tải tối đa ~8 giây; mạng lỗi / không có quảng cáo thì cho vào luôn, không bắt kẹt người chơi
-            var shown = false
-            val deadline = SystemClock.elapsedRealtime() + 8_000
-            while (a != null && !shown && SystemClock.elapsedRealtime() < deadline && container.adsManager.isAdsEnabledNow()) {
-                shown = container.interstitial.showRequired(a) {
-                    scope.launch { container.settings.setLossAdOwed(false); lossGateLoading = false; lossGate = null; next() }
-                }
-                if (!shown) kotlinx.coroutines.delay(400)
-            }
-            if (!shown) { container.settings.setLossAdOwed(false); lossGateLoading = false; lossGate = null; next() }
-        }
-    }
-    lossGate?.let { next ->
-        AlertDialog(
-            onDismissRequest = { if (!lossGateLoading) lossGate = null },
-            title = { Text(t("Thua ván rồi!", "You lost this one!", "这盘输了！", "負けてしまいました！")) },
-            text = {
-                Text(
-                    if (lossGateLoading) t("Đang tải quảng cáo…", "Loading the ad…", "正在加载广告…", "広告を読み込み中…")
-                    else t("Ở chế độ Chỉ đánh cờ, sau ván thua bạn xem 1 quảng cáo ngắn rồi vào ván mới. Thắng hoặc hoà thì không cần.",
-                        "In Just play mode, after a loss you watch one short ad before the next game. No ad after a win or draw.",
-                        "在“只下棋”模式下，输棋后需看一段短广告才能开始新对局。赢棋或和棋则不需要。",
-                        "「対局のみ」モードでは、負けた後に短い広告を1本見てから次の対局に進みます。勝ち・引き分けなら不要です。"),
-                )
-            },
-            confirmButton = {
-                TextButton(enabled = !lossGateLoading, onClick = { passLossGate(next) }) {
-                    Text(t("Xem quảng cáo", "Watch ad", "看广告", "広告を見る"), color = Red, fontWeight = FontWeight.Bold)
-                }
-            },
-            dismissButton = { if (!lossGateLoading) TextButton(onClick = { lossGate = null }) { Text(t("Để sau", "Later", "以后再说", "あとで")) } },
-        )
+    // ---- Thua ván "Chỉ đánh cờ" → lần bấm "Ván mới" kế tiếp hiện 1 quảng cáo (không hỏi, không chặn) ----
+    fun onNewGamePressed(go: () -> Unit) {
+        val owed = settings.lossAdOwed
+        go()
+        if (!owed) return
+        scope.launch { container.settings.setLossAdOwed(false) }
+        if (settings.adsRemoved) return
+        // Có sẵn thì hiện đè lên màn Ván mới; chưa tải xong thì bỏ qua lần này
+        context.findActivity()?.let { a -> if (container.interstitial.isReady()) container.interstitial.showRequired(a) {} }
     }
 
     fun startNewGame(nav: NavHostController, level: Level, sideChoice: Int, explain: Boolean, warn: Boolean, hint: Boolean, undo: Boolean, handicap: Handicap = Handicap.NONE, fromFen: String? = null, playOnly: Boolean = false) {
-        if (settings.lossAdOwed && !settings.adsRemoved && container.adsManager.isAdsEnabledNow()) {
-            container.interstitial.isReady() // bắt đầu tải sẵn trong lúc người chơi đọc hộp thoại
-            lossGate = { startGameNow(nav, level, sideChoice, explain, warn, hint, undo, handicap, fromFen, playOnly) }
-            return
-        }
-        if (settings.lossAdOwed) scope.launch { container.settings.setLossAdOwed(false) } // đã gỡ / không được hiện quảng cáo
+        // Vào ván bằng đường khác (gợi ý cấp, chơi tiếp từ thế cờ) → bỏ "nợ" để quảng cáo không hiện lệch về sau
+        if (settings.lossAdOwed) scope.launch { container.settings.setLossAdOwed(false) }
         startGameNow(nav, level, sideChoice, explain, warn, hint, undo, handicap, fromFen, playOnly)
     }
 
@@ -368,7 +334,7 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
                         if (ok) nav.navigate("game")
                     }
                 },
-                onNewGame = { withSkill { nav.navigate("new") } },
+                onNewGame = { withSkill { onNewGamePressed { nav.navigate("new") } } },
                 onPuzzles = { nav.navigate("puzzles") },
                 onDailyPuzzle = { scope.launch { container.daily.dailyPuzzleId()?.let { nav.navigate("puzzle/${it.first}") } } },
                 onDailySession = { withSkill { nav.navigate("daily/home") } },
@@ -385,7 +351,7 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
                     container.settings.setPlayOnly(c.playOnly)
                 }
                 // Điểm chuyển màn tự nhiên (trước khi ván bắt đầu) – InterstitialController tự áp giới hạn tần suất
-                if (FirebaseHelper.getLong(context, RcKeys.INTERSTITIAL_ON_NEW_GAME) != 0L && settings.games >= 1 && !settings.lossAdOwed) {
+                if (FirebaseHelper.getLong(context, RcKeys.INTERSTITIAL_ON_NEW_GAME) != 0L && settings.games >= 1) {
                     context.findActivity()?.let { container.interstitial.onTransition(it) }
                 }
                 startNewGame(nav, c.level, c.side, c.explain, c.warn, c.hint, c.undo, c.handicap, playOnly = c.playOnly)
@@ -405,7 +371,7 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
                 container, settings,
                 onBack = { nav.popBackStack() },
                 onAnalysis = { nav.navigate("analysis") },
-                onNewGame = { nav.navigate("new") },
+                onNewGame = { onNewGamePressed { nav.navigate("new") } },
                 onOpenReview = { nav.navigate("progress") },
                 onStartWith = { o ->
                     val st = container.game.state.value

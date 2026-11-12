@@ -689,9 +689,10 @@ class GameController(
             retried.values.filter { r -> reviews.none { it.fenBefore == r.fenBefore && it.review.move == r.move } }
         scope.launch { afterGame(result, reason, acc, moves, candidates) }
         val owesAd = result == -1 && _state.value.playOnly
+        if (owesAd) app.interstitial.preload() // tải sẵn để hiện ngay khi bấm "Ván mới"
         scope.launch {
             val before = settings.current()
-            // Thua ở chế độ "Chỉ đánh cờ" → ván mới cần xem 1 quảng cáo (ghi trước để không lách bằng cách thoát app)
+            // Thua ở chế độ "Chỉ đánh cờ" → lần bấm "Ván mới" kế tiếp hiện 1 quảng cáo
             if (owesAd) settings.setLossAdOwed(true)
             settings.recordGame(result, acc, level.id)
             val note = when {
