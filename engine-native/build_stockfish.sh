@@ -55,13 +55,13 @@ for ABI in $ABIS; do
     x86)         CXX="$BIN/i686-linux-android$API-clang++";      FLAGS="" ;;
     *) echo "ABI lạ: $ABI"; exit 1 ;;
   esac
-  OUT="$WORK/out-$ABI"; mkdir -p "$OUT"
+  OUT="$WORK/out-$ABI"; rm -rf "$OUT"; mkdir -p "$OUT"   # xoá .o cũ để lần lỗi trước không bị tính là đã build
   # Biên dịch song song từng file rồi liên kết
   objs=()
   for f in $SOURCES; do
     o="$OUT/$(basename "${f%.cpp}").o"
     objs+=("$o")
-    "$CXX" -std=c++17 -O3 -DNDEBUG -fPIE $FLAGS -Wno-deprecated-declarations -c "$f" -o "$o" &
+    "$CXX" -std=c++11 -O3 -DNDEBUG -fPIE $FLAGS -Wno-deprecated-declarations -c "$f" -o "$o" &
     while (( $(jobs -r | wc -l) >= JOBS )); do sleep 0.2; done
   done
   wait
