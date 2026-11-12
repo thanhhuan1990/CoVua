@@ -5,7 +5,35 @@ Package: `com.huanhuynh.covua` · Danh mục: **Game → Board** · Ngôn ngữ 
 | | vi-VN | en-US | zh-CN | ja-JP |
 |---|---|---|---|---|
 | Tên (≤30) | Cờ Vua Có Thầy – Học & chơi | Chess Coach – Learn & Play | 国际象棋老师 – 学棋与对弈 | チェス先生 – 学んで指せるチェス |
-| Mô tả ngắn (≤80) | Chơi cờ vua với máy, thầy chấm và giải thích từng nước. Bài chiếu hết mỗi ngày | Play chess vs the computer with a coach who explains every move | 与电脑下国际象棋，老师逐步点评讲解。每日杀棋题 | コンピュータとチェス。一手ごとに先生が解説。毎日のメイト問題 |
+| Mô tả ngắn (≤80) | Chơi cờ vua với máy, thầy chấm và giải thích từng nước. 600 bài chiếu hết | Play chess vs the computer with a coach who explains every move. 600 puzzles | 与电脑下国际象棋，老师逐步点评讲解。600道杀棋题，每日一题。 | コンピュータとチェス。一手ごとに先生が解説。メイト問題600問、毎日の新問題 |
+
+## Tên ứng dụng (≤ 30 ký tự)
+- vi-VN: `Cờ Vua Có Thầy – Học & chơi` (27 ký tự)
+- en-US: `Chess Coach – Learn & Play` (26 ký tự)
+- zh-CN: `国际象棋老师 – 学棋与对弈` (14 ký tự)
+- ja-JP: `チェス先生 – 学んで指せるチェス` (17 ký tự)
+
+## Mô tả ngắn (≤ 80 ký tự)
+- vi-VN:
+```
+Chơi cờ vua với máy, thầy chấm và giải thích từng nước. 600 bài chiếu hết
+```
+(73 ký tự)
+- en-US:
+```
+Play chess vs the computer with a coach who explains every move. 600 puzzles
+```
+(76 ký tự)
+- zh-CN:
+```
+与电脑下国际象棋，老师逐步点评讲解。600道杀棋题，每日一题。
+```
+(31 ký tự)
+- ja-JP:
+```
+コンピュータとチェス。一手ごとに先生が解説。メイト問題600問、毎日の新問題
+```
+(38 ký tự)
 
 ## Tags gợi ý (tối đa 5)
 Board (Cờ bàn) · Chess · Strategy · Puzzle · Offline. Dự phòng: Educational (Giáo dục – hợp với thầy kèm, Sổ tay & Buổi tập), Brain games.
