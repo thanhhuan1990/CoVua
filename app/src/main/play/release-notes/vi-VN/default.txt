@@ -1,5 +1,6 @@
 • Chơi cờ vua với máy, 8 cấp từ Mới học đến Đại kiện tướng (Stockfish), có cờ chấp.
 • Thầy chấm và giải thích từng nước, chỉ nước tốt hơn; cảnh báo trước khi đi.
+• Chế độ "Chỉ đánh cờ": tắt thầy kèm khi chỉ muốn đánh với máy.
 • Sổ tay sai lầm: thế bạn đi sai được ôn lại đúng lúc.
 • Buổi tập mỗi ngày: ôn sổ, bài của thầy, bài vừa sức.
 • 600 bài chiếu hết 1–4 nước theo độ khó.
