@@ -146,6 +146,34 @@ English, Tiếng Việt, 中文, 日本語. Engine: Stockfish (GPL v3). Free, wi
 日本語・English・Tiếng Việt・中文。エンジン：Stockfish（GPL v3）。無料（広告あり）。
 ```
 
+## Có gì mới – 1.0.1 (≤ 500 ký tự)
+```
+<en-US>
+• "More apps": installed apps now correctly show "Open"
+• New "See more" button to browse more apps from us
+• Better app suggestions
+• Stability improvements
+</en-US>
+<ja-JP>
+• 「ほかのアプリ」：インストール済みのアプリに正しく「開く」を表示
+• 「さらに見る」ボタンでほかのアプリを表示
+• おすすめアプリを改善
+• 安定性の向上
+</ja-JP>
+<vi-VN>
+• Mục "Ứng dụng khác": app đã cài hiện đúng nút "Mở" (trước đây có lúc vẫn hiện "Cài")
+• Thêm nút "Xem thêm" để xem thêm ứng dụng cùng nhà phát triển
+• Gợi ý ứng dụng phù hợp hơn với bạn
+• Cải thiện độ ổn định
+</vi-VN>
+<zh-CN>
+• "更多应用"：已安装的应用正确显示"打开"
+• 新增"查看更多"按钮，浏览更多我们的应用
+• 更合适的应用推荐
+• 提升稳定性
+</zh-CN>
+```
+
 ## Có gì mới – 1.0.0 (release notes, ≤ 500 ký tự mỗi ngôn ngữ)
 Cùng nội dung với `app/src/main/play/release-notes/<lang>/default.txt`. Dán nguyên khối dưới đây vào ô "Release notes" của bản phát hành:
 ```

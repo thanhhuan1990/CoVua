@@ -1,7 +1,4 @@
-• Chơi cờ vua với máy, 8 cấp từ Mới học đến Đại kiện tướng (Stockfish), có cờ chấp.
-• Thầy chấm và giải thích từng nước, chỉ nước tốt hơn; cảnh báo trước khi đi.
-• Chế độ "Chỉ đánh cờ": tắt thầy kèm khi chỉ muốn đánh với máy.
-• Sổ tay sai lầm: thế bạn đi sai được ôn lại đúng lúc.
-• Buổi tập mỗi ngày: ôn sổ, bài của thầy, bài vừa sức.
-• 600 bài chiếu hết 1–4 nước theo độ khó.
-• Phân tích ván, khai cuộc có tên, danh hiệu, lịch tập. Tiếng Việt, English, 中文, 日本語.
+• Mục "Ứng dụng khác": app đã cài hiện đúng nút "Mở" (trước đây có lúc vẫn hiện "Cài")
+• Thêm nút "Xem thêm" để xem thêm ứng dụng cùng nhà phát triển
+• Gợi ý ứng dụng phù hợp hơn với bạn
+• Cải thiện độ ổn định

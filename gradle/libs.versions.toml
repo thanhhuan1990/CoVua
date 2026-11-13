@@ -1,6 +1,6 @@
 [versions]
 playPublisher = "4.1.1"
-xpromo = "1.0.5"
+xpromo = "1.0.9"
 agp = "9.1.0"
 kotlin = "2.4.0"
 googleServices = "4.4.4"
