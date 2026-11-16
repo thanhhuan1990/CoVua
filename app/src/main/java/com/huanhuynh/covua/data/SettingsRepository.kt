@@ -74,6 +74,8 @@ data class AppSettings(
     val playOnly: Boolean = false,
     /** Vừa thua một ván "Chỉ đánh cờ": phải xem 1 quảng cáo trước khi vào ván mới. */
     val lossAdOwed: Boolean = false,
+    /** Đã xem hướng dẫn "thầy" + cách tắt thầy (lần đầu mở app). */
+    val coachTutorialSeen: Boolean = false,
 ) {
     val hasSavedGame get() = savedGame.isNotEmpty()
 
@@ -129,6 +131,7 @@ class SettingsRepository(private val context: Context) {
         val NOTIF_MINUTE = intPreferencesKey("notif_minute")
         val NOTIF_AUTO = booleanPreferencesKey("notif_auto")
         val PLAY_ONLY = booleanPreferencesKey("play_only")
+        val COACH_TUT = booleanPreferencesKey("coach_tutorial_seen")
         val LOSS_AD = booleanPreferencesKey("loss_ad_owed")
     }
 
@@ -170,6 +173,7 @@ class SettingsRepository(private val context: Context) {
             notifMinute = p[K.NOTIF_MINUTE] ?: -1,
             notifAuto = p[K.NOTIF_AUTO] ?: false,
             playOnly = p[K.PLAY_ONLY] ?: false,
+            coachTutorialSeen = p[K.COACH_TUT] ?: false,
             lossAdOwed = p[K.LOSS_AD] ?: false,
         )
     }
@@ -205,6 +209,7 @@ class SettingsRepository(private val context: Context) {
         it[K.NOTIF_ON] = on; it[K.NOTIF_MINUTE] = minute; it[K.NOTIF_AUTO] = auto
     }
     suspend fun setPlayOnly(v: Boolean) = context.dataStore.edit { it[K.PLAY_ONLY] = v }
+    suspend fun setCoachTutorialSeen() = context.dataStore.edit { it[K.COACH_TUT] = true }
     suspend fun setLossAdOwed(v: Boolean) = context.dataStore.edit { it[K.LOSS_AD] = v }
     suspend fun setLevel(level: Int) = context.dataStore.edit { it[K.LEVEL] = level }
 

@@ -32,6 +32,8 @@ import com.huanhuynh.covua.ui.theme.Red
 import androidx.appcompat.app.AppCompatActivity
 import com.huanhuynh.covua.i18n.AppLang
 import com.huanhuynh.covua.feature.onboarding.LanguagePicker
+import com.huanhuynh.covua.feature.onboarding.CoachTutorialChoice
+import com.huanhuynh.covua.feature.onboarding.CoachTutorialDialog
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedContentTransitionScope
@@ -177,6 +179,19 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
             langChosen = true
         }
         return
+    }
+
+    // ---- Hướng dẫn về thầy + cách tắt thầy: 1 lần, ngay sau khi chọn ngôn ngữ (màn chính hiện phía sau) ----
+    var coachTutDone by remember { mutableStateOf(false) }
+    if (!settings.coachTutorialSeen && !coachTutDone) {
+        CoachTutorialDialog(settings.playOnly) { choice ->
+            coachTutDone = true
+            container.events.log(Ev.COACH_TUTORIAL, mapOf("choice" to choice.id, "where" to "first_launch"))
+            container.appScope.launch {
+                if (choice != CoachTutorialChoice.SKIP) container.settings.setPlayOnly(choice == CoachTutorialChoice.PLAY_ONLY)
+                container.settings.setCoachTutorialSeen()
+            }
+        }
     }
 
     // ---- Câu hỏi trình độ: lần đầu bấm "Chơi với máy" hoặc "Buổi tập" ----

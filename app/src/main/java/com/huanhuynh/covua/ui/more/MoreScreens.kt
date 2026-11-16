@@ -73,6 +73,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.huanhuynh.covua.data.RcKeys
 import com.huanhuynh.covua.feature.daily.MonthCalendar
 import com.huanhuynh.covua.feature.onboarding.Onboarding
+import com.huanhuynh.covua.feature.onboarding.CoachTutorialChoice
+import com.huanhuynh.covua.feature.onboarding.CoachTutorialDialog
 import com.huanhuynh.covua.feature.onboarding.SkillAnswer
 import com.huanhuynh.covua.feature.onboarding.SkillQuestionDialog
 import com.huanhuynh.covua.feature.review.NotebookSection
@@ -85,6 +87,12 @@ fun SettingsScreen(container: AppContainer, settings: AppSettings, onBack: () ->
     val context = LocalContext.current
     val repo = container.settings
     var askSkill by remember { mutableStateOf(false) }
+    var showCoachTut by remember { mutableStateOf(false) }
+    if (showCoachTut) CoachTutorialDialog(settings.playOnly) { c ->
+        showCoachTut = false
+        container.events.log(com.huanhuynh.covua.domain.Ev.COACH_TUTORIAL, mapOf("choice" to c.id, "where" to "settings"))
+        if (c != CoachTutorialChoice.SKIP) scope.launch { repo.setPlayOnly(c == CoachTutorialChoice.PLAY_ONLY) }
+    }
     var showLicences by remember { mutableStateOf(false) }
     if (showLicences) LicencesDialog { showLicences = false }
     val player by remember { container.player.flow() }.collectAsStateWithLifecycle(initialValue = null)
@@ -172,6 +180,14 @@ fun SettingsScreen(container: AppContainer, settings: AppSettings, onBack: () ->
             CardBox {
                 SwitchRow(t("Chỉ đánh cờ với máy", "Just play the computer", "只和电脑下棋", "コンピュータと対局のみ"), t("Ván mới không có lời thầy, cảnh báo, gợi ý. Vẫn xem được phân tích sau ván.", "New games have no comments, warnings or hints. Analysis is still available afterwards.", "新对局没有点评、警告和提示，赛后仍可查看分析。", "新しい対局では解説・警告・ヒントなし。終局後の分析は見られます。"), settings.playOnly) { v ->
                     scope.launch { repo.setPlayOnly(v) }
+                }
+                HorizontalDivider(color = Line)
+                Row(Modifier.fillMaxWidth().clickable { showCoachTut = true }.padding(vertical = 11.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Column(Modifier.weight(1f)) {
+                        Text(t("Xem lại hướng dẫn về thầy", "Coach guide", "老师使用指南", "先生のガイド"), fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Ink)
+                        Text(t("Thầy giúp gì và cách tắt thầy", "What the coach does and how to turn it off", "老师能做什么以及如何关闭", "先生ができることとオフにする方法"), fontSize = 12.sp, color = Muted)
+                    }
+                    Text("›", fontSize = 20.sp, color = Muted)
                 }
                 HorizontalDivider(color = Line)
                 Row(Modifier.fillMaxWidth().padding(vertical = 11.dp), verticalAlignment = Alignment.CenterVertically) {

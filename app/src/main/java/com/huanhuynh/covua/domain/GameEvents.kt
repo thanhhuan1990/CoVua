@@ -17,6 +17,7 @@ object Ev {
     const val DAILY_STEP_DONE = "daily_step_done"
     const val DAILY_SESSION_DONE = "daily_session_done"
     const val ONBOARD_SKILL = "onboard_skill"
+    const val COACH_TUTORIAL = "coach_tutorial"
     const val GAME_START = "game_start"
     const val GAME_END = "game_end"
     const val DDA_PROMPT = "dda_prompt"
