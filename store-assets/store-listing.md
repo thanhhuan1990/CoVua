@@ -8,7 +8,7 @@ Package: `com.huanhuynh.covua` · Danh mục: **Game → Board** · Ngôn ngữ 
 | Mô tả ngắn (≤80) | Chơi cờ vua với máy, thầy chấm và giải thích từng nước. 600 bài chiếu hết | Play chess vs the computer with a coach who explains every move. 600 puzzles | 与电脑下国际象棋，老师逐步点评讲解。600道杀棋题，每日一题。 | コンピュータとチェス。一手ごとに先生が解説。メイト問題600問、毎日の新問題 |
 
 ## Tên ứng dụng (≤ 30 ký tự)
-- vi-VN: `Cờ Vua Có Thầy – Học & chơi` (27 ký tự)
+- vi-VN: `Cờ Vua Có Thầy: Chess Coach` (27 ký tự) – 11/2026: tên song ngữ để tìm được bằng cả tiếng Việt và tiếng Anh; trên Play hiện chỉ có listing **vi** nên máy mọi ngôn ngữ đều thấy tên này. Tên trước đó trên Play: `Cờ Vua Có Thầy - Offline`.
 - en-US: `Chess Coach – Learn & Play` (26 ký tự)
 - zh-CN: `国际象棋老师 – 学棋与对弈` (14 ký tự)
 - ja-JP: `チェス先生 – 学んで指せるチェス` (17 ký tự)
@@ -144,6 +144,32 @@ English, Tiếng Việt, 中文, 日本語. Engine: Stockfish (GPL v3). Free, wi
 🧩 1〜4手メイトの問題600問 – 難易度5段階、「あなた向けの問題」、毎日新しい問題
 
 日本語・English・Tiếng Việt・中文。エンジン：Stockfish（GPL v3）。無料（広告あり）。
+```
+
+## Có gì mới – 1.1.0 (≤ 500 ký tự)
+```
+<vi-VN>
+• Hướng dẫn mới về "thầy": thầy giúp gì trong ván và cách tắt thầy khi muốn tự đánh
+• Chọn ngay "Học cùng thầy" hoặc "Chỉ đánh cờ" từ lần đầu mở app
+• Xem lại hướng dẫn bất cứ lúc nào trong Cài đặt
+• Tên app trên màn hình chính thống nhất là "Cờ Vua Có Thầy", kể cả khi máy dùng tiếng Anh
+</vi-VN>
+<en-US>
+• New coach guide: what your coach does during a game and how to turn it off when you want to play on your own
+• Choose "Learn with the coach" or "Just play" right from the first launch
+• Revisit the guide any time in Settings
+• The app name on your home screen is now "Cờ Vua Có Thầy"
+</en-US>
+<zh-CN>
+• 新增老师使用指南：老师在对局中能做什么，以及想自己下时如何关闭老师
+• 首次打开即可选择"跟老师学"或"只下棋"
+• 随时可在设置中重新查看指南
+</zh-CN>
+<ja-JP>
+• 先生ガイドを追加：対局中に先生ができることと、自分だけで指したいときの先生のオフ方法
+• 初回起動時に「先生と学ぶ」か「対局だけ」を選べます
+• ガイドは設定からいつでも見直せます
+</ja-JP>
 ```
 
 ## Có gì mới – 1.0.1 (≤ 500 ký tự)

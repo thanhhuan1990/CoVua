@@ -1,4 +1,4 @@
-• Mục "Ứng dụng khác": app đã cài hiện đúng nút "Mở" (trước đây có lúc vẫn hiện "Cài")
-• Thêm nút "Xem thêm" để xem thêm ứng dụng cùng nhà phát triển
-• Gợi ý ứng dụng phù hợp hơn với bạn
-• Cải thiện độ ổn định
+• Hướng dẫn mới về "thầy": thầy giúp gì trong ván và cách tắt thầy khi muốn tự đánh
+• Chọn ngay "Học cùng thầy" hoặc "Chỉ đánh cờ" từ lần đầu mở app
+• Xem lại hướng dẫn bất cứ lúc nào trong Cài đặt
+• Tên app trên màn hình chính thống nhất là "Cờ Vua Có Thầy", kể cả khi máy dùng tiếng Anh

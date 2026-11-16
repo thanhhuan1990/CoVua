@@ -1,4 +1,4 @@
-• "More apps": installed apps now correctly show "Open"
-• New "See more" button to browse more apps from us
-• Better app suggestions
-• Stability improvements
+• New coach guide: what your coach does during a game and how to turn it off when you want to play on your own
+• Choose "Learn with the coach" or "Just play" right from the first launch
+• Revisit the guide any time in Settings
+• The app name on your home screen is now "Cờ Vua Có Thầy"
