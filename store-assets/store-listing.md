@@ -1,6 +1,6 @@
 # Cờ Vua Có Thầy – Store listing (Google Play)
 
-Package: `com.huanhuynh.covua` · Danh mục: **Game → Board** · Ngôn ngữ mặc định: **vi-VN** (+ en-US, zh-CN, ja-JP) · Mọi lứa tuổi, có quảng cáo.
+Package: `com.huanhuynh.covua` · Version 1.1.2 (5) · Danh mục: **Game → Board** · Ngôn ngữ mặc định: **vi-VN** (+ en-US, zh-CN, ja-JP) · Mọi lứa tuổi, có quảng cáo.
 
 | | vi-VN | en-US | zh-CN | ja-JP |
 |---|---|---|---|---|
@@ -144,6 +144,34 @@ English, Tiếng Việt, 中文, 日本語. Engine: Stockfish (GPL v3). Free, wi
 🧩 1〜4手メイトの問題600問 – 難易度5段階、「あなた向けの問題」、毎日新しい問題
 
 日本語・English・Tiếng Việt・中文。エンジン：Stockfish（GPL v3）。無料（広告あり）。
+```
+
+## Có gì mới – 1.1.2 (≤ 500 ký tự)
+```
+<en-US>
+• Fixed Today's practice and Today's puzzle not loading
+• The full puzzle collection is back
+• Cleaner ads: no ads when you tap New game, Close or Back to home
+• Stability improvements
+</en-US>
+<ja-JP>
+• 「今日の練習」と「今日の問題」が読み込めない問題を修正
+• 問題集がすべて使えるようになりました
+• 広告をすっきり：新しい対局・閉じる・ホームに戻る操作では広告を表示しません
+• 安定性の向上
+</ja-JP>
+<vi-VN>
+• Sửa lỗi Buổi tập hôm nay và Bài hôm nay không tải được bài
+• Kho bài thế đầy đủ đã trở lại
+• Quảng cáo gọn gàng hơn: không hiện khi bấm Ván mới, Đóng hay Về trang chủ
+• Cải thiện độ ổn định
+</vi-VN>
+<zh-CN>
+• 修复"今日练习"和"今日题"无法加载的问题
+• 完整题库已恢复
+• 广告更清爽：点击"新棋局"、关闭或返回首页时不再显示广告
+• 提升稳定性
+</zh-CN>
 ```
 
 ## Có gì mới – 1.1.0 (≤ 500 ký tự)

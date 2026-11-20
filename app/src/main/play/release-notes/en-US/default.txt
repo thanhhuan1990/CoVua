@@ -1,4 +1,4 @@
-• New coach guide: what your coach does during a game and how to turn it off when you want to play on your own
-• Choose "Learn with the coach" or "Just play" right from the first launch
-• Revisit the guide any time in Settings
-• The app name on your home screen is now "Cờ Vua Có Thầy"
+• Fixed Today's practice and Today's puzzle not loading
+• The full puzzle collection is back
+• Cleaner ads: no ads when you tap New game, Close or Back to home
+• Stability improvements

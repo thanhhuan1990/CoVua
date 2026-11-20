@@ -1,4 +1,4 @@
-• Hướng dẫn mới về "thầy": thầy giúp gì trong ván và cách tắt thầy khi muốn tự đánh
-• Chọn ngay "Học cùng thầy" hoặc "Chỉ đánh cờ" từ lần đầu mở app
-• Xem lại hướng dẫn bất cứ lúc nào trong Cài đặt
-• Tên app trên màn hình chính thống nhất là "Cờ Vua Có Thầy", kể cả khi máy dùng tiếng Anh
+• Sửa lỗi Buổi tập hôm nay và Bài hôm nay không tải được bài
+• Kho bài thế đầy đủ đã trở lại
+• Quảng cáo gọn gàng hơn: không hiện khi bấm Ván mới, Đóng hay Về trang chủ
+• Cải thiện độ ổn định
