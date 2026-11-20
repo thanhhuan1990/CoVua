@@ -130,8 +130,14 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
-                keepSplash = false
-                if (eligible) container.appOpenAdManager.showIfAvailable(this@MainActivity)
+                // App Open chỉ hiện trên màn chờ: splash được giữ đến khi quảng cáo đã phủ màn hình (hoặc không có quảng cáo).
+                if (eligible) {
+                    container.appOpenAdManager.showIfAvailable(this@MainActivity) { keepSplash = false }
+                    // Phòng hờ: không bao giờ kẹt màn chờ quá 2 giây sau khi đã chờ tải.
+                    launch { kotlinx.coroutines.delay(2_000); keepSplash = false }
+                } else {
+                    keepSplash = false
+                }
                 // Đặt lại lịch "Thầy nhắc" (WorkManager giữ qua khởi động lại máy, nhưng giờ có thể đã đổi)
                 val s = container.settings.current()
                 if (s.notifOn && container.reminders.hasPermission()) container.reminders.schedule(ReminderWorker.targetMinute(container))
@@ -217,16 +223,9 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
         nav.navigate("game") { popUpTo("home") }
     }
 
-    // ---- Thua ván "Chỉ đánh cờ" → lần bấm "Ván mới" kế tiếp hiện 1 quảng cáo (không hỏi, không chặn) ----
-    fun onNewGamePressed(go: () -> Unit) {
-        val owed = settings.lossAdOwed
-        go()
-        if (!owed) return
-        scope.launch { container.settings.setLossAdOwed(false) }
-        if (settings.adsRemoved) return
-        // Có sẵn thì hiện đè lên màn Ván mới; chưa tải xong thì bỏ qua lần này
-        context.findActivity()?.let { a -> if (container.interstitial.isReady()) container.interstitial.showRequired(a) {} }
-    }
+    // ---- Nút "Ván mới" / thẻ "Chơi với máy" là nút ĐIỀU HƯỚNG: luôn mở màn chọn ván ngay, KHÔNG quảng cáo
+    // (chính sách AdMob "Site behavior: Navigation"). Quảng cáo "nợ" sau ván thua chuyển sang lúc bấm "Bắt đầu". ----
+    fun onNewGamePressed(go: () -> Unit) = go()
 
     fun startNewGame(nav: NavHostController, level: Level, sideChoice: Int, explain: Boolean, warn: Boolean, hint: Boolean, undo: Boolean, handicap: Handicap = Handicap.NONE, fromFen: String? = null, playOnly: Boolean = false) {
         // Vào ván bằng đường khác (gợi ý cấp, chơi tiếp từ thế cờ) → bỏ "nợ" để quảng cáo không hiện lệch về sau
@@ -365,11 +364,16 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
                     container.settings.setHandicap(c.handicap.id)
                     container.settings.setPlayOnly(c.playOnly)
                 }
-                // Điểm chuyển màn tự nhiên (trước khi ván bắt đầu) – InterstitialController tự áp giới hạn tần suất
-                if (FirebaseHelper.getLong(context, RcKeys.INTERSTITIAL_ON_NEW_GAME) != 0L && settings.games >= 1) {
-                    context.findActivity()?.let { container.interstitial.onTransition(it) }
-                }
-                startNewGame(nav, c.level, c.side, c.explain, c.warn, c.hint, c.undo, c.handicap, playOnly = c.playOnly)
+                // Điểm chuyển màn tự nhiên: quảng cáo hiện TRƯỚC, đóng xong mới vào ván (InterstitialController tự áp giới hạn tần suất)
+                val begin = { startNewGame(nav, c.level, c.side, c.explain, c.warn, c.hint, c.undo, c.handicap, playOnly = c.playOnly) }
+                val act = context.findActivity()
+                val owed = settings.lossAdOwed
+                if (owed) container.appScope.launch { container.settings.setLossAdOwed(false) }
+                if (act == null || settings.adsRemoved) begin()
+                else if (owed && container.interstitial.isReady() && container.interstitial.showRequired(act, begin)) Unit
+                else if (FirebaseHelper.getLong(context, RcKeys.INTERSTITIAL_ON_NEW_GAME) != 0L && settings.games >= 1) {
+                    container.interstitial.onTransition(act, begin)
+                } else begin()
             }
         }
         composable("new/fen") {
@@ -400,15 +404,12 @@ private fun AppNav(container: AppContainer, settings: AppSettings, deepLink: Mut
             )
         }
         composable("analysis") {
-            fun leave(block: () -> Unit) {
-                context.findActivity()?.let { container.interstitial.onTransition(it) }
-                block()
-            }
+            // Không quảng cáo ở màn phân tích (Đóng / Ván mới): tránh 2 quảng cáo liên tiếp khi vào ván mới.
             AnalysisScreen(
                 container, settings,
-                onClose = { leave { nav.popBackStack() } },
+                onClose = { nav.popBackStack() },
                 onReplay = { ply -> nav.navigate("replay/$ply") },
-                onNewGame = { leave { nav.navigate("new") { popUpTo("home") } } },
+                onNewGame = { nav.navigate("new") { popUpTo("home") } },
             )
         }
         composable("replay/{ply}") { e ->

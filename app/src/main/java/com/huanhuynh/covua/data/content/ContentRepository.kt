@@ -39,9 +39,24 @@ class ContentRepository(private val context: Context, scope: CoroutineScope) {
     /** Dùng trong Compose sau khi đã nạp (trả null nếu chưa xong). */
     fun peek(): Content? = cached ?: if (loading.isCompleted) loading.getCompleted().also { cached = it } else null
 
-    private fun readGz(path: String): String? = runCatching {
-        GZIPInputStream(context.assets.open(path)).bufferedReader().use { it.readText() }
-    }.getOrNull()
+    /**
+     * Đọc asset JSON đã nén gzip. Lưu ý: khi đóng gói APK/AAB, công cụ build tự giải nén và BỎ đuôi ".gz"
+     * (assets/content/x.json.gz → x.json trong bản release). Vì vậy thử cả hai tên và tự nhận diện gzip
+     * theo 2 byte đầu (1F 8B) – trước đây chỉ mở tên ".gz" nên bản release luôn đọc thất bại
+     * (Buổi tập hôm nay trống, bài thế rơi về bộ cũ).
+     */
+    private fun readGz(path: String): String? {
+        val base = path.removeSuffix(".gz")
+        for (name in listOf("$base.gz", base)) {
+            val bytes = runCatching { context.assets.open(name).use { it.readBytes() } }.getOrNull() ?: continue
+            val gz = bytes.size >= 2 && bytes[0] == 0x1f.toByte() && bytes[1] == 0x8b.toByte()
+            val text = runCatching {
+                if (gz) GZIPInputStream(bytes.inputStream()).bufferedReader().use { it.readText() } else bytes.toString(Charsets.UTF_8)
+            }.getOrNull()
+            if (text != null) return text
+        }
+        return null
+    }
 
     private fun load(): Content {
         val pack = readGz("content/puzzles.v2.json.gz")?.let { runCatching { Puzzle.parsePack(it) }.getOrNull() }

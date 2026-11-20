@@ -214,6 +214,7 @@ fun SettingsScreen(container: AppContainer, settings: AppSettings, onBack: () ->
                     )
                 }
                 NavRow(t("Chính sách quyền riêng tư", "Privacy policy", "隐私政策", "プライバシーポリシー")) {
+                    container.appOpenAdManager.markExternalLaunch()
                     runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_POLICY_URL))) }
                 }
                 if (container.adsManager.privacyOptionsRequired.value) {
@@ -229,7 +230,7 @@ fun SettingsScreen(container: AppContainer, settings: AppSettings, onBack: () ->
             }
             Spacer(Modifier.height(16.dp))
         }
-        if (!settings.adsRemoved) BannerAd(container.adsManager, Modifier.fillMaxWidth())
+        // Không đặt banner ở màn Cài đặt: ngay trên là danh sách "Ứng dụng khác" có nút bấm (dễ bấm nhầm).
     }
 }
 
@@ -307,7 +308,9 @@ fun ProgressScreen(container: AppContainer, settings: AppSettings, onBack: () ->
                 Text(t("Đã giải ${solved.size}/$puzzleCount bài", "Solved ${solved.size}/$puzzleCount", "已解${solved.size}/${puzzleCount}题", "解いた問題 ${solved.size}/${puzzleCount}"), fontWeight = FontWeight.SemiBold, color = Ink, modifier = Modifier.padding(top = 14.dp))
                 player?.let { Text(t("Bậc bài vừa sức: ${it.puzzleBand}/5", "Puzzle level: ${it.puzzleBand}/5", "题目等级：${it.puzzleBand}/5", "問題の段階：${it.puzzleBand}/5"), fontSize = 12.5.sp, color = Muted, modifier = Modifier.padding(top = 2.dp, bottom = 14.dp)) }
             }
+            Spacer(Modifier.height(24.dp))
         }
+        if (!settings.adsRemoved) BannerAd(container.adsManager, Modifier.fillMaxWidth())
     }
 }
 

@@ -196,6 +196,7 @@ object Sharer {
                 clipData = ClipData.newRawUri("", uri)
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
             }
+            (context.applicationContext as? com.huanhuynh.covua.CoVuaApp)?.container?.appOpenAdManager?.markExternalLaunch()
             context.startActivity(Intent.createChooser(send, t("Chia sẻ", "Share", "分享", "共有")).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
             FirebaseHelper.logEvent(context, "share", mapOf("moment" to content.moment))
         }
@@ -208,6 +209,7 @@ object Sharer {
                 type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, text + "\n" + ShareImage.playUrl(context, moment))
             }
+            (context.applicationContext as? com.huanhuynh.covua.CoVuaApp)?.container?.appOpenAdManager?.markExternalLaunch()
             context.startActivity(Intent.createChooser(send, t("Giới thiệu cho bạn bè", "Tell your friends", "推荐给好友", "友達に紹介")).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
             FirebaseHelper.logEvent(context, "share", mapOf("moment" to moment))
         }

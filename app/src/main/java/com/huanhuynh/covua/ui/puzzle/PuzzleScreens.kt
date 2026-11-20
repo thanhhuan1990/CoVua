@@ -82,7 +82,7 @@ fun PuzzleListScreen(container: AppContainer, settings: AppSettings, onBack: () 
     val list = content?.puzzles.orEmpty()
     Column(Modifier.fillMaxSize().background(Paper).navigationBarsPadding()) {
         TopBar(t("Bài tập · ${solved.size}/${list.size}", "Puzzles · ${solved.size}/${list.size}", "习题 · ${solved.size}/${list.size}", "問題集 · ${solved.size}/${list.size}"), onBack)
-        LazyColumn(Modifier.weight(1f).padding(horizontal = 16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        LazyColumn(Modifier.weight(1f).padding(horizontal = 16.dp), contentPadding = androidx.compose.foundation.layout.PaddingValues(bottom = 24.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             item {
                 Column(
                     Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(Red).clickable(onClick = onFit).padding(16.dp),
@@ -147,11 +147,12 @@ private fun PuzzleRow(p: Puzzle, solved: Boolean, onClick: () -> Unit) {
 }
 
 /** Quảng cáo xen kẽ chỉ ở chế độ danh sách: cứ N bài một lần, tại điểm chuyển "Bài tiếp". */
-private fun maybeInterstitial(container: AppContainer, activity: android.app.Activity?) {
+private fun maybeInterstitial(container: AppContainer, activity: android.app.Activity?, then: () -> Unit) {
     val every = container.rcInt(RcKeys.PUZZLE_INTERSTITIAL_EVERY)
     if (activity != null && every > 0 && container.puzzlesSolvedSession > 0 && container.puzzlesSolvedSession % every == 0) {
-        container.interstitial.onTransition(activity)
-    }
+        // Quảng cáo hiện TRƯỚC, đóng xong mới sang bài tiếp
+        container.interstitial.onTransition(activity, then)
+    } else then()
 }
 
 /** Một bài theo id (từ danh sách). */
@@ -170,7 +171,7 @@ fun PuzzleScreen(
         PuzzleHeader(puzzle)
         PuzzleTrainer(container, settings, puzzle, onResult = { r -> scope.launch { recordPuzzle(container, puzzle, PuzzleMode.BROWSE, r, source = "list") } }) { r ->
             val next = list.indexOfFirst { it.id == puzzle.id } + 1
-            if (next in list.indices) PillButton(t("Bài tiếp ▶", "Next puzzle ▶", "下一题 ▶", "次の問題 ▶")) { maybeInterstitial(container, context.findActivity()); onNext(list[next].id) }
+            if (next in list.indices) PillButton(t("Bài tiếp ▶", "Next puzzle ▶", "下一题 ▶", "次の問題 ▶")) { maybeInterstitial(container, context.findActivity()) { onNext(list[next].id) } }
             if (r.success) PillButton(t("📤 Thách bạn bè", "📤 Challenge friends", "📤 挑战好友", "📤 友達に挑戦状"), primary = false) { sharePuzzle(context, puzzle, settings) }
             if (onPlayFrom != null && container.flag(RcKeys.PLAY_FROM_POSITION_ENABLED)) PillButton(t("♟ Chơi tiếp với máy", "♟ Play on vs computer", "♟ 继续和电脑下", "♟ コンピュータと続ける"), primary = false) { onPlayFrom(puzzle.fen) }
             PillButton(t("Danh sách", "List", "列表", "一覧"), primary = false, onClick = onBack)
@@ -204,7 +205,7 @@ fun FitPuzzleScreen(container: AppContainer, settings: AppSettings, onBack: () -
         if (p == null) Text(t("Thầy đang chọn bài…", "Choosing a puzzle…", "正在选题…", "問題を選んでいます…"), color = Muted, modifier = Modifier.padding(16.dp)) else {
             PuzzleHeader(p)
             PuzzleTrainer(container, settings, p, onResult = { r -> scope.launch { recordPuzzle(container, p, PuzzleMode.BROWSE, r, source = "fit") } }) { r ->
-                PillButton(t("Bài tiếp ▶", "Next puzzle ▶", "下一题 ▶", "次の問題 ▶")) { maybeInterstitial(container, context.findActivity()); round++ }
+                PillButton(t("Bài tiếp ▶", "Next puzzle ▶", "下一题 ▶", "次の問題 ▶")) { maybeInterstitial(container, context.findActivity()) { round++ } }
                 if (r.success) PillButton(t("📤 Thách bạn bè", "📤 Challenge friends", "📤 挑战好友", "📤 友達に挑戦状"), primary = false) { sharePuzzle(context, p, settings) }
                 if (onPlayFrom != null && container.flag(RcKeys.PLAY_FROM_POSITION_ENABLED)) PillButton(t("♟ Chơi tiếp với máy", "♟ Play on vs computer", "♟ 继续和电脑下", "♟ コンピュータと続ける"), primary = false) { onPlayFrom(p.fen) }
             }

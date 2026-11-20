@@ -52,6 +52,8 @@ class RewardedController(
         current.fullScreenContentCallback = object : FullScreenContentCallback() {
             override fun onAdShowedFullScreenContent() {
                 adsManager.isShowingFullScreenAd = true
+                // Giãn cách: interstitial không hiện ngay sau quảng cáo có thưởng.
+                adsManager.lastInterstitialShownAt = android.os.SystemClock.elapsedRealtime()
             }
 
             override fun onAdDismissedFullScreenContent() {

@@ -29,7 +29,10 @@ object InAppReview {
         runCatching {
             val m = ReviewManagerFactory.create(activity)
             m.requestReviewFlow().addOnCompleteListener { t ->
-                if (t.isSuccessful) m.launchReviewFlow(activity, t.result)
+                if (t.isSuccessful) {
+                    c.appOpenAdManager.markExternalLaunch()
+                    m.launchReviewFlow(activity, t.result)
+                }
             }
         }
     }

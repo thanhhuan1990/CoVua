@@ -257,6 +257,7 @@ fun HomeScreen(
                     }
                 }
             }
+            Spacer(Modifier.height(24.dp))
         }
         if (!settings.adsRemoved) BannerAd(container.adsManager, Modifier.fillMaxWidth())
     }

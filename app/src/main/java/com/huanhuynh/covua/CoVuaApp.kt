@@ -62,6 +62,10 @@ class CoVuaApp : Application() {
                 languages = listOf("vi", "en", "zh", "ja"),
                 enabled = { FirebaseHelper.getLong(this, RcKeys.XPROMO_ENABLED) != 0L },
                 analytics = { name, params ->
+                    // Bấm thẻ "Ứng dụng khác" → mở Google Play / app khác: lúc quay lại không hiện App Open.
+                    if (name == "xpromo_click" || name == "xpromo_open_app" || name == "xpromo_open_deeplink") {
+                        container.appOpenAdManager.markExternalLaunch()
+                    }
                     FirebaseHelper.logEvent(this, name, params.mapValues { it.value?.toString() ?: "" })
                 },
             ),

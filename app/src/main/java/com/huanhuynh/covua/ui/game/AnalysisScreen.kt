@@ -94,6 +94,8 @@ fun AnalysisScreen(container: AppContainer, settings: AppSettings, onClose: () -
                 StatBox("${counts[Grade.INACCURACY] ?: 0}", t("Chưa chính xác", "Inaccuracy", "欠准确", "緩手"), gradeColor(Grade.INACCURACY), Modifier.weight(1f))
                 StatBox("${(counts[Grade.MISTAKE] ?: 0) + (counts[Grade.BLUNDER] ?: 0)}", t("Sai lầm", "Mistake", "失误", "悪手"), gradeColor(Grade.BLUNDER), Modifier.weight(1f))
             }
+            // Quảng cáo native giữa nội dung tĩnh (sau phần thống kê), cách xa các nút bấm ở cuối màn.
+            if (!settings.adsRemoved) com.huanhuynh.covua.ads.NativeAdCard(container.adsManager, Modifier.padding(top = 16.dp, bottom = 6.dp))
             if (moments.isNotEmpty()) {
                 SectionTitle(t("Khoảnh khắc quan trọng", "Key moments", "关键时刻", "重要な場面"))
                 CardBox {
@@ -124,7 +126,7 @@ fun AnalysisScreen(container: AppContainer, settings: AppSettings, onClose: () -
             }
             if (!settings.adsRemoved) XPromo.get()?.let { XPromoCard(it, placement = "analysis", modifier = Modifier.padding(bottom = 16.dp)) }
         }
-        if (!settings.adsRemoved) com.huanhuynh.covua.ads.BannerAd(container.adsManager, Modifier.fillMaxWidth())
+        // Không đặt banner ở đáy màn phân tích: ngay trên là các nút Xem lại / Khoe / Ván mới (dễ bấm nhầm).
     }
 }
 

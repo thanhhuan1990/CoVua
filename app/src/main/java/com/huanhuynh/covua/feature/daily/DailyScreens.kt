@@ -140,7 +140,12 @@ fun DailySessionScreen(container: AppContainer, settings: AppSettings, source: S
         if (p != null && step != Step.DONE) StepHeader(p, parts, step)
         when (step) {
             Step.LOADING -> Text(t("Thầy đang soạn bài…", "Preparing your lesson…", "老师正在备课…", "先生が準備中…"), color = Muted, modifier = Modifier.padding(16.dp))
-            Step.UNAVAILABLE -> Text(t("Chưa tải được bài hôm nay. Thử lại sau nhé.", "Couldn't load today's lesson. Please try again later.", "今日练习加载失败，请稍后再试。", "今日の練習を読み込めませんでした。後でもう一度お試しください。"), color = Muted, modifier = Modifier.padding(16.dp))
+            // Không để màn cụt: luôn có nút quay về
+            Step.UNAVAILABLE -> Column(Modifier.padding(16.dp)) {
+                Text(t("Chưa tải được bài hôm nay. Thử lại sau nhé.", "Couldn't load today's lesson. Please try again later.", "今日练习加载失败，请稍后再试。", "今日の練習を読み込めませんでした。後でもう一度お試しください。"), color = Muted)
+                androidx.compose.foundation.layout.Spacer(Modifier.padding(top = 12.dp))
+                PillButton(t("Về trang chủ", "Back to home", "返回首页", "ホームに戻る"), onClick = onHome)
+            }
             Step.REVIEW -> ReviewSession(container, settings, p!!.reviewCardIds, onFinished = { n, ok -> reviewed += n; reviewedOk += ok; complete(SessionParts.REVIEW, "review") }, finishLabel = t("Sang bài hôm nay ▶", "On to today's puzzle ▶", "进入今日题 ▶", "今日の問題へ ▶"))
             Step.DAILY -> {
                 val puzzle = content?.puzzle(p!!.dailyPuzzleId)
@@ -168,8 +173,7 @@ fun DailySessionScreen(container: AppContainer, settings: AppSettings, source: S
                 }
             }
             Step.DONE -> DoneView(container, settings, p, parts, dailyResult, reviewed, reviewedOk, extrasSolved, milestone, onHome = {
-                // 1 interstitial ở điểm chuyển tự nhiên "Về trang chủ" (không trong lúc tập)
-                if (container.flag(RcKeys.INTERSTITIAL_AFTER_DAILY_SESSION)) context.findActivity()?.let { container.interstitial.onTransition(it) }
+                // "Về trang chủ" là thao tác rời màn (giống Back) → không hiện quảng cáo.
                 onHome()
             })
         }

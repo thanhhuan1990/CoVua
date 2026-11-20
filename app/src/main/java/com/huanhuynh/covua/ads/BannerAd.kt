@@ -2,6 +2,8 @@ package com.huanhuynh.covua.ads
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
@@ -37,7 +39,11 @@ fun BannerAd(adsManager: AdsManager, modifier: Modifier = Modifier) {
     DisposableEffect(adView) {
         onDispose { adView.destroy() }
     }
-    Box(modifier = modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-        AndroidView(factory = { adView })
+    // Tách hẳn khỏi nội dung/nút bấm phía trên (đường kẻ + khoảng trống) để tránh bấm nhầm vào quảng cáo
+    androidx.compose.foundation.layout.Column(modifier.fillMaxWidth()) {
+        androidx.compose.material3.HorizontalDivider(color = androidx.compose.ui.graphics.Color(0x1F000000))
+        Box(modifier = Modifier.fillMaxWidth().padding(top = 12.dp, bottom = 4.dp), contentAlignment = Alignment.Center) {
+            AndroidView(factory = { adView })
+        }
     }
 }

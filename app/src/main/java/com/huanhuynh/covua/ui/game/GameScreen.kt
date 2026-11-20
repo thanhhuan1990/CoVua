@@ -209,11 +209,25 @@ fun GameScreen(
         if (text != null) container.tts.speak(prefix + text) else if (check) container.tts.speak(t("Chiếu!", "Check!", "将军！", "チェック！"))
     }
 
-    fun rewardedThen(onReward: () -> Unit) {
-        val a = context.findActivity() ?: return
-        if (!container.rewarded.show(a, onReward = onReward)) {
-            Toast.makeText(context, t("Quảng cáo đang tải, thử lại sau ít giây", "The ad is loading, try again in a few seconds", "广告加载中，请稍后再试", "広告を読み込み中です。数秒後にもう一度お試しください"), Toast.LENGTH_SHORT).show()
-        }
+    // Đi lại hết lượt miễn phí: luôn hỏi trước (tự nguyện, có nút "Không, cảm ơn"), không bật quảng cáo ngay khi bấm nút.
+    var undoAsk by remember { mutableStateOf<(() -> Unit)?>(null) }
+    fun rewardedThen(onReward: () -> Unit) { undoAsk = onReward }
+    undoAsk?.let { reward ->
+        AlertDialog(
+            onDismissRequest = { undoAsk = null },
+            title = { Text(t("Đi lại bằng quảng cáo ngắn", "Take back with a short ad", "看短广告悔棋", "短い広告で待った")) },
+            text = { Text(t("Bạn đã dùng hết lượt đi lại miễn phí. Xem một quảng cáo ngắn để nhận thêm 3 lượt.", "You've used your free take-backs. Watch a short ad to get 3 more.", "免费悔棋次数已用完。看一段短广告可再获得3次。", "無料の待ったを使い切りました。短い広告を見るとさらに3回使えます。")) },
+            confirmButton = {
+                TextButton(onClick = {
+                    undoAsk = null
+                    val a = context.findActivity() ?: return@TextButton
+                    if (!container.rewarded.show(a, onReward = reward)) {
+                        Toast.makeText(context, t("Quảng cáo đang tải, thử lại sau ít giây", "The ad is loading, try again in a few seconds", "广告加载中，请稍后再试", "広告を読み込み中です。数秒後にもう一度お試しください"), Toast.LENGTH_SHORT).show()
+                    }
+                }) { Text(t("Xem quảng cáo", "Watch ad", "看广告", "広告を見る"), color = Red, fontWeight = FontWeight.Bold) }
+            },
+            dismissButton = { TextButton(onClick = { undoAsk = null }) { Text(t("Không, cảm ơn", "No, thanks", "不用了，谢谢", "いいえ、結構です")) } },
+        )
     }
 
     Column(Modifier.fillMaxSize().background(Paper).navigationBarsPadding()) {
